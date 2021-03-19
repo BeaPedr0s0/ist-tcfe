@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.5)  19 MAR 2021 23:52
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  19 MAR 2021 23:36
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -49,9 +53,15 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
 Package babel Info: \l@australian = using hyphenrules for ukenglish
+<<<<<<< HEAD
 (babel)             (\language72) on input line 105.
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language72) on input line 108.
+=======
+(babel)             (\language43) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language43) on input line 108.
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/notoccite/notoccite.sty
 Package: notoccite 2000/07/20
@@ -162,6 +172,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
+<<<<<<< HEAD
 (/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
@@ -170,6 +181,8 @@ Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
 )
+=======
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 (/usr/share/texlive/texmf-dist/tex/latex/nowidow/nowidow.sty
 Package: nowidow 2011/09/20 1.0 Easily prevent widows and orphans
 Package: nowidow 
@@ -624,7 +637,11 @@ LaTeX Info: Redefining \nameref on input line 82.
  (./frontcover.tex
 Package pdftex.def Info: Option `bb' equivalent to `viewport' with pdftex drive
 r on input line 15.
+<<<<<<< HEAD
 <../../figlib/IST_A_CMYK_POS.pdf, id=28, 845.0471pt x 597.51233pt>
+=======
+<../../figlib/IST_A_CMYK_POS.pdf, id=32, 845.0471pt x 597.51233pt>
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 File: ../../figlib/IST_A_CMYK_POS.pdf Graphic file (type pdf)
 <use ../../figlib/IST_A_CMYK_POS.pdf>
 Package pdftex.def Info: ../../figlib/IST_A_CMYK_POS.pdf  used on input line 15
@@ -641,7 +658,11 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 
 
 (./intro.tex
+<<<<<<< HEAD
 <t1draw.pdf, id=35, 722.7pt x 542.025pt>
+=======
+<t1draw.pdf, id=40, 722.7pt x 542.025pt>
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 File: t1draw.pdf Graphic file (type pdf)
 <use t1draw.pdf>
 Package pdftex.def Info: t1draw.pdf  used on input line 13.
@@ -651,19 +672,27 @@ Package pdftex.def Info: t1draw.pdf  used on input line 13.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./analysis.tex
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../figlib/IST_A_CMYK_PO
+<<<<<<< HEAD
 S.pdf>]
 Overfull \hbox (7.87823pt too wide) in paragraph at lines 12--29
 []$[]$ $[]$ \OT1/phv/m/n/10.95 = $[]$ 
  []
 
 ) (./simulation.tex (../sim/op_tab.tex)
+=======
+S.pdf>]) (./simulation.tex (../sim/op_tab.tex)
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 17.
 
@@ -678,6 +707,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 160.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 160.
 Package rerunfilecheck Info: File `report.out' has not changed.
+<<<<<<< HEAD
 (rerunfilecheck)             Checksum: 7BB1696E538335CEAFD8D10B37579F8B;350.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
@@ -703,4 +733,27 @@ PDF statistics:
  83 compressed objects within 1 object stream
  13 named destinations out of 1000 (max. 500000)
  59 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+(rerunfilecheck)             Checksum: AF38C8BC566DEBF28BDC4FC4F70E8C1F;414.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
+ ) 
+Here is how much of TeX's memory you used:
+ 11514 strings out of 481239
+ 183853 string characters out of 5920377
+ 575325 words of memory out of 5000000
+ 26543 multiletter control sequences out of 15000+600000
+ 554497 words of font info for 54 fonts, out of 8000000 for 9000
+ 1142 hyphenation exceptions out of 8191
+ 41i,9n,42p,925b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/helvetic/uhvro8a.pfb>
+Output written on report.pdf (3 pages, 227124 bytes).
+PDF statistics:
+ 102 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> 7a16a331e25cc46f718e764890320695562cd3e6
 
