@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex 2021.3.5)  19 MAR 2021 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.5)  19 MAR 2021 22:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**analysis.tex
-(./analysis.tex
+**report.tex
+(./report.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -179,22 +179,17 @@ Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
-File: l3backend-dvips.def 2020-02-03 L3 backend support: dvips
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count199
 \l__pdf_internal_box=\box49
-\g__pdf_backend_object_int=\count199
-\l__pdf_backend_content_box=\box50
-\l__pdf_backend_model_box=\box51
-\g__pdf_backend_annotation_int=\count266
-\g__pdf_backend_link_int=\count267
-\g__pdf_backend_link_sf_int=\count268
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count269
-\g__xparse_grabber_int=\count270
-\l__xparse_m_args_int=\count271
-\l__xparse_v_nesting_int=\count272
+\l__xparse_current_arg_int=\count266
+\g__xparse_grabber_int=\count267
+\l__xparse_m_args_int=\count268
+\l__xparse_v_nesting_int=\count269
 )
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 
@@ -213,10 +208,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen156
 \Gin@req@width=\dimen157
@@ -230,9 +225,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 ))
-\Gm@cnth=\count273
-\Gm@cntv=\count274
-\c@Gm@tempcnt=\count275
+\Gm@cnth=\count270
+\Gm@cntv=\count271
+\c@Gm@tempcnt=\count272
 \Gm@bindingoffset=\dimen158
 \Gm@wd@mp=\dimen159
 \Gm@odd@mp=\dimen160
@@ -243,25 +238,6 @@ Package: iftex 2019/11/07 v1.0c TeX engine tests
 \Gm@layoutvoffset=\dimen165
 \Gm@dimlist=\toks23
 )
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.41 ...bmargin=2.5cm,lmargin=1,5cm,rmargin=1.5cm}
-                                                  
-? return
-OK, entering \nonstopmode...
-
-! Package keyval Error: 5cm undefined.
-
-See the keyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.41 ...bmargin=2.5cm,lmargin=1,5cm,rmargin=1.5cm}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
@@ -274,7 +250,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
@@ -292,8 +268,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen166
-\Hy@linkcounter=\count276
-\Hy@pagecounter=\count277
+\Hy@linkcounter=\count273
+\Hy@pagecounter=\count274
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
@@ -306,22 +282,8 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count278
-\pdfmajorversion=\count279
-
-
-! Package hyperref Error: Wrong driver option `pdftex',
-(hyperref)                because pdfTeX in PDF mode is not detected.
-
-See the hyperref package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4421 \ProcessKeyvalOptions{Hyp}
-                                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+\Hy@SavedSpaceFactor=\count275
+\pdfmajorversion=\count276
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -329,7 +291,8 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count280
+\c@Hy@tempcnt=\count277
+
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -344,7 +307,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count281
+\Fld@menulength=\count278
 \Field@Width=\dimen168
 \Fld@charsize=\dimen169
 Package hyperref Info: Hyper figures OFF on input line 6430.
@@ -360,32 +323,25 @@ LaTeX Info: Redefining \pageref on input line 6504.
 (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count282
-\c@Item=\count283
-\c@Hfootnote=\count284
+\Hy@abspage=\count279
+\c@Item=\count280
+\c@Hfootnote=\count281
 )
-Package hyperref Info: Driver (default): hdvips.
+Package hyperref Info: Driver: hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2020/01/14 v7.00d Hyperref driver for dvips
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2020/01/14 v7.00d Hyperref definitions for pdfmark specials
-\pdf@docset=\toks24
-\pdf@box=\box52
-\pdf@toks=\toks25
-\pdf@defaulttoks=\toks26
-\HyField@AnnotCount=\count285
-\Fld@listcount=\count286
-\c@bookmark@seq@number=\count287
-
-(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
+\Fld@listcount=\count282
+\c@bookmark@seq@number=\count283
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
 (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
@@ -393,7 +349,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip52
-))
+)
 Package hyperref Info: Option `colorlinks' set `true' on input line 71.
 
 
@@ -412,19 +368,19 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip53
 \bibsep=\skip54
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count288
+\c@NAT@ctr=\count284
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
-\c@subfigure=\count289
-\c@subtable=\count290
+\c@subfigure=\count285
+\c@subtable=\count286
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count291
+\etb@tempcnta=\count287
 )
 (/usr/share/texlive/texmf-dist/tex/latex/zref/zref-abspage.sty
 Package: zref-abspage 2019/11/29 v2.28 Module abspage for zref (HO)
@@ -435,7 +391,7 @@ Package zref Info: New property list: main on input line 763.
 Package zref Info: New property: default on input line 764.
 Package zref Info: New property: page on input line 765.
 )
-\c@abspage=\count292
+\c@abspage=\count288
 Package zref Info: New property: abspage on input line 66.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
@@ -447,13 +403,10 @@ Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: dvips.def on input line 147.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-))
+Package color Info: Driver file: pdftex.def on input line 147.
+)
 \mdf@templength=\skip55
-\c@mdf@globalstyle@cnt=\count293
+\c@mdf@globalstyle@cnt=\count289
 \mdf@skipabove@length=\skip56
 \mdf@skipbelow@length=\skip57
 \mdf@leftmargin@length=\skip58
@@ -497,11 +450,11 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
-\mdf@frametitlebox=\box53
-\mdf@footnotebox=\box54
-\mdf@splitbox@one=\box55
-\mdf@splitbox@two=\box56
-\mdf@splitbox@save=\box57
+\mdf@frametitlebox=\box50
+\mdf@footnotebox=\box51
+\mdf@splitbox@one=\box52
+\mdf@splitbox@two=\box53
+\mdf@splitbox@save=\box54
 \mdfsplitboxwidth=\skip95
 \mdfsplitboxtotalwidth=\skip96
 \mdfsplitboxheight=\skip97
@@ -529,68 +482,98 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip119
 \mdfsubtitleheight=\skip120
 \mdfsubsubtitleheight=\skip121
-\c@mdfcountframes=\count294
+\c@mdfcountframes=\count290
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count295
-\c@mdf@env@i=\count296
-\c@mdf@env@ii=\count297
-\c@mdf@zref@counter=\count298
+\mdf@envdepth=\count291
+\c@mdf@env@i=\count292
+\c@mdf@env@ii=\count293
+\c@mdf@zref@counter=\count294
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-(./analysis.aux)
-\openout1 = `analysis.aux'.
+No file report.aux.
+\openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 8
-4.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+2.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count299
+\c@lstlisting=\count295
 
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count296
+\scratchdimen=\dimen170
+\scratchbox=\box55
+\nofMPsegments=\count297
+\nofMParguments=\count298
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count299
+\MPscratchDim=\dimen171
+\MPnumerator=\count300
+\makeMPintoPDFobject=\count301
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 
 Package geometry Warning: The marginal notes overrun the paper.
-     Add 70.32088pt and more to the right margin.
+     Add 41.86812pt and more to the right margin.
 
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(1.0pt, 553.82875pt, 42.67912pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=553.82875pt
+* \textwidth=455.24411pt
 * \textheight=702.78308pt
-* \oddsidemargin=-71.26999pt
-* \evensidemargin=-29.59087pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -609,8 +592,8 @@ Package geometry Warning: The marginal notes overrun the paper.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box58
-Package hyperref Info: Link coloring ON on input line 84.
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring ON on input line 82.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -620,97 +603,158 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count300
+\c@section@level=\count302
 )
-LaTeX Info: Redefining \ref on input line 84.
-LaTeX Info: Redefining \pageref on input line 84.
-LaTeX Info: Redefining \nameref on input line 84.
-
-(./analysis.out) (./analysis.out)
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
 \@outlinefile=\write3
-\openout3 = `analysis.out'.
+\openout3 = `report.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+(./frontcover.tex
+Package pdftex.def Info: Option `bb' equivalent to `viewport' with pdftex drive
+r on input line 15.
+<../../figlib/IST_A_CMYK_POS.pdf, id=4, 845.0471pt x 597.51233pt>
+File: ../../figlib/IST_A_CMYK_POS.pdf Graphic file (type pdf)
+<use ../../figlib/IST_A_CMYK_POS.pdf>
+Package pdftex.def Info: ../../figlib/IST_A_CMYK_POS.pdf  used on input line 15
+.
+(pdftex.def)             Requested size: -78.38533pt x -90.76195pt.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 26
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+))
+\tf@toc=\write4
+\openout4 = `report.toc'.
+
+
+(./intro.tex
+
+LaTeX Warning: Reference `fig:t1draw' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sec:analysis' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Reference `sec:simulation' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Reference `sec:simulation' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 1 undefined on input line 9.
+
+<t1draw.pdf, id=5, 722.7pt x 542.025pt>
+File: t1draw.pdf Graphic file (type pdf)
+<use t1draw.pdf>
+Package pdftex.def Info: t1draw.pdf  used on input line 13.
+(pdftex.def)             Requested size: 182.09486pt x 136.57281pt.
+) (./analysis.tex [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../figlib/IST_A_CMYK_PO
+S.pdf> <./t1draw.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.96  $$A=\begin{bmatrix}
-                         
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+l.13  A=\begin{bmatrix}
+                       
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.112 \end{bmatrix}
-                   *B=
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
+l.29 \end{bmatrix}
+                  *B=
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.113 \begin{bmatrix}
-                     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+l.30 \begin{bmatrix}
+                    
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.122 \end{bmatrix}
-                    =C=
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
+l.39 \end{bmatrix}
+                   = C=
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.123 \begin{bmatrix}
-                     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+l.40 \begin{bmatrix}
+                    
+? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.132 \end{bmatrix}
-                   
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+l.49 \end{bmatrix}
+                  
+? 
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
-[1
+Overfull \hbox (2.72415pt too wide) in paragraph at lines 13--50
+[]\OT1/phv/m/n/10.95 A=$[]$*B= $[]$ =
+ []
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
- (./analysis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 137.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
-Package rerunfilecheck Info: File `analysis.out' has not changed.
-(rerunfilecheck)             Checksum: F7221CBD1F4E8F293402A6941B9C3F6F;121.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
+) (./simulation.tex
+
+LaTeX Warning: Reference `tab:op' on page 2 undefined on input line 7.
+
+(../sim/op_tab.tex)
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 17.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./conclusion.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 160.
+ [2] [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
+ (./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 160.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 160.
+
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  7BB1696E538335CEAFD8D10B37579F8B;350.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
 Here is how much of TeX's memory you used:
- 11063 strings out of 481240
- 177265 string characters out of 5920404
- 574656 words of memory out of 5000000
- 26150 multiletter control sequences out of 15000+600000
- 538641 words of font info for 41 fonts, out of 8000000 for 9000
+ 11501 strings out of 481239
+ 183723 string characters out of 5920378
+ 579825 words of memory out of 5000000
+ 26539 multiletter control sequences out of 15000+600000
+ 554497 words of font info for 54 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 41i,8n,42p,927b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,42p,925b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
+/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb
+>
+Output written on report.pdf (3 pages, 259856 bytes).
+PDF statistics:
+ 88 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on analysis.dvi (1 page, 5732 bytes).

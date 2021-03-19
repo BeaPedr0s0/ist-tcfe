@@ -1,99 +1,16 @@
 
-% ----------------------------------------------------------------------
-%  Set the document class
-% ----------------------------------------------------------------------
-\documentclass[11pt,a4paper,twoside]{article}
-
-% ----------------------------------------------------------------------
-% Define external packages, language, margins, fonts and new commands
-% ----------------------------------------------------------------------
-%\input{preamble} 
-\usepackage[utf8]{inputenc}   % <<<<< Linux
-\usepackage[english]{babel} % <<<<< English
-\usepackage{notoccite}
-\usepackage[skip=0.5\baselineskip]{caption}
-\hyphenation{GTKWave}
-\usepackage{listings}
-\usepackage{amsmath}
-\usepackage[all]{nowidow}
-
-%blind text
-\usepackage{lipsum}
-
-\usepackage{graphicx}
-\graphicspath{{./}{../../figlib/}{../mat/}{../sim/}}
-\def\FontLn{% 16 pt normal
-  \usefont{T1}{phv}{m}{n}\fontsize{16pt}{16pt}\selectfont}
-\def\FontLb{% 16 pt bold
-  \usefont{T1}{phv}{b}{n}\fontsize{16pt}{16pt}\selectfont}
-\def\FontMn{% 14 pt normal
-  \usefont{T1}{phv}{m}{n}\fontsize{14pt}{14pt}\selectfont}
-\def\FontMb{% 14 pt bold
-  \usefont{T1}{phv}{b}{n}\fontsize{14pt}{14pt}\selectfont}
-\def\FontSn{% 12 pt normal
-  \usefont{T1}{phv}{m}{n}\fontsize{12pt}{12pt}\selectfont}
-
-% Use Arial font as default
-%
-\renewcommand{\rmdefault}{phv}
-\renewcommand{\sfdefault}{phv}
-\usepackage{geometry}	
-\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=1,5cm,rmargin=1.5cm}
-
-%\usepackage{setspace}
-%\renewcommand{\baselinestretch}{1.5}
-
-\usepackage[pdftex]{hyperref} % enhance documents that are to be
-                              % output as HTML and PDF
-\hypersetup{colorlinks,       % color text of links and anchors,
-                              % eliminates borders around links
-%            linkcolor=red,    % color for normal internal links
-            linkcolor=black,  % color for normal internal links
-            anchorcolor=black,% color for anchor text
-%            citecolor=green,  % color for bibliographical citations
-            citecolor=black,  % color for bibliographical citations
-%            filecolor=magenta,% color for URLs which open local files
-            filecolor=black,  % color for URLs which open local files
-%            menucolor=red,    % color for Acrobat menu items
-            menucolor=black,  % color for Acrobat menu items
-%            pagecolor=red,    % color for links to other pages
-            pagecolor=black,  % color for links to other pages
-%            urlcolor=cyan,    % color for linked URLs
-            urlcolor=black,   % color for linked URLs
-	          bookmarks=true,         % create PDF bookmarks
-	          bookmarksopen=false,    % don't expand bookmarks
-	          bookmarksnumbered=true, % number bookmarks
-	          pdftitle={report},
-            pdfauthor={Andre C. Marta},
-%            pdfsubject={Thesis Title},
-%            pdfkeywords={Thesis Keywords},
-            pdfstartview=FitV,
-            pdfdisplaydoctitle=true}
-
-\usepackage[numbers,sort&compress]{natbib} % <<<<< References in numbered list [1],[2],...
-\usepackage{subcaption} 
-\usepackage{mdframed}
-
-
-\usepackage{amsmath}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Begin Document                                                   %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
 
 \section {Theoretical Analysis}
 
-
+\label{sec:analysis}
 In this section, a theoretical analysis of the circuit was conducted. Two approaches were chosen: the mesh and the node methods.
 
 \subsection{Node Method}
 
 The aim of using this method to analyse the circuit is to determine every node voltage. To do so, a reference node(with voltage =0V) was chosen. Then, seven independent equations were written in orther to find the remaining unknown node voltage values. The equations were then put in the form of the matriz shown below. Octave math tools were used to solve the seven equations.\\
 
-\begin{equation}
- $$A=\begin{bmatrix}
+
+ A=\begin{bmatrix}
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
    
 G1 & G1-G2-G3 & G2 & 0 & G3 & 0 & 0 & 0\\
@@ -130,8 +47,8 @@ Va\\
 0\\
 0
 \end{bmatrix}
-$$
-\end{equation}
 
 
-\end{document}
+
+
+
