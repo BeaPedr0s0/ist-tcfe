@@ -48,3 +48,21 @@ V4=F(5)
 V5=F(6)
 V6=F(7)
 V7=F(8)
+
+file=fopen("tab.ptd",'w');
+
+fprintf(file,"Ia=%f \n",Ia);
+fprintf(file,"Ib=%f \n",Ib);
+fprintf(file,"Ic=%f \n",Ic);
+fprintf(file,"Id=%f \n",Id);
+
+fprintf(file,"V0=%f \n",V0);
+fprintf(file,"V1=%f \n",V1);
+fprintf(file,"V2=%f \n",V2);
+fprintf(file,"V3=%f \n",V3);
+fprintf(file,"V4=%f \n",V4);
+fprintf(file,"V5=%f \n",V5);
+fprintf(file,"V6=%f \n",V6);
+fprintf(file,"V7=%f",V7);
+
+fclose(file);
