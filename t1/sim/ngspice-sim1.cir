@@ -30,7 +30,7 @@ Vb 8 6  0
 op
 
 echo "********************************************"
-echo  "Operating point"
+echo RESULTADOS OBTIDOS NGSPICE GRUPO 28
 echo "********************************************"
 
 echo  "op_TAB"
