@@ -8,47 +8,22 @@ In this section, a theoretical analysis of the circuit was conducted. Two approa
 \subsection{Node Method}
 
 The aim of using this method to analyse the circuit is to determine every node voltage. To do so, a reference node(with voltage =0V) was chosen. Then, seven independent equations were written in orther to find the remaining unknown node voltage values. The equations were then put in the form of the matriz shown below. Octave math tools were used to solve the seven equations.\\
-
-
- A=\begin{bmatrix}
+\[
+\begin{bmatrix}
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
-   
 G1 & G1-G2-G3 & G2 & 0 & G3 & 0 & 0 & 0\\
-
 0 & G2+Kb & -G2 & 0 & -Kb & 0 & 0 & 0\\
-
 1 & 0 & 0 & -1 & 0 & 0 & 0 & 0\\
-
 0 & G1 & 0 & -G4-G6 & G4 & 0 & G6 & 0\\
-
 0 & -Kb & 0 & 0 & G5+Kb & -G5 & 0 & 0\\
-
 0 & 0 & 0 & G6 & 0 & 0 & -G6-G7 & G7\\
-
 0 & 0 & 0 & -KcG6 & -1 & 0 & Kc*G6 & -1
-\end{bmatrix}*B= 
-\begin{bmatrix}
-V0\\
-V1\\
-V2\\
-V3\\
-V4\\
-V5\\
-V6\\
-V7
-\end{bmatrix} = C= 
-\begin{bmatrix}
-0\\
-0\\
-0\\
-Va\\
-0\\
--Id\\
-0\\
-0
 \end{bmatrix}
-
-
-
-
-
+\begin{bmatrix}
+V0 \\ V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7
+\end{bmatrix} 
+= 
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ Va \\ 0 \\ -Id \\ 0 \\ 0
+\end{bmatrix}
+]
