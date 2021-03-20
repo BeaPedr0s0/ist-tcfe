@@ -25,10 +25,6 @@ B=[-Va; 0; 0];
 
 C=inv(A)*B;
 
-Ia= C(1);
-Ib= C(2);
-Ic= C(3);
-
 D =[1 0 0 -1 0 0 0 0;
     -G1 G1+G2+G3 -G2 0 -G3 0 0 0;
     0 -Kb 0 0 Kb+G5 -G5 0 0;
@@ -40,17 +36,8 @@ D =[1 0 0 -1 0 0 0 0;
 
 E=[Va; 0 ; -Id; 0 ; 0 ; 0 ; 0; 0];
 F=inv(D)*E;
-V0=F(1);
-V1=F(2);
-V2=F(3);
-V3=F(4);
-V4=F(5);
-V5=F(6);
-V6=F(7);
-V7=F(8);
 
-
-printf  ("malhas_TAB\n");
+printf ("malhas_TAB\n");
 printf ("Ia = %e \n", C(1));
 printf ("Ib = %e \n", C(2));
 printf ("Ic = %e \n", C(3));
@@ -58,8 +45,7 @@ printf ("malhas_END\n");
 
 
 
-
-printf("nos_TAB\n");
+printf ("nos_TAB\n");
 printf ("V0 = %e \n", F(1));
 printf ("V1 = %e \n", F(2));
 printf ("V2 = %e \n", F(3));
@@ -68,6 +54,16 @@ printf ("V4 = %e \n", F(5));
 printf ("V5 = %e \n", F(6));
 printf ("V6 = %e \n", F(7));
 printf ("V7 = %e \n", F(8));
- 
- printf( "nos_END\n");
+printf ( "nos_END\n");
+
+
+Ia=(F(2)-F(1))/R1;
+Ib=(F(3)-F(2))/R2;
+Ic=(F(4)-F(7))/R6;
+
+printf ("confirmacao_TAB\n");
+printf ("Ia = %e \n", Ia);
+printf ("Ib = %e \n", Ib);
+printf ("Ic = %e \n", Ic);
+printf ("confirmacao_END\n");
 
