@@ -49,22 +49,25 @@ V5=F(6);
 V6=F(7);
 V7=F(8);
 
-file=fopen("tabelaoctave.tex",'w');
 
-fprintf(file,"Método das Malhas: \n");
-fprintf(file,"Ia=%f \n",Ia);
-fprintf(file,"Ib=%f \n",Ib);
-fprintf(file,"Ic=%f \n",Ic);
-fprintf(file,"Id=%f \n\n",Id);
+printf  ("malhas_TAB\n");
+printf ("Ia = %e \n", C(1));
+printf ("Ib = %e \n", C(2));
+printf ("Ic = %e \n", C(3));
+printf ("malhas_END\n");
 
-fprintf(file,"Método dos Nós: \n");
-fprintf(file,"V0=%f \n",V0);
-fprintf(file,"V1=%f \n",V1);
-fprintf(file,"V2=%f \n",V2);
-fprintf(file,"V3=%f \n",V3);
-fprintf(file,"V4=%f \n",V4);
-fprintf(file,"V5=%f \n",V5);
-fprintf(file,"V6=%f \n",V6);
-fprintf(file,"V7=%f",V7);
 
-fclose(file);
+
+
+printf("nos_TAB\n");
+printf ("V0 = %e \n", F(1));
+printf ("V1 = %e \n", F(2));
+printf ("V2 = %e \n", F(3));
+printf ("V3 = %e \n", F(4));
+printf ("V4 = %e \n", F(5));
+printf ("V5 = %e \n", F(6));
+printf ("V6 = %e \n", F(7));
+printf ("V7 = %e \n", F(8));
+ 
+ printf( "nos_END\n");
+

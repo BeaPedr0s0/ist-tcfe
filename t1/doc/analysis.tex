@@ -27,10 +27,20 @@ $\begin{bmatrix}
 0 \\ 0 \\ 0 \\ Va \\ 0 \\ -Id \\ 0 \\ 0
 \end{bmatrix}$
 
-
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [V]} \\ \hline
+    \input{../mat/nos_tab}
+  \end{tabular}
+  \caption{NgSpice Results . A variable preceded by @ is of type {\em current}
+    and expressed in Ampere; other variables are of type {\it voltage} and expressed in
+    Volt.}
+  \label{tab:nos}
+\end{table}
 
 \subsection{Mesh Method}
-
 The mesh analysis was the chosen method to determine the currents IA, IB and IC. This was achieved by examining the loop formed by R1, R3, R4 and Va and the loop constituted by R4, R6, R7 and Vc, in which the circulating currents are IA and IC, respectively. The third independent equation was obtained equaling IB to Kb*Vb. The equations were then rearrenged in a matrix form as shown below. Octave math tools were used to solve the three equations.\\
 
 $\begin{bmatrix}
@@ -52,6 +62,16 @@ Vc\\
 0
 \end{bmatrix}$
 
-
-
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [V]} \\ \hline
+    \input{../mat/malhas_tab}
+  \end{tabular}
+  \caption{NgSpice Results . A variable preceded by @ is of type {\em current}
+    and expressed in Ampere; other variables are of type {\it voltage} and expressed in
+    Volt.}
+  \label{tab:malhas}
+\end{table}
 
