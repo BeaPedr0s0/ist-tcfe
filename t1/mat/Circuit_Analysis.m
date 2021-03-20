@@ -49,13 +49,19 @@ V5=F(6);
 V6=F(7);
 V7=F(8);
 
-file=fopen("tabelaoctave.tex",'w');
 
-fprintf(file,"Método das Malhas: \n");
-fprintf(file,"Ia=%f \n",Ia);
-fprintf(file,"Ib=%f \n",Ib);
-fprintf(file,"Ic=%f \n",Ic);
-fprintf(file,"Id=%f \n\n",Id);
+file=fopen("tabelamalhas.tex",'w');
+
+fprintf(file,'%s', 'ola');
+%fprintf(file,"Método das Malhas: \n");
+%fprintf(file,"Ia=%f \n",Ia);
+%fprintf(file,"Ib=%f \n",Ib);
+%fprintf(file,"Ic=%f \n",Ic);
+%fprintf(file,"Id=%f \n\n",Id);
+
+fclose(file);
+
+file1=fopen("tabelanos.tex",'w');
 
 fprintf(file,"Método dos Nós: \n");
 fprintf(file,"V0=%f \n",V0);
@@ -67,4 +73,4 @@ fprintf(file,"V5=%f \n",V5);
 fprintf(file,"V6=%f \n",V6);
 fprintf(file,"V7=%f",V7);
 
-fclose(file);
+fclose(file1);
