@@ -25,9 +25,9 @@ B=[-Va; 0; 0];
 
 C=inv(A)*B;
 
-Ia= C(1)
-Ib= C(2)
-Ic= C(3)
+Ia= C(1);
+Ib= C(2);
+Ic= C(3);
 
 D =[1 0 0 -1 0 0 0 0;
     -G1 G1+G2+G3 -G2 0 -G3 0 0 0;
@@ -40,22 +40,24 @@ D =[1 0 0 -1 0 0 0 0;
 
 E=[Va; 0 ; -Id; 0 ; 0 ; 0 ; 0; 0];
 F=inv(D)*E;
-V0=F(1)
-V1=F(2)
-V2=F(3)
-V3=F(4)
-V4=F(5)
-V5=F(6)
-V6=F(7)
-V7=F(8)
+V0=F(1);
+V1=F(2);
+V2=F(3);
+V3=F(4);
+V4=F(5);
+V5=F(6);
+V6=F(7);
+V7=F(8);
 
-file=fopen("tab.ptd",'w');
+file=fopen("tabelaoctave.tex",'w');
 
+fprintf(file,"Método das Malhas: \n");
 fprintf(file,"Ia=%f \n",Ia);
 fprintf(file,"Ib=%f \n",Ib);
 fprintf(file,"Ic=%f \n",Ic);
-fprintf(file,"Id=%f \n",Id);
+fprintf(file,"Id=%f \n\n",Id);
 
+fprintf(file,"Método dos Nós: \n");
 fprintf(file,"V0=%f \n",V0);
 fprintf(file,"V1=%f \n",V1);
 fprintf(file,"V2=%f \n",V2);
