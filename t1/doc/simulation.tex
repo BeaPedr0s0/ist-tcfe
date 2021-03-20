@@ -3,8 +3,19 @@
 \label{simulation}
 
 \subsection{Operating Point Analysis}
+First of all, to contextualize the values obtained using the tools in ngspice, it is necessary to state that, as node 0 is connected to ground, its nodal voltage does not appear on the table of results. Furthermore, to be able to describe the voltage flowing in the dependent source, an extra voltage source(which voltage is equal to 0 V) was created, and put after the resistor 6 and node 6. This source led to the appearence of node 8, that has the same voltage of node 6. This was necessary because ngspice does not measure the current between two nodes. The circuit with these changes is shown in the drawing below.
 
-After careful evaluation of the Table below, which shows the simulated operating point results for the circuit that is being studied.This simulation allowed the group to obtain the current flowing in every risistor, the voltage in the dependent voltage source and even the current flowing in the dependent currrent source. 
+\begin{figure}[h] \centering
+\includegraphics[width=1.0\linewidth]{simdraw.pdf}
+\caption{Circuit analysed in ngspice.}
+\label{simdraw}
+\end{figure}
+
+
+After running the simulation, the results were put in the table below. Then, a careful analysis of the aforementioned table was conducted.It shows the simulated operating point results for the circuit that is being studied, allowing the group to obtain the current flowing in every risistor, the voltage in the dependent voltage source and even the current flowing in the dependent currrent source. 
+
+A variable preceded by @ is of type {\em current} and expressed in Ampere; other variables are of type {\it voltage} and expressed in
+    Volt.
 \begin{table}[h]
   \centering
   \begin{tabular}{|l|r|}
@@ -12,13 +23,11 @@ After careful evaluation of the Table below, which shows the simulated operating
     {\bf Name} & {\bf Value [A or V]} \\ \hline
     \input{../sim/op_tab}
   \end{tabular}
-  \caption{NgSpice Results . A variable preceded by @ is of type {\em current}
-    and expressed in Ampere; other variables are of type {\it voltage} and expressed in
-    Volt.}
+  \caption{NgSpice Results}
   \label{tab:op}
 \end{table}
 
-After comparing the results obtained in ngspice with the obtained using the octave math tools, we conclude that every result match.
+After comparing the results obtained in ngspice with the obtained using the octave math tools, analysed in Section 2, we conclude that every result, Ia,Ib and Ic match.
 
 
 
