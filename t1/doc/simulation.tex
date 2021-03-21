@@ -5,7 +5,7 @@
 \subsection{Operating Point Analysis}
 First of all, to contextualize the values obtained using the tools in ngspice, it is necessary to state that, as node 0 is connected to ground, its nodal voltage does not appear on the table of results. Furthermore, to be able to describe the voltage flowing in the dependent source, an extra voltage source (whose voltage is equal to 0 V) was created, and put after the resistor 6 and node 6. This source led to the appearence of node 8, that has the same voltage of node 6. This was necessary because ngspice does not measure the current between two nodes, only in resistors and in independent voltage sources. The circuit with these changes is shown in the drawing below.
 
-\begin{figure}[h] \centering
+\begin{figure}[ht] \centering
 \includegraphics[width=1.0\linewidth]{simdraw.pdf}
 \caption{Circuit analysed in ngspice.}
 \label{simdraw}
@@ -16,7 +16,7 @@ After running the simulation, the results were put in the table below. Then, a c
 
 A variable preceded by @ is of type {\em current} and expressed in Ampere; other variables are of type {\it voltage} and expressed in
     Volt.
-\begin{table}[h]
+\begin{table}[ht]
   \centering
   \begin{tabular}{|l|r|}
     \hline    
