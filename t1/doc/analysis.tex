@@ -8,7 +8,7 @@ In this section, a theoretical analysis of the circuit was conducted. Two approa
 
 
 \subsection{Mesh Method}
-The mesh analysis was the chosen method to determine the currents IA, IB and IC. This was achieved by examining the loop formed by R1, R3, R4 and Va and the loop constituted by R4, R6, R7 and Vc, in which the circulating currents are IA and IC, respectively. The third independent equation was obtained equaling IB to Kb*Vb. The equations were then rearrenged in a matrix form as shown below. Octave math tools were used to solve the three equations.\\
+The currents IA and IC were determined by examining the loop formed by R1, R3, R4 and Va and the loop formed by R4, R6, R7 and Vc, respectively. The third independent equation was obtained by matching IB to Kb*Vb (Vb=R3*(IB-IA)). These were then rearrenged in a matrix form as shown below. Octave math tools were used to solve the system.\\
 
 $\begin{bmatrix}
 R1+R3+R4 & -R3 & -R4\\
@@ -25,7 +25,7 @@ IC
 = 
 $\begin{bmatrix}
 -Va\\
-Vc\\
+0\\
 0
 \end{bmatrix}$
 
@@ -36,7 +36,7 @@ Vc\\
     {\bf Name} & {\bf Value [A]} \\ \hline
     \input{../mat/malhas_tab}
   \end{tabular}
-  \caption{Mesh Method Results . All variables are of type {\em current}
+  \caption{Octave Mesh Method Results. All variables are of type {\em current}
     and expressed in Ampere.}
   \label{tab:malhas}
 \end{table}
@@ -44,7 +44,7 @@ Vc\\
 
 \subsection{Node Method}
 
-The aim of using this method to analyse the circuit is to determine every node voltage. To do so, a reference node(with voltage =0V) was chosen. Then, seven independent equations were written in orther to find the remaining unknown node voltage values. The equations were then put in the form of the matriz shown below. Octave math tools were used to solve the seven equations.\\
+The aim of using this method is to determine every node voltage. To do so, a reference node(with voltage =0V) was chosen. Then, seven independent equations were written in orther to find the remaining unknown node voltage values. The equations were then put in the form of the matrix shown below. Octave math tools were used to solve the system.\\
 
 
 $\begin{bmatrix}
@@ -72,13 +72,13 @@ $\begin{bmatrix}
     {\bf Name} & {\bf Value [V]} \\ \hline
     \input{../mat/nos_tab}
   \end{tabular}
-  \caption{Node Method Results . All variables are of type {\it voltage} and expressed in
+  \caption{Octave Node Method Results. All variables are of type {\it voltage} and expressed in
     Volt.}
   \label{tab:nos}
 \end{table}
 
 
-With this results, we are able to compare both methods. Calculating $(V1-V0)/R1$ with the voltages of the node method we get Ia. Repeating the same process for V2, V1 and R2 we obtain Ib and for V3, V6 and R6 we get Ic. The calculations lead us to the following table:
+\par With these results, we are able to compare both methods. Calculating $(V1-V0)/R1$ with the voltages of the node method we get Ia. Repeating the same process for V2, V1 and R2 we obtain Ib and for V3, V6 and R6 we get Ic. The calculations lead us to the following table:
 
 
 \begin{table}[ht]
