@@ -28,12 +28,29 @@ A variable preceded by @ is of type {\em current} and expressed in Ampere; other
 \end{table}
 
 
-In order to validate the results obtained in NGSPICE, relative errors between the theoretical values, obtain in octave and the ones obtained in ngspice. These were put in the table below.
+In order to validate the results obtained in NGSPICE, relative errors between the theoretical values, obtained in octave and the ones obtained in ngspice, were calculated. These were put in the table below.
+
+\begin{table}[ht] \centering
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCC67}}l |c|}
+\hline
+\multicolumn{2}{|l|}{\cellcolor[HTML]{EABD8B}Relative Errors (\%)} \\ \hline
+{\color[HTML]{333333} V1}               & 4.444e-05               \\ \hline
+{\color[HTML]{333333} V2}               & 4.288e-05               \\ \hline
+{\color[HTML]{333333} V3}               & 7.892e-05               \\ \hline
+{\color[HTML]{333333} V4}               & 5.154e-05               \\ \hline
+{\color[HTML]{333333} V5}               & 0                       \\ \hline
+{\color[HTML]{333333} V6}               & 0                       \\ \hline
+{\color[HTML]{333333} V7}               & 2.487e-05               \\ \hline
+{\color[HTML]{333333} IA}               & 9.253e-05               \\ \hline
+{\color[HTML]{333333} IB}               & 1.769e-05               \\ \hline
+{\color[HTML]{333333} IC}               & 0                       \\ \hline
+\end{tabular}
+\caption{Relative Errors between Octave and NgSpice results}
+\end{table}
 
 
 
 
-
-
-After the anaylysis of these erros, we conclude that the accuracy is extremely high. Therefore, the simulation results can be validated.
+After the anaylysis of these erros, we conclude that the accuracy is extremely high. The absolute maximum error is 9.253e-05\%, which is extremely low. Therefore, the simulation results can be validated.
 
