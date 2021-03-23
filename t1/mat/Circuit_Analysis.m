@@ -73,7 +73,7 @@ printf ( "nos_END\n");
 Ia=(F(2)-F(1))/R1;
 Ib=(F(3)-F(2))/R2;
 Ic=(F(4)-F(7))/R6;
-~
+
 
 % Creating a table in the mat folder with the calculations above
 % Allow us to confirm the results of both methods

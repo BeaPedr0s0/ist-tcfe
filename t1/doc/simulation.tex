@@ -3,7 +3,8 @@
 \label{simulation}
 
 \subsection{Operating Point Analysis}
-First of all, to contextualize the values obtained using the tools in ngspice, it is necessary to state that, as node 0 is connected to ground, its nodal voltage does not appear on the table of results. Furthermore, to be able to describe the voltage flowing in the dependent source, an extra voltage source (whose voltage is equal to 0 V) was created, and put after the resistor 6 and node 6. This source led to the appearence of node 8, that has the same voltage of node 6. This was necessary because ngspice does not measure the current between two nodes, only in resistors and in independent voltage sources. The circuit with these changes is shown in the drawing below.
+First of all, to contextualize the values obtained using the tools in ngspice, it is necessary to state that, as node 0 is connected to ground, its nodal voltage does not appear on the table of results. Furthermore, to be able to describe the voltage flowing in the dependent source, it is necessary to know the current in resistor 6. However, ngspice is not able to compute this value when the depedent source is described. So, in order to do that, an extra dependent voltage source (whose voltage drop is equal to 0 V) was created, and put in series after the resistor 6. This led to the appearence of node 8, that has the same voltage drop as node 6. So, by doing that, ngspice is able to determine the current in this auxiliar independent source, which is exactly the value needed.
+ The circuit with these changes is shown in the drawing below.
 
 \begin{figure}[ht] \centering
 \includegraphics[width=1.0\linewidth]{simdraw.pdf}
@@ -52,5 +53,5 @@ In order to validate the results obtained in NGSPICE, relative errors between th
 
 
 
-After the anaylysis of these erros, we conclude that the accuracy is extremely high. The absolute maximum error is 9.253e-05\%, which is extremely low. Nevertheless, we can conclude that these errors are due to dissipated power in the resistors. Even so, the simulation results can be validated.
+After the anaylysis of these errors, we conclude that the accuracy is extremely high supported by the fact that the relative maximum error is 9.253e-05\%. Nevertheless, we assume that these errors are due to dissipated power in the resistors. Even so, the simulation results can be validated.
 
