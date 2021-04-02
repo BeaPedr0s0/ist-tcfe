@@ -1,4 +1,5 @@
-* NGSPICE simulation script lab2 QUESTION 3
+
+* NGSPICE simulation script lab2 QUESTION 1
 * Group 28
 *
 .options savecurrents
@@ -19,7 +20,7 @@ R7 7 8  1.02754401839k
 
 * INDEPENDENT VOLTAGE SOURCE, CONNECTED TO GROUND. AND NODE X. VALUE IN VOLTS.
 
-Vs 1 0 dc 0
+Vs 1 0 0
 
 
 *DEPENDENT CURRENT SOURCE. CONNECTED TO NODES X & X. DEPENDS OF THE VOLTAGE BETWEEN THE NODES 1 AND 4. VALUE AMPLIFIED BY CONSTANT Z. VALUE IN AMPERES.
@@ -38,42 +39,31 @@ Vaux 9 7  0
 
 *CAPACITOR TRANSFORMED IN VOLTAGE SOURCE. CONNECTED TO NODES X & X. VALUE = 0 VOLTS
 
-Vin 6 8 exp(1.776357e-15 8.553593e+00 0 3.2442 20 3.2442)
+Vx 6 8 8.553593
 
 *START OF THE SIMULATION
 
 
-.model group 28
-
-
-tran 1e-5 20e-3
+.model 2 group 28
 
 .control
 
-*makes plots in color
-set hcopypscolor=0
-set color0=white
-set color1=black
-set color2=red
-set color3=blue
-set color4=violet
-set color5=rgb:3/8/0
-set color6=rgb:4/0/0
+op
 
+*COMMANDS TO PRINT THE RESULTS ON THE NGSPICE LOG FILE
 
+echo "************************************************************"
+echo RESULTS NGSPICE SIMULATION GROUP 28, LABORATORY 1 QUESTION 1
+echo "************************************************************"
 
-
-
-
-echo "********************************************"
-echo  "Transient analysis GROUP 28, LAB 2 QUESTION 3"
-echo "********************************************"
-
-
-
-hardcopy trans.ps v(6)
-echo trans_FIG
-
+echo  "op2_TAB"
+print all
+echo  "op2_END"
+quit
 .endc
 
 .end
+
+
+
+*END OF THE SIMULATION
