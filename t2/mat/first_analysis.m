@@ -3,7 +3,7 @@ format long e
 file=fopen("~/ist-tcfe/t2/data.txt",'r');
 t=importdata("~/ist-tcfe/t2/data.txt",'\t',14);
 
-R1=sscanf(char (t(4,1)), "Values: R1 = %f")*1000;
+R1=sscanf(char (t(4,1)), "Values: R1 = %e")*1000;
 R2=sscanf(char (t(5,1)), "R2 = %e")*1000;
 R3=sscanf(char (t(6,1)), "R3 = %e")*1000;
 R4=sscanf(char (t(7,1)), "R4 = %e")*1000;
@@ -13,7 +13,7 @@ R7=sscanf(char (t(10,1)), "R7 = %e")*1000;
 Vs=sscanf(char (t(11,1)), "Vs = %e");
 C=sscanf(char (t(12,1)), "C = %e")/1000000;
 Kb=sscanf(char (t(13,1)), "Kb = %e")/1000;
-Kd=sscanf(char (t(14,1)), "Kc = %f")*1000;
+Kd=sscanf(char (t(14,1)), "Kc = %e")*1000;
 
 fclose (file);
 
@@ -93,6 +93,7 @@ E=[Vs; 0 ; 0; 0 ; 0 ; 0 ; 0; 0];
 % D*F=E <=>
 F=inv(D)*E;
 
+Vx=F(6)-F(8)
 
 % Creating a table in the mat folder with the voltages results of the Node Method
 printf ("nos_TAB\n");
@@ -182,3 +183,38 @@ fprintf(file4,".IC v(6)=%e v(8)=%e\n\n",F(6), F(8));
 fprintf(file4, ".END\n\n");
 
 fclose(file4);
+
+
+
+X =[1 0 0 0 0 0 0 0 0;
+    -G1 G1+G2+G3 -G2 0 -G3 0 0 0 0;
+    0 -Kb-G2 G2 0 Kb 0 0 0 0;
+    0 0 0 1 0 0 0 0 0;
+    0 -G3 0 -G4 G3+G4+G5 -G5 -G7 G7 -1;
+    0 Kb 0 0 -Kb-G5 G5 0 0 1;
+    0 0 0 -G6 0 0 G6+G7 -G7 0;
+    0 0 0 Kd*G6 -1 0 -Kd*G6 1 0;
+    0 0 0 0 0 1 0 -1 0];
+
+Y=[0; 0 ; 0; 0 ; 0 ; 0 ; 0; 0; Vx];
+
+% D*F=E <=>
+Z=inv(X)*Y
+
+
+
+%A=[1 0 0 0 0 0 0 0;
+%    -G1 G1+G2+G3 -G2 0 -G3 0 0 0;
+%    0 -Kb-G2 G2 0 Kb 0 0 0;
+%    0 0 0 1 0 0 0 0;
+%    0 -G3 0 -G4 G3+G4+G5 -G5 -G7 G7;
+%    0 Kb 0 0 -Kb-G5 G5 0 0;
+%    0 0 0 -G6 0 0 G6+G7 -G7;
+ %   0 0 0 Kd*G6 -1 0 -Kd*G6 1];
+
+
+%B=[0; 0 ; 0; 0 ; 0 ; 0 ; Vx; 0; 0];
+
+% D*F=E <=>
+%C=inv(A)*B
+
