@@ -50,7 +50,7 @@ ngspice-4.log: ../sim/sim24.net
 	
 	
 #ALINEA 5
-4:ngspice-5.log
+5:ngspice-5.log
 	$(eval NGSFIGS=$(shell grep _FIG $< | sed 's/_FIG//g' | sed ':a;N;$!ba;s/\n/ /g'))
 	$(eval NGSFIGPS=$(addsuffix .ps, $(NGSFIGS)))
 	$(foreach i, $(NGSFIGPS), ps2pdf $i;)
@@ -65,6 +65,6 @@ ngspice-5.log: ../sim/sim25.net
 			
 			
 clean:
-	@rm -f ngspice-1.log ngspice-2.log ngspice-3.log ngspice-4.log ngspice-5.log *.tex *.pdf *.ps *~
+	@rm -f 1 2 3 4 5 *.tex *.pdf *.ps *~
 
 .PHONY: all clean
