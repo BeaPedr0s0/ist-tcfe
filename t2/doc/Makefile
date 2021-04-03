@@ -6,7 +6,7 @@
 FILE=report
 
 #list of LibreOffice Draw files
-#LODFIGS = $(patsubst %.odg,%.pdf,$(wildcard *.odg))
+LODFIGS = $(patsubst %.odg,%.pdf,$(wildcard *.odg))
 
 all: $(FILE).pdf
 	evince $< &
