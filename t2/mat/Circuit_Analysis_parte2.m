@@ -16,8 +16,24 @@ Vs=sscanf(char (t(11,1)), "Vs = %e");
 C =sscanf(char (t(12,1)), "C = %e")/1000000;
 Kb=sscanf(char (t(13,1)), "Kb = %e")/1000;
 Kd=sscanf(char (t(14,1)), "Kd = %e\n")*1000;
-
 fclose (file);
+
+
+printf ("initial_data_TAB\n");
+printf ("R1 = %e \n", R1);
+printf ("R2 = %e \n", R2);
+printf ("R3 = %e \n", R3);
+printf ("R4 = %e \n", R4);
+printf ("R5 = %e \n", R5);
+printf ("R6 = %e \n", R6);
+printf ("R7 = %e \n", R7);
+printf ("Vs = %e \n", Vs);
+printf ("C = %e \n", C);
+printf ("Kb = %e \n", Kb);
+printf ("Kd = %e \n", Kd);
+printf ("initial_data_END\n");
+
+
 
 % writing the data in first.cir for the first simulation in ngspice
 file1=fopen("first.cir",'w');
