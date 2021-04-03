@@ -15,8 +15,8 @@
 set hcopypscolor=0
 set color0=white
 set color1=black
-set color2=red
-set color3=blue
+set color2=orange
+set color3=green
 set color4=violet
 set color5=rgb:3/8/0
 set color6=rgb:4/0/0

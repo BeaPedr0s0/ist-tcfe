@@ -61,10 +61,9 @@ ngspice-5.log: ../sim/sim25.net
 	ngspice -b $< -o $@	
 	
 		
-	
-			
+		
 			
 clean:
-	@rm -f 1 2 3 4 5 *.tex *.pdf *.ps *~
+	@rm -f *.tex *.pdf *.ps *~
 
 .PHONY: all clean
