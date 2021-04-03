@@ -13,9 +13,9 @@ R5=sscanf(char (t(8,1)), "R5 = %e")*1000;
 R6=sscanf(char (t(9,1)), "R6 = %e")*1000;
 R7=sscanf(char (t(10,1)), "R7 = %e")*1000;
 Vs=sscanf(char (t(11,1)), "Vs = %e");
-C=sscanf(char (t(12,1)), "C = %e")/1000000;
+C =sscanf(char (t(12,1)), "C = %e")/1000000;
 Kb=sscanf(char (t(13,1)), "Kb = %e")/1000;
-Kd=sscanf(char (t(14,1)), "Kc = %e")*1000;
+Kd=sscanf(char (t(14,1)), "Kd = %e\n")*1000;
 
 fclose (file);
 
@@ -66,7 +66,6 @@ G7=1/R7;
 % Insertion of the matrices that will allow us to calculate the voltages of 
 % each node by the Node Method
 
-B=[Vs; 0 ; 0; 0 ; 0 ; 0 ; 0; 0];
 
 A=[1 0 0 0 0 0 0 0;
     -G1 G1+G2+G3 -G2 0 -G3 0 0 0;
@@ -77,7 +76,7 @@ A=[1 0 0 0 0 0 0 0;
     0 0 0 -G6 0 0 G6+G7 -G7;
     0 0 0 Kd*G6 -1 0 -Kd*G6 1];
 
-
+B=[Vs; 0 ; 0; 0 ; 0 ; 0 ; 0; 0];
 
 % A*B=C <=>
 V=inv(A)*B;
@@ -111,15 +110,12 @@ G7=1/R7;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 printf ("\n\n-----------Parte 2-----------\n\n");
 
-%The capacitor was replaced with a voltage Vx=V6-V8,
-%where V6 and V8 are the voltages obtained when t<0
-Vx=N(6)-N(8);
 
 % Insertion of the matrices that will allow us to calculate the voltages of 
 % each node
 
 
-A =[1 0 0 0 0 0 0 0 0;
+D =[1 0 0 0 0 0 0 0 0;
     0 0 0 1 0 0 0 0 0;
     -G1 G1+G2+G3 -G2 0 -G3 0 0 0 0;
     0 -Kb-G2 G2 0 Kb 0 0 0 0;   
@@ -129,33 +125,32 @@ A =[1 0 0 0 0 0 0 0 0;
     0 0 0 0 0 1 0 -1 0;
     0 0 0 Kd*G6 -1 0 -Kd*G6 1 0];
     
-B = [0; 0; 0; 0; 0; 0; 0; Vx; 0];
+E = [0; 0; 0; 0; 0; 0; 0; Vx; 0];
 
 
-% A*B=R <=>
-R=inverse(A)*B;
-%R=A\B;
+% D*E=F <=>
+F=inverse(D)*E;
 
 %computation of the equivalent resistor (Req=Vx/(-Ix))
-Req=(Vx/(-R(9)));
+Req=(Vx/(-F(9)));
 
 %time constant (tau=Req*C)
 tau=(Req*C);
 
 % Creating a table in the mat folder with the voltages results
 printf ("voltages_p2_TAB\n");
-printf ("V1 = %e \n", R(1));
-printf ("V2 = %e \n", R(2));
-printf ("V3 = %e \n", R(3));
-printf ("V4 = %e \n", R(4));
-printf ("V5 = %e \n", R(5));
-printf ("V6 = %e \n", R(6));
-printf ("V7 = %e \n", R(7));
-printf ("V8 = %e \n", R(8));
+printf ("V1 = %e \n", F(1));
+printf ("V2 = %e \n", F(2));
+printf ("V3 = %e \n", F(3));
+printf ("V4 = %e \n", F(4));
+printf ("V5 = %e \n", F(5));
+printf ("V6 = %e \n", F(6));
+printf ("V7 = %e \n", F(7));
+printf ("V8 = %e \n", F(8));
 printf ( "voltages_p2_END\n");
 
 printf ("\nnorten_current_p2_TAB\n");
-printf ("Ix = %e \n", R(9));
+printf ("Ix = %e \n", F(9));
 printf ("norton_current_p2_END\n");
 
 printf ("\nReq_tau_p2_TAB\n");
@@ -178,14 +173,18 @@ t = 0:(20e-3)/1000:20e-3; %s
 
 
 %Vx is the initial voltage
-V6_n=(R(6))*e.^(-t/tau);
+V6_n=(F(6))*e.^(-t/tau);
 
 
 %Plot natural solution 
 natural = figure ();
-plot (t*1000, V6_n, "g");
-xlabel ("t[ms]");
-ylabel ("Vnatural(t) [V]");
+plot (t*1000, V6_n, "r", "linewidth",4);
+xlabel ("t [ms]");
+ylabel ("V [V]");
+h=legend({"V_{natural}"});
+legend(h,"location", "northeast");
+set (gca,"fontsize",16,"linewidth",2);
+set (h,"fontsize",16);
 print (natural, "natural.eps", "-depsc");
 
 
@@ -220,7 +219,7 @@ fprintf(file3, "Vaux 9 7 0 \n\n");
 fprintf(file3,"*CAPACITOR. CONNECTED TO NODES X & X. VALUE = 0 VOLTS\n");
 fprintf(file3, "C1 6 8 %e \n\n",C);
 
-fprintf(file3,".IC v(6)=%e v(8)=%e\n\n",F(6), F(8));
+fprintf(file3,".IC v(6)=%e v(8)=%e\n\n",V(6), V(8));
 
 fprintf(file3, ".END\n\n");
 
@@ -240,7 +239,7 @@ w=2*pi*f;
 Zc=1/(j*w*C);
 
 
-D =[G1 -G1-G2-G3 G2 0 G3 0 0 0;
+G =[G1 -G1-G2-G3 G2 0 G3 0 0 0;
     0 Kb+G2 -G2 0 -Kb 0 0 0;
     0 Kb 0 0 -Kb-G5 G5+1/Zc 0 -1/Zc;
     0 0 0 -G6 0 0 G6+G7 -G7;
@@ -249,23 +248,23 @@ D =[G1 -G1-G2-G3 G2 0 G3 0 0 0;
     0 0 0 Kd*G6 -1 0 -Kd*G6 1;
     0 0 0 1 0 0 0 0];
     
-E=[0; 0; 0; 0; 0; 1; 0; 0];
+H =[0; 0; 0; 0; 0; 1; 0; 0];
 
 
-% D*F=E <=>
-F=D\E;
+% G*I=H <=>
+I=G\H;
 
 
 % Creating a table in the mat folder with the voltages results
 printf ("voltages_p4_TAB\n");
-printf ("V1 = %e \n", abs(F(1)));
-printf ("V2 = %e \n", abs(F(2)));
-printf ("V3 = %e \n", abs(F(3)));
-printf ("V4 = %e \n", abs(F(4)));
-printf ("V5 = %e \n", abs(F(5)));
-printf ("V6 = %e \n", abs(F(6)));
-printf ("V7 = %e \n", abs(F(7)));
-printf ("V8 = %e \n", abs(F(8)));
+printf ("V1 = %e \n", abs(I(1)));
+printf ("V2 = %e \n", abs(I(2)));
+printf ("V3 = %e \n", abs(I(3)));
+printf ("V4 = %e \n", abs(I(4)));
+printf ("V5 = %e \n", abs(I(5)));
+printf ("V6 = %e \n", abs(I(6)));
+printf ("V7 = %e \n", abs(I(7)));
+printf ("V8 = %e \n", abs(I(8)));
 printf ( "voltages_p4_END\n");
 
 
@@ -300,7 +299,7 @@ fprintf(file4, "Vaux 9 7 0 \n\n");
 fprintf(file4,"*CAPACITOR. CONNECTED TO NODES X & X. VALUE = 0 VOLTS\n");
 fprintf(file4, "C1 6 8 %e \n\n",C);
 
-fprintf(file4,".IC v(6)=%e v(8)=%e\n\n",F(6), F(8));
+fprintf(file4,".IC v(6)=%e v(8)=%e\n\n",V(6), V(8));
 
 fprintf(file4, ".END\n\n");
 
@@ -316,16 +315,16 @@ fclose(file4);
 printf ("\n\n-----------Parte 5-----------\n\n");
 
 printf ("voltages_p5_amplitude_TAB\n");
-for i=1:length(F)
-  Vm(i)=abs(F(i));
+for i=1:length(I)
+  Vm(i)=abs(I(i));
   printf("Vm(%d) = %e \n" ,i ,Vm(i));
 endfor
-printf ("voltages_p5_amplitude_END\n");
+printf ("voltages_p5_amplitude_END\n\n");
 
 
 printf ("voltages_p5_phase_TAB\n");
-for i=1:length(F)
-  Vph(i)= arg(F(i));
+for i=1:length(I)
+  Vph(i)= arg(I(i));
   printf("Vph(%d) = %e \n" ,i ,Vph(i));
 endfor
 printf ("voltages_p5_phase_END\n");
@@ -344,19 +343,25 @@ Vs_pos= e.^(-j*(w*t_pos-pi/2));
 Vs_total=[Vs_neg, Vs_pos];
 
 %!!!!!!!!!!!!!!!!!!!!!!!!!!!!!nao e VX e v6 do ponto 1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-V6_neg=N(6)+0*t_neg;
+V6_neg=V(6)+0*t_neg;
 V6_pos = V6_n + V6_f;
 V6_total=[V6_neg, V6_pos];
 
 
-part4 = figure();
-plot(t_total*1e3,Vs_total,'r');
+part5 = figure();
+plot(t_total*1e3,Vs_total,'b', "linewidth",4);
 hold on
-plot(t_total*1000, V6_total, "g");
+plot(t_total*1000, V6_total, "r", "linewidth",4);
 
 xlabel ("t[ms]");
 ylabel (" [V]");
-print (part4, "part4.eps", "-depsc");
+
+h=legend({"V_{s}","V_{6}"});
+legend(h,"location", "northeast");
+set (gca,"fontsize",16,"linewidth",2);
+set (h,"fontsize",16);
+
+print (part5, "part4.eps", "-depsc");
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -371,7 +376,7 @@ w(counter)=2*pi*freq(counter);
 
 Zc = (1/(2*pi*freq(counter)*C*j));
 
-G =[G1 -G1-G2-G3 G2 0 G3 0 0 0;
+J =[G1 -G1-G2-G3 G2 0 G3 0 0 0;
     0 Kb+G2 -G2 0 -Kb 0 0 0;
     0 Kb 0 0 -Kb-G5 G5+1/Zc 0 -1/Zc;
     0 0 0 -G6 0 0 G6+G7 -G7;
@@ -380,10 +385,10 @@ G =[G1 -G1-G2-G3 G2 0 G3 0 0 0;
     0 0 0 Kd*G6 -1 0 -Kd*G6 1;
     0 0 0 1 0 0 0 0];
     
-H=[0; 0; 0; 0; 0; 1; 0; 0];
+L=[0; 0; 0; 0; 0; 1; 0; 0];
 
-K=inverse(G)*H;
-%K=G\H;
+%J*K=L
+K=inverse(J)*L;
 
 
 Vc_freq(counter) = K(6)-K(8);
@@ -406,25 +411,37 @@ Vs_eixoY_ang = angle((Vs_freq))*180/pi;
 
 
 part6_amp = figure();
-plot (w_eixoX, Vc_eixoY_amp, "r");
+plot (w_eixoX, Vc_eixoY_amp, "color",[0.95,0.60,0], "linewidth",4);
 hold on
-plot (w_eixoX, V6_eixoY_amp, "g");
-plot (w_eixoX, Vs_eixoY_amp, "b")
+plot (w_eixoX, V6_eixoY_amp, "b", "linewidth",4);
+plot (w_eixoX, Vs_eixoY_amp, "r", "linewidth",4)
 
-xlabel ("Vi(t)/Vo(t) [rad/s]");
-ylabel ("[dB]");
+xlabel ("log10(w) [rad/s]");
+ylabel ("Amplitude [V]");
+
+h=legend({"V_{c}","V_{6}","V_{s}"});
+legend(h,"location", "northeast");
+set (gca,"fontsize",16,"linewidth",2);
+set (h,"fontsize",16);
+
 axis([0 6.5 -90 20]);
 print (part6_amp, "part6_amp.eps", "-depsc");
  
  
 part6_ang = figure();
-plot (w_eixoX, Vc_eixoY_ang, "r");
+plot (w_eixoX, Vc_eixoY_ang, "color",[0.95,0.60,0], "linewidth",4);
 hold on
-plot (w_eixoX, V6_eixoY_ang, "g");
-plot (w_eixoX, Vs_eixoY_ang, "b");
+plot (w_eixoX, V6_eixoY_ang, "b","linewidth",4);
+plot (w_eixoX, Vs_eixoY_ang, "r","linewidth",4);
 
 
-xlabel ("Vi(t)/Vo(t) [rad/s]");
-ylabel ("[dB]");
+xlabel ("log10(w) [rad/s]");
+ylabel ("Phase [degrees]");
+
+h=legend({"V_{c}","V_{6}","V_{s}"});
+legend(h,"location", "northeast");
+set (gca,"fontsize",16,"linewidth",2);
+set (h,"fontsize",16);
+
 axis([0 6.5 -190 15]);
 print (part6_ang, "part6_ang.eps", "-depsc");
