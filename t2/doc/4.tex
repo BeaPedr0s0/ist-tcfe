@@ -34,7 +34,12 @@ $\begin{bmatrix}
 V6_f=A*sin(w*t+Ph)
 \end{equation} 
 
-\par The table below presents the values of the complex amplitudes of every nodal voltage:
+\par The tables below present the values that allows us to compute the comlex amplitude of every node voltage. In fact, it is obtained by the following expression: 
+
+\begin{equation}
+V_{complex}(i)=V_i exp(-j*phase(i))
+\end{equation} 
+
 
 \begin{table}[ht]
 
@@ -46,6 +51,21 @@ V6_f=A*sin(w*t+Ph)
   \end{tabular}
   \caption{Amplitudes of Nodal Voltages} 
 \end{table}
+
+
+\begin{table}[ht]
+
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [Rad]} \\ \hline
+    \input{../mat/phase_p4_tab}
+  \end{tabular}
+  \caption{Phase of Nodal Voltages} 
+\end{table}
+
+
+
 
 \newpage
 

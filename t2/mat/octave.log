@@ -66,6 +66,16 @@ V6 = 5.886212e-01
 V7 = 3.907822e-01 
 V8 = 5.868501e-01 
 voltages_p4_END
+phase_p4_TAB
+Phase1 = 0.000000e+00 
+Phase2 = -5.722643e-16 
+Phase3 = -1.142921e-15 
+Phase4 = 3.141593e+00 
+Phase5 = -5.388346e-16 
+Phase6 = -3.000819e+00 
+Phase7 = 3.141593e+00 
+Phase8 = 3.141593e+00 
+phase_p4_END
 
 
 -----------Parte 5-----------

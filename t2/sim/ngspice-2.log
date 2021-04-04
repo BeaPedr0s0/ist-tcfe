@@ -29,5 +29,6 @@ hd#branch = 2.745419e-03
 vaux#branch = -8.67362e-19
 vs#branch = -3.95801e-18
 vx#branch = -2.74542e-03
+(v(6)-v(8))/vx#branch = -3.11559e+03
 op2_END
 ngspice-31 done

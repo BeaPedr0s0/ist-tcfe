@@ -247,6 +247,11 @@ H =[0; 0; 0; 0; 0; 1; 0; 0];
 I=G\H;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for a=1:length(I)
+  phi(a)= arg(I(a));
+endfor
+
+
 %imprimir amplitude complexa
 % Creating a table in the mat folder with the voltages results
 printf ("voltages_p4_TAB\n");
@@ -259,6 +264,17 @@ printf ("V6 = %e \n", abs(I(6)));
 printf ("V7 = %e \n", abs(I(7)));
 printf ("V8 = %e \n", abs(I(8)));
 printf ( "voltages_p4_END\n");
+
+printf ("phase_p4_TAB\n");
+printf ("Phase1 = %e \n", phi(1));
+printf ("Phase2 = %e \n", phi(2));
+printf ("Phase3 = %e \n", phi(3));
+printf ("Phase4 = %e \n", phi(4));
+printf ("Phase5 = %e \n", phi(5));
+printf ("Phase6 = %e \n", phi(6));
+printf ("Phase7 = %e \n", phi(7));
+printf ("Phase8 = %e \n", phi(8));
+printf ( "phase_p4_END\n");
 
 
 % writing the data in fourth.cir for the fourth simulation in ngspice

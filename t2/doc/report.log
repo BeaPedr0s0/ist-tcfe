@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.5)  4 APR 2021 17:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  4 APR 2021 19:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -49,9 +49,9 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
 Package babel Info: \l@australian = using hyphenrules for ukenglish
-(babel)             (\language72) on input line 105.
+(babel)             (\language43) on input line 105.
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
-(babel)             (\language72) on input line 108.
+(babel)             (\language43) on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/notoccite/notoccite.sty
 Package: notoccite 2000/07/20
@@ -678,13 +678,16 @@ Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (./report.aux
 
-LaTeX Warning: Label `fig:sim4' multiply defined.
+LaTeX Warning: Label `RC Circuit.' multiply defined.
+
+
+LaTeX Warning: Label `RC Circuit.' multiply defined.
 
 
 LaTeX Warning: Label `RC Circuit.' multiply defined.
 
 
-LaTeX Warning: Label `RC Circuit.' multiply defined.
+LaTeX Warning: Label `fig:sim3' multiply defined.
 
 )
 \openout1 = `report.aux'.
@@ -800,7 +803,7 @@ LaTeX Info: Redefining \nameref on input line 82.
  (./frontcover.tex
 Package pdftex.def Info: Option `bb' equivalent to `viewport' with pdftex drive
 r on input line 15.
-<../../figlib/IST_A_CMYK_POS.pdf, id=108, 845.0471pt x 597.51233pt>
+<../../figlib/IST_A_CMYK_POS.pdf, id=96, 845.0471pt x 597.51233pt>
 File: ../../figlib/IST_A_CMYK_POS.pdf Graphic file (type pdf)
 <use ../../figlib/IST_A_CMYK_POS.pdf>
 Package pdftex.def Info: ../../figlib/IST_A_CMYK_POS.pdf  used on input line 15
@@ -837,149 +840,267 @@ S.pdf>] (./report.toc)
 LaTeX Warning: Reference `fig:circ_inicial' on page 3 undefined on input line 4
 0.
 
-<t2draw.pdf, id=164, 722.7pt x 542.025pt>
+
+LaTeX Warning: Reference `section:con' on page 3 undefined on input line 51.
+
+<t2draw.pdf, id=156, 722.7pt x 542.025pt>
 File: t2draw.pdf Graphic file (type pdf)
 <use t2draw.pdf>
-Package pdftex.def Info: t2draw.pdf  used on input line 53.
+Package pdftex.def Info: t2draw.pdf  used on input line 56.
 (pdftex.def)             Requested size: 478.85695pt x 359.1436pt.
-) [3] (./1.tex
-<sim1draw.pdf, id=178, 722.7pt x 542.025pt>
-File: sim1draw.pdf Graphic file (type pdf)
-<use sim1draw.pdf>
-Package pdftex.def Info: sim1draw.pdf  used on input line 14.
-(pdftex.def)             Requested size: 425.65514pt x 319.23784pt.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 22.
- (../sim/op_tab.tex)
-Underfull \hbox (badness 4416) in paragraph at lines 32--32
-[]\OT1/phv/m/n/10.95 Table 2: |Sim-u-la-tion and Cal-cu-lus of Req
- []
+File: t2draw.pdf Graphic file (type pdf)
+<use t2draw.pdf>
+Package pdftex.def Info: t2draw.pdf  used on input line 70.
+(pdftex.def)             Requested size: 478.85695pt x 359.1436pt.
+) [3] (./analysis.tex
 
-(../mat/nos_part1_tab.tex)
-Underfull \hbox (badness 4416) in paragraph at lines 40--40
-[]\OT1/phv/m/n/10.95 Table 3: |Sim-u-la-tion and Cal-cu-lus of Req
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4.
 
-) [4 <./t2draw.pdf>] [5 <./sim1draw.pdf>] (./2.tex
-<sim2draw.pdf, id=218, 722.7pt x 542.025pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 9.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9.
+
+<sim2draw.pdf, id=168, 722.7pt x 542.025pt>
 File: sim2draw.pdf Graphic file (type pdf)
 <use sim2draw.pdf>
-Package pdftex.def Info: sim2draw.pdf  used on input line 12.
+Package pdftex.def Info: sim2draw.pdf  used on input line 20.
 (pdftex.def)             Requested size: 425.65514pt x 319.23784pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6] (../sim/op2_tab.tex) (../mat/voltages_p2_tab.tex) [7 <./sim2draw.pdf>])
-(./3.tex
 
-LaTeX Warning: Reference `subsection:2.3' on page 8 undefined on input line 10.
+Underfull \vbox (badness 6125) has occurred while \output is active []
+
+ [4 <./t2draw.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 59.
 
 
-<../sim/sim3.pdf, id=248, 597.23125pt x 845.1575pt>
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ge' on input line 59.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 59.
+
+
+Underfull \vbox (badness 4792) has occurred while \output is active []
+
+ [5]
+Package epstopdf Info: Source file: <natural.eps>
+(epstopdf)                    date: 2021-04-04 19:05:44
+(epstopdf)                    size: 25559 bytes
+(epstopdf)             Output file: <natural-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-04 19:05:47
+(epstopdf)                    size: 13330 bytes
+(epstopdf)             Command: <repstopdf --outfile=natural-eps-converted-to.p
+df natural.eps>
+(epstopdf)             \includegraphics on input line 67.
+Package epstopdf Info: Output file is already uptodate.
+<natural-eps-converted-to.pdf, id=198, 578.16pt x 433.62pt>
+File: natural-eps-converted-to.pdf Graphic file (type pdf)
+<use natural-eps-converted-to.pdf>
+Package pdftex.def Info: natural-eps-converted-to.pdf  used on input line 67.
+(pdftex.def)             Requested size: 266.03345pt x 199.52055pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 74.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ge' on input line 74.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 74.
+
+[6 <./sim2draw.pdf>]
+Overfull \hbox (11.00226pt too wide) in paragraph at lines 88--105
+[]$[]$ $[]$ \OT1/phv/m/n/10.95 = $[]$ 
+ []
+
+(../mat/voltages_p4_tab.tex) (../mat/phase_p4_tab.tex) [7 <./natural-eps-conver
+ted-to.pdf>]
+Package epstopdf Info: Source file: <part4.eps>
+(epstopdf)                    date: 2021-04-04 19:05:44
+(epstopdf)                    size: 47475 bytes
+(epstopdf)             Output file: <part4-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-04 19:05:50
+(epstopdf)                    size: 17077 bytes
+(epstopdf)             Command: <repstopdf --outfile=part4-eps-converted-to.pdf
+ part4.eps>
+(epstopdf)             \includegraphics on input line 176.
+Package epstopdf Info: Output file is already uptodate.
+<part4-eps-converted-to.pdf, id=233, 578.16pt x 433.62pt>
+File: part4-eps-converted-to.pdf Graphic file (type pdf)
+<use part4-eps-converted-to.pdf>
+Package pdftex.def Info: part4-eps-converted-to.pdf  used on input line 176.
+(pdftex.def)             Requested size: 266.03345pt x 199.52055pt.
+ [8 <./part4-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <part6_amp.eps>
+(epstopdf)                    date: 2021-04-04 19:05:44
+(epstopdf)                    size: 18554 bytes
+(epstopdf)             Output file: <part6_amp-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-04 19:05:53
+(epstopdf)                    size: 9285 bytes
+(epstopdf)             Command: <repstopdf --outfile=part6_amp-eps-converted-to
+.pdf part6_amp.eps>
+(epstopdf)             \includegraphics on input line 203.
+Package epstopdf Info: Output file is already uptodate.
+<part6_amp-eps-converted-to.pdf, id=250, 578.16pt x 433.62pt>
+File: part6_amp-eps-converted-to.pdf Graphic file (type pdf)
+<use part6_amp-eps-converted-to.pdf>
+Package pdftex.def Info: part6_amp-eps-converted-to.pdf  used on input line 203
+.
+(pdftex.def)             Requested size: 478.85695pt x 359.14362pt.
+ [9 <./part6_amp-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <part6_ang.eps>
+(epstopdf)                    date: 2021-04-04 19:05:44
+(epstopdf)                    size: 18245 bytes
+(epstopdf)             Output file: <part6_ang-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-04 19:05:56
+(epstopdf)                    size: 9200 bytes
+(epstopdf)             Command: <repstopdf --outfile=part6_ang-eps-converted-to
+.pdf part6_ang.eps>
+(epstopdf)             \includegraphics on input line 214.
+Package epstopdf Info: Output file is already uptodate.
+<part6_ang-eps-converted-to.pdf, id=261, 578.16pt x 433.62pt>
+File: part6_ang-eps-converted-to.pdf Graphic file (type pdf)
+<use part6_ang-eps-converted-to.pdf>
+Package pdftex.def Info: part6_ang-eps-converted-to.pdf  used on input line 214
+.
+(pdftex.def)             Requested size: 212.8235pt x 159.61644pt.
+) [10 <./part6_ang-eps-converted-to.pdf>] (./simulation.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3.
+
+<sim1draw.pdf, id=272, 722.7pt x 542.025pt>
+File: sim1draw.pdf Graphic file (type pdf)
+<use sim1draw.pdf>
+Package pdftex.def Info: sim1draw.pdf  used on input line 9.
+(pdftex.def)             Requested size: 425.65514pt x 319.23784pt.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ge' on input line 15.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 15.
+
+
+LaTeX Warning: Reference `subsection:2.3' on page 11 undefined on input line 18
+.
+
+<../sim/sim3.pdf, id=273, 597.23125pt x 845.1575pt>
 File: ../sim/sim3.pdf Graphic file (type pdf)
 <use ../sim/sim3.pdf>
-Package pdftex.def Info: ../sim/sim3.pdf  used on input line 13.
+Package pdftex.def Info: ../sim/sim3.pdf  used on input line 21.
 (pdftex.def)             Requested size: 266.03345pt x 376.47433pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8]) (./4.tex
-Overfull \hbox (11.00226pt too wide) in paragraph at lines 14--31
-[]$[]$ $[]$ \OT1/phv/m/n/10.95 = $[]$ 
- []
+[11 <./sim1draw.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 28.
 
 
-Underfull \vbox (badness 4518) has occurred while \output is active []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\ge' on input line 28.
 
- [9 <../sim/sim3.pdf>] (../mat/voltages_p4_tab.tex) [10]) (./5.tex
-Package epstopdf Info: Source file: <part4.eps>
-(epstopdf)                    date: 2021-04-04 17:04:23
-(epstopdf)                    size: 47470 bytes
-(epstopdf)             Output file: <part4-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-04 17:04:24
-(epstopdf)                    size: 17072 bytes
-(epstopdf)             Command: <repstopdf --outfile=part4-eps-converted-to.pdf
- part4.eps>
-(epstopdf)             \includegraphics on input line 8.
-Package epstopdf Info: Output file is already uptodate.
-<part4-eps-converted-to.pdf, id=272, 578.16pt x 433.62pt>
-File: part4-eps-converted-to.pdf Graphic file (type pdf)
-<use part4-eps-converted-to.pdf>
-Package pdftex.def Info: part4-eps-converted-to.pdf  used on input line 8.
-(pdftex.def)             Requested size: 266.03345pt x 199.52055pt.
-<../sim/sim4.pdf, id=273, 597.23125pt x 845.1575pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 28.
+
+<../sim/sim4.pdf, id=292, 597.23125pt x 845.1575pt>
 File: ../sim/sim4.pdf Graphic file (type pdf)
 <use ../sim/sim4.pdf>
-Package pdftex.def Info: ../sim/sim4.pdf  used on input line 18.
-(pdftex.def)             Requested size: 159.62169pt x 225.88718pt.
- [11 <./part4-eps-converted-to.pdf> <../sim/sim4.pdf>] [12]) (./6.tex
-Package epstopdf Info: Source file: <part6_amp.eps>
-(epstopdf)                    date: 2021-04-04 17:04:23
-(epstopdf)                    size: 18557 bytes
-(epstopdf)             Output file: <part6_amp-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-04 17:04:25
-(epstopdf)                    size: 9287 bytes
-(epstopdf)             Command: <repstopdf --outfile=part6_amp-eps-converted-to
-.pdf part6_amp.eps>
-(epstopdf)             \includegraphics on input line 18.
-Package epstopdf Info: Output file is already uptodate.
-<part6_amp-eps-converted-to.pdf, id=295, 578.16pt x 433.62pt>
-File: part6_amp-eps-converted-to.pdf Graphic file (type pdf)
-<use part6_amp-eps-converted-to.pdf>
-Package pdftex.def Info: part6_amp-eps-converted-to.pdf  used on input line 18.
-
-(pdftex.def)             Requested size: 478.85695pt x 359.14362pt.
-
+Package pdftex.def Info: ../sim/sim4.pdf  used on input line 33.
+(pdftex.def)             Requested size: 212.8235pt x 301.17432pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package epstopdf Info: Source file: <part6_ang.eps>
-(epstopdf)                    date: 2021-04-04 17:04:23
-(epstopdf)                    size: 18262 bytes
-(epstopdf)             Output file: <part6_ang-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-04 17:04:25
-(epstopdf)                    size: 9188 bytes
-(epstopdf)             Command: <repstopdf --outfile=part6_ang-eps-converted-to
-.pdf part6_ang.eps>
-(epstopdf)             \includegraphics on input line 29.
-Package epstopdf Info: Output file is already uptodate.
-<part6_ang-eps-converted-to.pdf, id=296, 578.16pt x 433.62pt>
-File: part6_ang-eps-converted-to.pdf Graphic file (type pdf)
-<use part6_ang-eps-converted-to.pdf>
-Package pdftex.def Info: part6_ang-eps-converted-to.pdf  used on input line 29.
-
-(pdftex.def)             Requested size: 212.8235pt x 159.61644pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../sim/sim5_db.pdf, id=297, 597.23125pt x 845.1575pt>
+[12 <../sim/sim3.pdf>]
+<../sim/sim5_db.pdf, id=307, 597.23125pt x 845.1575pt>
 File: ../sim/sim5_db.pdf Graphic file (type pdf)
 <use ../sim/sim5_db.pdf>
-Package pdftex.def Info: ../sim/sim5_db.pdf  used on input line 41.
+Package pdftex.def Info: ../sim/sim5_db.pdf  used on input line 54.
 (pdftex.def)             Requested size: 212.8235pt x 301.17432pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../sim/sim5_ph.pdf, id=298, 597.23125pt x 845.1575pt>
+<../sim/sim5_ph.pdf, id=308, 597.23125pt x 845.1575pt>
 File: ../sim/sim5_ph.pdf Graphic file (type pdf)
 <use ../sim/sim5_ph.pdf>
-Package pdftex.def Info: ../sim/sim5_ph.pdf  used on input line 50.
+Package pdftex.def Info: ../sim/sim5_ph.pdf  used on input line 63.
 (pdftex.def)             Requested size: 212.8235pt x 301.17432pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13]) [14 <./part6_amp-eps-converted-to.pdf>] (./conclusion.tex) [15 <./part6_a
-ng-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
- [16 <../sim/sim5_db.pdf> <../sim/sim5_ph.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
+[13 <../sim/sim4.pdf>]) [14 <../sim/sim5_db.pdf>] (./comparison.tex
 
-(./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3.
+
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 7.
+(../sim/op_tab.tex)
+Underfull \hbox (badness 4416) in paragraph at lines 17--17
+[]\OT1/phv/m/n/10.95 Table 4: |Sim-u-la-tion and Cal-cu-lus of Req
+ []
+
+(../mat/nos_part1_tab.tex)
+Underfull \hbox (badness 4416) in paragraph at lines 25--25
+[]\OT1/phv/m/n/10.95 Table 5: |Sim-u-la-tion and Cal-cu-lus of Req
+ []
+
+(../sim/op2_tab.tex) (../mat/voltages_p2_tab.tex)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 69.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 69.
+
+) (./conclusion.tex [15 <../sim/sim5_ph.pdf>]) [16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+ (./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 789152F60F4155B610890351072AEF72;1800.
+(rerunfilecheck)             Checksum: 942D0A9ABC3C7808CDB185EEE6F49B85;1823.
 
 
 LaTeX Warning: There were undefined references.
@@ -987,30 +1108,31 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
  ) 
 Here is how much of TeX's memory you used:
- 18716 strings out of 481239
- 315182 string characters out of 5920378
- 625072 words of memory out of 5000000
- 33553 multiletter control sequences out of 15000+600000
- 557267 words of font info for 63 fonts, out of 8000000 for 9000
+ 18734 strings out of 481239
+ 315704 string characters out of 5920377
+ 622273 words of memory out of 5000000
+ 33571 multiletter control sequences out of 15000+600000
+ 559324 words of font info for 70 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  43i,12n,86p,1024b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on report.pdf (16 pages, 414100 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on report.pdf (17 pages, 438041 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 65 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

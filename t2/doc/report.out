@@ -1,26 +1,23 @@
 \BOOKMARK [1][-]{section.1}{1 Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{2 NODAL ANALYSIS}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{2.1 Theoretical Analysis}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{2.2 Operating Point Analysis}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{2.3 Comparison}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{3 CALCULUS OF REQ}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{3.1 Theoretical Analysis}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{3.2 Operating Point Analysis}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.3}{3.3 Comparison}{section.3}% 9
-\BOOKMARK [1][-]{section.4}{4 NATURAL RESPONSE}{}% 10
-\BOOKMARK [2][-]{subsection.4.1}{4.1 Theoretical Analysis}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.2}{4.2 Simulation Analysis}{section.4}% 12
-\BOOKMARK [1][-]{section.5}{5 FORCED RESPONSE}{}% 13
-\BOOKMARK [1][-]{section.6}{6 TOTAL RESPONSE}{}% 14
-\BOOKMARK [2][-]{subsection.6.1}{6.1 Theoretical Analysis}{section.6}% 15
-\BOOKMARK [2][-]{subsection.6.2}{6.2 Simulation Analysis}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.3}{6.3 Comparison}{section.6}% 17
-\BOOKMARK [1][-]{section.7}{7 FREQUENCY RESPONSE, MAGNITUDE, PHASE}{}% 18
-\BOOKMARK [2][-]{subsection.7.1}{7.1 Theoretical Analysis}{section.7}% 19
-\BOOKMARK [3][-]{subsubsection.7.1.1}{7.1.1 Frequency Response- Magnitude}{subsection.7.1}% 20
-\BOOKMARK [3][-]{subsubsection.7.1.2}{7.1.2 Frequency Response- Phase}{subsection.7.1}% 21
-\BOOKMARK [2][-]{subsection.7.2}{7.2 Simulation Analysis}{section.7}% 22
-\BOOKMARK [3][-]{subsubsection.7.2.1}{7.2.1 Frequency Response- Magnitude}{subsection.7.2}% 23
-\BOOKMARK [3][-]{subsubsection.7.2.2}{7.2.2 Frequency Response- Phase}{subsection.7.2}% 24
-\BOOKMARK [2][-]{subsection.7.3}{7.3 Comparison}{section.7}% 25
-\BOOKMARK [1][-]{section.8}{8 Conclusion}{}% 26
+\BOOKMARK [1][-]{section.2}{2 Theoretical Analysis}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{2.1 Node analysis for t<0}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{2.2 Calculus of Req}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{2.3 Operating Point Analysis}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{2.4 Node analysis for t \0400 \(Natural solution\)}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{2.5 Node analysis for t \0400 \(Forced solution\)}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{2.6 Natural and Forced Superimposed}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.7}{2.7 Frequency Responses}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.7.1}{2.7.1 Frequency Response- Magnitude}{subsection.2.7}% 10
+\BOOKMARK [3][-]{subsubsection.2.7.2}{2.7.2 Frequency Response- Phase}{subsection.2.7}% 11
+\BOOKMARK [1][-]{section.3}{3 Simulation Analysis}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{3.1 Operating Point Analysis for t<0}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{3.2 Operating Point Analysis for \0400 \(Natural Solution\)}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.3}{3.3 Operating Point Analysis for \0400 \(Natural and Forced Solutions\)}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{3.4 Comparison}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.5}{3.5 Frequency Responses}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.5.1}{3.5.1 Frequency Response- Magnitude}{subsection.3.5}% 18
+\BOOKMARK [3][-]{subsubsection.3.5.2}{3.5.2 Frequency Response- Phase}{subsection.3.5}% 19
+\BOOKMARK [1][-]{section.4}{4 Octave and Ngspice Comparison}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{4.1 Analysis for t<0}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{4.2 Natural Solution for t>0}{section.4}% 22
+\BOOKMARK [1][-]{section.5}{5 Conclusion}{}% 23
