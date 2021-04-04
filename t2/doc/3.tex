@@ -4,6 +4,13 @@ It was proposed to study and determine the natural response of the circuit over 
 \subsection{Theoretical Analysis}
 
 
+In order to calculate the natural solution, we have to eliminate the voltage source, which means vs(t)=0V. Hence, we have an equivalent cicuit described by a voltage source and the capacitor. The current flowing through the capacitor is in fact consumed by it. Therefore, the voltage V8=0V and the amplitude Vx=V6-V8=V6.The natural solution will have the format $V{6n}(t)=A*e^{(-t/tau)}$ with tau=Req*C and A=V6 obtained in 2). As expected, the result is a negative exponencial graph, shown bellow.
+
+\begin{figure}[ht] \centering
+\includegraphics[width=0.5\linewidth]{natural.eps}
+\caption{Circuit analysed.}
+\label{fig:sim3}
+\end{figure}
 
 
 \subsection{Simulation Analysis}
