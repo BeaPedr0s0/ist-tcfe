@@ -14,7 +14,7 @@ A variable preceded by @ is of type {\em current} and expressed in Ampere; other
     {\bf Name} & {\bf Value [A or V]} \\ \hline
     \input{../sim/op_tab}
   \end{tabular}
-  \caption{Simulation and Calculus of Req (NgSpice)}} 
+  \caption{Simulation nodal voltage results. All variables are expressed in Volt or Ampere. (Ngspice)}} 
 \parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
@@ -22,7 +22,7 @@ A variable preceded by @ is of type {\em current} and expressed in Ampere; other
     {\bf Name} & {\bf Value [A or V]} \\ \hline
     \input{../mat/nos_part1_tab}
   \end{tabular}
-  \caption{Simulation and Calculus of Req (NgSpice)}}
+  \caption{Theoretical nodal voltage results. All variables are expressed in Volt.(Octave)}}
  
 \end{table}
 
@@ -33,26 +33,30 @@ In order to validate the results obtained in NGSPICE, relative errors between th
 
 After running the node analysis in octave and the simulation in ngspice, the results were put in the tables below. Then, a careful analysis of the aforementioned tables was conducted.
 
+
+\clearpage
+\subsection{Calculus and Simulation of $R_{eq}$.}
+
 A variable preceded by @ is of type {\em current} and expressed in Ampere; other variables are of type {\it voltage} and expressed in
     Volt. $R_{eq}$ is presented as in \ref{eq:4} in Ohm.
 
 \begin{table}[ht]
-\parbox{.30\linewidth}{
+\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value [A or V]} \\ \hline
     \input{../sim/op2_tab}
   \end{tabular}
-  \caption{Simulation and Calculus of Req (NgSpice)}} 
-\parbox{.30\linewidth}{
+  \caption{Simulation of $R_{eq}$. All variables are expressed in Volt, Ohm or Ampere. (NgSpice)}} 
+\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value [A or V]} \\ \hline
     \input{../mat/voltages_p2_tab}
   \end{tabular}
-  \caption{Calculus of $R_{eq}$- Octave}}
+  \caption{Calculus of $R_{eq}$.All variables are expressed in Volt, Ohm or Ampere. (Octave)}}
  
 \end{table}
 
@@ -66,7 +70,7 @@ A variable preceded by @ is of type {\em current} and expressed in Ampere; other
 
 
 
-\subsection{Natural Solution for t$>$0}
+
 
 
 

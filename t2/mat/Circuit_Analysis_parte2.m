@@ -141,16 +141,11 @@ printf ("V5 = %e \n", F(5));
 printf ("V6 = %e \n", F(6));
 printf ("V7 = %e \n", F(7));
 printf ("V8 = %e \n", F(8));
-printf ( "voltages_p2_END\n");
-
-printf ("\nnorten_current_p2_TAB\n");
 printf ("Ix = %e \n", F(9));
-printf ("norton_current_p2_END\n");
-
-printf ("\nReq_tau_p2_TAB\n");
 printf ("Req = %e \n", Req);
 printf ("tau = %e \n", tau);
-printf ("Req_tau_p2_END\n");
+printf ( "voltages_p2_END\n\n");
+
 
 % writing the data in second.cir for the third simulation in ngspice
 file2=fopen("second.cir",'w');
@@ -384,7 +379,6 @@ Vc_freq(counter) = K(6)-K(8);
 V6_freq(counter) = K(6);
 Vs_freq(counter) = K(1)-K(4);
 
-w_eixoX=log10(w);
 endfor
 
 Vc_eixoY_amp = 20*log10(abs(Vc_freq));
@@ -397,12 +391,12 @@ Vs_eixoY_ang = angle((Vs_freq))*180/pi;
 
 
 part6_amp = figure();
-plot (w_eixoX, Vc_eixoY_amp, "color",[0.95,0.60,0], "linewidth",4);
+plot (log10(freq), Vc_eixoY_amp, "color",[0.95,0.60,0], "linewidth",4);
 hold on
-plot (w_eixoX, V6_eixoY_amp, "b", "linewidth",4);
-plot (w_eixoX, Vs_eixoY_amp, "r", "linewidth",4)
+plot (log10(freq), V6_eixoY_amp, "b", "linewidth",4);
+plot (log10(freq), Vs_eixoY_amp, "r", "linewidth",4)
 
-xlabel ("log10(w) [rad/s]");
+xlabel ("log10(frequency) [Hz]");
 ylabel ("Amplitude [V]");
 
 h=legend({"V_{c}","V_{6}","V_{s}"});
@@ -410,16 +404,16 @@ legend(h,"location", "northeast");
 set (gca,"fontsize",16,"linewidth",2);
 set (h,"fontsize",16);
 
-axis([0 6.5 -90 20]);
+axis([-1 6 -90 20]);
 print (part6_amp, "part6_amp.eps", "-depsc");
  
 part6_ang = figure();
-plot (w_eixoX, Vc_eixoY_ang, "color",[0.95,0.60,0], "linewidth",4);
+plot (log10(freq), Vc_eixoY_ang, "color",[0.95,0.60,0], "linewidth",4);
 hold on
-plot (w_eixoX, V6_eixoY_ang, "b","linewidth",4);
-plot (w_eixoX, Vs_eixoY_ang, "r","linewidth",4);
+plot (log10(freq), V6_eixoY_ang, "b","linewidth",4);
+plot (log10(freq), Vs_eixoY_ang, "r","linewidth",4);
 
-xlabel ("log10(w) [rad/s]");
+xlabel ("log10(frequency) [Hz]");
 ylabel ("Phase [degrees]");
 
 h=legend({"V_{c}","V_{6}","V_{s}"});
@@ -427,5 +421,5 @@ legend(h,"location", "northeast");
 set (gca,"fontsize",16,"linewidth",2);
 set (h,"fontsize",16);
 
-axis([0 6.5 -190 15]);
+axis([-1 6 -190 15]);
 print (part6_ang, "part6_ang.eps", "-depsc");

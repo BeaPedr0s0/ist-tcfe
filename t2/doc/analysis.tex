@@ -31,6 +31,17 @@ Vs \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
 \end{bmatrix}
 $
 
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/nos_part1_tab}
+  \end{tabular}
+  \caption{Theoretical nodal voltage results. All variables are expressed in V.}
+  \label{tab:p2}
+\end{table}
+
 
 \subsection{Calculus of $R_{eq}$}
 \label{subsection:2.2}
@@ -45,7 +56,7 @@ R_{eq}=\frac{V_{x}}{I_{x}}
 In order to determine the variable aforementioned, first it was sugested to calculate it seen from the capacitors terminals. Then, using the Thevenin and Norton theorem, we put the independent voltage source to 0V. $V_{x}$ is equivalent to Thevenin's Voltage, and $I_{x}$ to Norton's Current. This is necessary because the depedent voltage short cannot be put equal to 0V(short-circuit) and the independent current source cannot be erased from the circuit.
 \par An ilustration of the circuit analysed is showed in figure \ref{sim2draw} 
 \begin{figure}[h] \centering
-\includegraphics[width=0.8\linewidth]{sim2draw.pdf}
+\includegraphics[width=0.65\linewidth]{sim2draw.pdf}
 \caption{RC Circuit analysed in section 2.}
 \label{sim2draw}
 \end{figure}
@@ -73,38 +84,19 @@ $\begin{bmatrix}
 
 \par Theoretically speaking, once the voltage source is equal to 0V, $V_{4}$ and  $V_{1}$ are also to be 0. 
 
-\begin{table}[ht]
+\begin{table}[]
   \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value} \\ \hline
     \input{../mat/voltages_p2_tab}
   \end{tabular}
-  \caption{Theoretical nodal voltage results. All variables are expressed in V.}
+  \caption{Theoretical nodal voltage results. All variables are expressed in Volt, Ampere or Ohm.}
   \label{tab:p2}
 \end{table}
 
-\begin{table}[ht]
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Name} & {\bf Value} \\ \hline
-    \input{../mat/norton_current_p2_tab}
-  \end{tabular}
-  \caption{Theoretical Ix. Expressed in A.}
-  \label{tab:p2}
-\end{table}
 
-\begin{table}[ht]
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Name} & {\bf Value} \\ \hline
-    \input{../mat/Req_tau_p2_tab}
-  \end{tabular}
-  \caption{Theoretical Req and tau results. Expressed in Ohm and s.}
-  \label{tab:p2}
-\end{table}
+\clearpage
 
 \subsection{Node analysis for t $\ge$ 0 (Natural solution)}
 
@@ -254,7 +246,7 @@ The magnitude of $V_s$ does not suffer any alteration with the variation of the 
 On the contrary, as the frequency is increasing, the magnitudes of $V_6$ and $V_c$ decrease. The value of $V_c$ changes as it is expected in a RC circuit. This is due to the impedance of the capacitor (Z=-j/wC).
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.6\linewidth]{part6_amp.eps}
+\includegraphics[width=0.5\linewidth]{part6_amp.eps}
 \caption{Circuit analysed.}
 \label{Magnitude response.}
 \end{figure}
@@ -264,8 +256,8 @@ On the contrary, as the frequency is increasing, the magnitudes of $V_6$ and $V_
 
 The angles of the values saved were transformed from radians to degrees. The phase in $V_s$ is 0, therefore we do not have to do any further calculations. The phase of each voltage corresponds to the exact angles. In the plot shown below, the frequencies were also  put in the logarithmic scale. As the frequency increases the phase tend to negative values, which varies as it is expected.
 
-\begin{figure}[h] \centering
-\includegraphics[width=0.6\linewidth]{part6_ang.eps}
+\begin{figure}[ht] \centering
+\includegraphics[width=0.5\linewidth]{part6_ang.eps}
 \caption{Phase response.}
 \label{RC Circuit.}
 \end{figure}
