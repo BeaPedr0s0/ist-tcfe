@@ -184,7 +184,6 @@ printf ("\n\n-----------Parte 3-----------\n\n");
 %time axis: 0 to 20ms with 1us steps
 t = 0:(20e-3)/1000:20e-3; %s
 
-%Vx is the initial voltage
 V6_n=(F(6))*e.^(-t/tau);
 
 %Plot natural solution 
@@ -245,7 +244,9 @@ H =[0; 0; 0; 0; 0; 1; 0; 0];
 
 % G*I=H <=>
 I=G\H;
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%imprimir amplitude complexa
 % Creating a table in the mat folder with the voltages results
 printf ("voltages_p4_TAB\n");
 printf ("V1 = %e \n", abs(I(1)));
@@ -316,7 +317,6 @@ Vs_neg=Vs+0*t_neg;
 Vs_pos= e.^(-j*(w*t_pos-pi/2));
 Vs_total=[Vs_neg, Vs_pos];
 
-%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!nao e VX e v6 do ponto 1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 V6_neg=V(6)+0*t_neg;
 V6_pos = V6_n + V6_f;
 V6_total=[V6_neg, V6_pos];
