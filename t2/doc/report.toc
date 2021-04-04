@@ -3,22 +3,22 @@
 \contentsline {section}{\numberline {2}Theoretical Analysis}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Node analysis for t$<$0}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Calculus of $R_{eq}$}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Operating Point Analysis}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Node analysis for t $\ge $ 0 (Natural solution)}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Node analysis for t $\ge $ 0 (Forced solution)}{6}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Natural and Forced Superimposed}{8}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Frequency Responses}{9}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Frequency Response- Magnitude}{9}{subsubsection.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.2}Frequency Response- Phase}{10}{subsubsection.2.7.2}%
-\contentsline {section}{\numberline {3}Simulation Analysis}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Operating Point Analysis for t$<$0}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Operating Point Analysis for $\ge $ 0 (Natural Solution)}{11}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Operating Point Analysis for $\ge $ 0 (Natural and Forced Solutions)}{12}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Comparison}{12}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Frequency Responses}{13}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Frequency Response- Magnitude}{13}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Frequency Response- Phase}{13}{subsubsection.3.5.2}%
-\contentsline {section}{\numberline {4}Octave and Ngspice Comparison}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Analysis for t$<$0}{15}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Natural Solution for t$>$0}{15}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Conclusion}{16}{section.5}%
+\contentsline {subsection}{\numberline {2.3}Node analysis for t $\ge $ 0 (Natural solution)}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Node analysis for t $\ge $ 0 (Forced solution)}{6}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Natural and Forced Superimposed}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Frequency Responses}{8}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Frequency Response- Magnitude}{9}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Frequency Response- Phase}{9}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Simulation Analysis}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Operating Point Analysis for t$<$0}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Operating Point Analysis}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Operating Point Analysis for $\ge $ 0 (Natural Solution)}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Operating Point Analysis for $\ge $ 0 (Natural and Forced Solutions)}{11}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Comparison}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Frequency Responses}{12}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Frequency Response- Magnitude}{12}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Frequency Response- Phase}{12}{subsubsection.3.6.2}%
+\contentsline {section}{\numberline {4}Octave and Ngspice Comparison}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Analysis for t$<$0}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Natural Solution for t$>$0}{14}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Conclusion}{15}{section.5}%

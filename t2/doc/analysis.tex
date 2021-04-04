@@ -3,18 +3,46 @@
 
 \subsection{Node analysis for t$<$0}
 
+\par In this section, a theoretical analysis of the circuit was conducted. The node method was the chosen approach.
 
+The aim of using this method is to determine every node voltage. To do so, the node 4 was considered a reference node. Then, eight independent equations were written in orther to find the remaining unknown node voltage values. Before $t=0s$, v(s) is constant. Therefore, the capacitor behaves like an open-circuit which means Ix=0.
+
+
+The equations were then put in the form of the matrix shown below. Octave math tools were used to solve the system.
+
+
+
+$\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+-G1 & G1+G2+G3 & -G2 & 0 & -G3 & 0 & 0 & 0\\
+0 &-Kb-G2 & G2 & 0 & Kb & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & -G3 & 0 & -G4 & G3+G4+G5 & -G5 & -G7 & G7\\
+0 & Kb & 0 & 0 & -Kb-G5 & G5 & 0 & 0\\
+0 & 0 & 0 & -G6 & 0 & 0 & G6+G7 & -G7\\
+0 & 0 & 0 & Kd*G6 & -1 & 0 & -Kd*G6 & 1\\
+\end{bmatrix}
+$$\begin{bmatrix}
+V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\ V8
+\end{bmatrix}$
+=
+$\begin{bmatrix}
+Vs \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
+$
 
 
 \subsection{Calculus of $R_{eq}$}
+\label{subsection:2.2}
 
-The purpose of this task was to compute the Req (equivalant resistance) of the circuit.
+\par The purpose of this task was to compute the Req (equivalant resistance) of the circuit.
 
 It is known that:
 \begin{equation}
 R_{eq}=\frac{V_{x}}{I_{x}}
 \end{equation}
-IN order to determine the variable aforementioned, first it was sugested to calculate it seen from the capacitors terminals. Then, using the Thevenin and Norton theorem, we put the independent voltage source to 0V. $V_{x}$ is equivalent to Thevenin's Voltage, and $I_{x}$ to Norton's Current. This is necessary because the depedent voltage short cannot be put equal to 0V(short-circuit) and the independent current source cannot be erased from the circuit.
+
+In order to determine the variable aforementioned, first it was sugested to calculate it seen from the capacitors terminals. Then, using the Thevenin and Norton theorem, we put the independent voltage source to 0V. $V_{x}$ is equivalent to Thevenin's Voltage, and $I_{x}$ to Norton's Current. This is necessary because the depedent voltage short cannot be put equal to 0V(short-circuit) and the independent current source cannot be erased from the circuit.
 \par An ilustration of the circuit analysed is showed in figure \ref{sim2draw} 
 \begin{figure}[h] \centering
 \includegraphics[width=0.8\linewidth]{sim2draw.pdf}
@@ -36,7 +64,7 @@ $\begin{bmatrix}
 0 & 0 & 0 & KdG6 & -1 & 0 & -Kd*G6 & 1 & 0
 \end{bmatrix}$
 $\begin{bmatrix}
-V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\ I_{x}
+V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\ V8 \\ I_{x}
 \end{bmatrix}$
 = 
 $\begin{bmatrix}
@@ -45,23 +73,45 @@ $\begin{bmatrix}
 
 \par Theoretically speaking, once the voltage source is equal to 0V, $V_{4}$ and  $V_{1}$ are also to be 0. 
 
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/voltages_p2_tab}
+  \end{tabular}
+  \caption{Theoretical nodal voltage results. All variables are expressed in V.}
+  \label{tab:p2}
+\end{table}
 
-\subsection{Operating Point Analysis}
-As requested, an operating point analysis was conducted. The capacitor was replaced by the independent voltage source $V_{x}$ (\ref{sim2draw}). The values of currents and nodal voltages  were then put in a table, as well as the $R_{eq}$, hence:
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/norton_current_p2_tab}
+  \end{tabular}
+  \caption{Theoretical Ix. Expressed in A.}
+  \label{tab:p2}
+\end{table}
 
-\begin{equation}
-R_{eq}=\frac{v(6)-v(8)}{vxbranch}
-\label{eq:4}
-\end{equation}
-
-
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/Req_tau_p2_tab}
+  \end{tabular}
+  \caption{Theoretical Req and tau results. Expressed in Ohm and s.}
+  \label{tab:p2}
+\end{table}
 
 \subsection{Node analysis for t $\ge$ 0 (Natural solution)}
 
 
-It was proposed to study and determine the natural response of the circuit over time, in node 6. The natural response of the circuit is what the circuit does including the initial conditions (initial voltage of the capacitor) but with the imput supressed. 
+It was proposed to study and determine the natural response of the circuit over time, in node 6. The natural response is what the circuit does including the initial conditions (initial voltage of the capacitor) but with the imput supressed. 
 
-In order to calculate the natural solution, we have to eliminate the voltage source, which means vs(t)=0V. Hence, we have an equivalent cicuit described by a voltage source and the capacitor. The current flowing through the capacitor is in fact consumed by it. Therefore, the voltage V8=0V and the amplitude Vx=V6-V8=V6.The natural solution will have the format $V{6n}(t)=A*e^{(-t/tau)}$ with tau=Req*C and A=V6 obtained in 2). As expected, the result is a negative exponencial graph, shown bellow.
+In order to calculate the natural solution, we have to eliminate the voltage source, which means vs(t)=0V. Hence, we have an equivalent cicuit described by a voltage source and the capacitor. The current flowing through the capacitor is in fact consumed by it. Therefore, the voltage V8=0V and the amplitude $Vx=V6-V8=V6$.The natural solution will have the format $V{6n}(t)=A*e^{(-t/tau)}$ with $tau=Req*C$ and $A=V6$ obtained in \ref{subsection:2.2}. As expected, the result is a negative exponencial graph, shown bellow.
 
 \begin{figure}[ht] \centering
 \includegraphics[width=0.5\linewidth]{natural.eps}
@@ -96,7 +146,7 @@ $\begin{bmatrix}
 0 & 0 & 0 & KdG6 & -1 & 0 & -Kd*G6 & 1
 \end{bmatrix}$
 $\begin{bmatrix}
-V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\ 
+V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\ V8
 \end{bmatrix}$
 = 
 $\begin{bmatrix}
@@ -151,30 +201,34 @@ V_{complex}(i)=V_i exp(-j*phase(i))
 The total response of a circuit can be teased apart into a forced response plus a natural response. These responses can be combined using the principle of superposition. This principle pressupose the addition of the natural response and the forced response, both calculated in question 3 and 4.
 
 The final solution for $V(6)_{final}$  is then given by:
-\par For t$<$0
-\begin{equation}
-V6_{final}=V_{6}-V_{8}
-\end{equation}
-\par For t$\ge$0
+
 
 \begin{equation}
-V(6)_{final}=V(6)_{n} + A*sin(w*t+Ph)
+V6_{final}
+\begin{cases}
+V_{6}-V_{8} & $t$ < $0$ \\
+V(6)_{n} + A*sin(w*t+Ph) & $t $\geq$ 0$
+\end{cases}
+\label {eq:n2}
 \end{equation}
+
+
 
 The final solution for $V(S)_{final}$  is then given by:
-\par For t$<$0
-\begin{equation}
-VS_{final}=Vs
-\end{equation}
-\par For t$ge$0
 
 \begin{equation}
-VS_{final}=1*sin(w*t)
+VS_{final}
+\begin{cases}
+Vs & $t$ < $0$ \\
+e.^(-j*(w*t_pos-pi/2))& $t $\geq$ 0$
+\end{cases}
+\label {eq:n2}
 \end{equation}
+
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.5\linewidth]{part4.eps}
-\caption{Circuit analysed.}
+\includegraphics[width=0.6\linewidth]{part4.eps}
+\caption{Final response.}
 \label{fig:part4}
 \end{figure}
 
@@ -200,9 +254,9 @@ The magnitude of $V_s$ does not suffer any alteration with the variation of the 
 On the contrary, as the frequency is increasing, the magnitudes of $V_6$ and $V_c$ decrease. The value of $V_c$ changes as it is expected in a RC circuit. This is due to the impedance of the capacitor (Z=-j/wC).
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.9\linewidth]{part6_amp.eps}
+\includegraphics[width=0.6\linewidth]{part6_amp.eps}
 \caption{Circuit analysed.}
-\label{RC Circuit.}
+\label{Magnitude response.}
 \end{figure}
 
 \subsubsection{Frequency Response- Phase}
@@ -211,8 +265,8 @@ On the contrary, as the frequency is increasing, the magnitudes of $V_6$ and $V_
 The angles of the values saved were transformed from radians to degrees. The phase in $V_s$ is 0, therefore we do not have to do any further calculations. The phase of each voltage corresponds to the exact angles. In the plot shown below, the frequencies were also  put in the logarithmic scale. As the frequency increases the phase tend to negative values, which varies as it is expected.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.4\linewidth]{part6_ang.eps}
-\caption{Circuit analysed.}
+\includegraphics[width=0.6\linewidth]{part6_ang.eps}
+\caption{Phase response.}
 \label{RC Circuit.}
 \end{figure}
 
