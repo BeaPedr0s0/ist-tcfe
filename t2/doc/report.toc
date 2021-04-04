@@ -1,28 +1,27 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
-\contentsline {section}{\numberline {2}Introduction}{3}{section.2}%
-\contentsline {section}{\numberline {3}Question 1- Nodal Analysis}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Theoretical Analysis}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Operating Point Analysis}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Comparison}{4}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Question 2- Nodal Analysis, and Req}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Theoretical Analysis}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Operating Point Analysis}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Comparison}{7}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Question 3-Natural Response}{9}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Theoretical Analysis}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Simulation Analysis}{9}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Question 4- Theoretical Forced Response}{10}{section.6}%
-\contentsline {section}{\numberline {7}Question 5 (Theorectial) and 4 (Simulation)-Natural and Forced Response}{11}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Theoretical Analysis}{11}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Simulation Analysis}{11}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Comparison}{11}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Question 6 (Theoretial) and 5 (Simulation)-Frequency Response}{12}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Theoretical Analysis}{12}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Frequency Response- Magnitude}{12}{subsubsection.8.1.1}%
-\contentsline {subsubsection}{\numberline {8.1.2}Frequency Response- Phase}{12}{subsubsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.2}Simulation Analysis}{12}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Comparison}{12}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}Frequency Response- Magnitude}{12}{subsubsection.8.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.2}Frequency Response- Phase}{12}{subsubsection.8.3.2}%
-\contentsline {section}{\numberline {9}Conclusion}{13}{section.9}%
+\contentsline {section}{\numberline {2}NODAL ANALYSIS}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Theoretical Analysis}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Operating Point Analysis}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Comparison}{4}{subsection.2.3}%
+\contentsline {section}{\numberline {3}CALCULUS OF REQ}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Theoretical Analysis}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Operating Point Analysis}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Comparison}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}NATURAL RESPONSE}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Theoretical Analysis}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Simulation Analysis}{8}{subsection.4.2}%
+\contentsline {section}{\numberline {5}FORCED RESPONSE}{9}{section.5}%
+\contentsline {section}{\numberline {6}TOTAL RESPONSE}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Theoretical Analysis}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Simulation Analysis}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Comparison}{12}{subsection.6.3}%
+\contentsline {section}{\numberline {7}FREQUENCY RESPONSE, MAGNITUDE, PHASE}{13}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Theoretical Analysis}{13}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Frequency Response- Magnitude}{13}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Frequency Response- Phase}{13}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Simulation Analysis}{13}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Frequency Response- Magnitude}{13}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Frequency Response- Phase}{13}{subsubsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.3}Comparison}{14}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Conclusion}{15}{section.8}%

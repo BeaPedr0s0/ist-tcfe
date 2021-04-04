@@ -1,4 +1,4 @@
-\section{Question 4- Theoretical Forced Response}
+\section{FORCED RESPONSE}
 The forced response of a circuit is calculated with the sources turned on, but with the initial conditions (internal stored energy) set to zero.What is forced response? The forced response is where the output (the voltage on the capacitor) is going to end up in the long run after all stored energy eventually dissipates. The forced response does this by ignoring the presence of energy storage elements (in this case, it ignores the capacitor and its initial voltage). However, the forced response can't tell us what happens at t=0, or during the transition to the final state, because it ignores the stored energy. 
 \par Like so, a phasor was used, with $V_{s}=1$. The capacitor was replaced by its impiedence $Z$. Then, the nodal method was run again, with this new variable.
 \begin{equation}
@@ -16,7 +16,7 @@ $\begin{bmatrix}
 -G1 & G1+G2+G3 & -G2 & 0 & -G3 & 0 & 0 & 0 \\
 0 & -G2-Kb & G2 & 0 & Kb & 0 & 0 & 0 \\
 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
-0 & G3 & 0 & G4 &-G3-G5-G4 & G5+1/Zc & G7 & -G7-1/Zc\\
+0 & G3 & 0 & G4 &-G3-G5-G4 & G5+1/Zc & G7 & -G7-1/Z_{c}\\
 0 & Kb & 0 & 0 & -G5-Kb & G5+1/Z_{c} & 0 & -1/Z_{c} \\
 0 & 0 & 0 & 0 & 0 & 0 & G6+G7& -G7 \\
 0 & 0 & 0 & KdG6 & -1 & 0 & -Kd*G6 & 1
@@ -28,7 +28,6 @@ V1 \\ V2 \\ V3 \\ V4 \\ V5 \\ V6 \\ V7 \\
 $\begin{bmatrix}
 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 
 \end{bmatrix}$
-
 \par Then, the complex amplitudes with the knowlegde that the amplitude of the forced response is the absolute value of the complex $V_{6}$, and the phase is the argument, the forced solution is then given by:
 
 \begin{equation}
@@ -48,6 +47,6 @@ V6_f=A*sin(w*t+Ph)
   \caption{Amplitudes of Nodal Voltages} 
 \end{table}
 
-
+\newpage
 
 

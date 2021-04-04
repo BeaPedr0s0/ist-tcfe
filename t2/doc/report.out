@@ -1,27 +1,26 @@
 \BOOKMARK [1][-]{section.1}{1 Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{2 Introduction}{}% 2
-\BOOKMARK [1][-]{section.3}{3 Question 1- Nodal Analysis}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{3.1 Theoretical Analysis}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{3.2 Operating Point Analysis}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.3}{3.3 Comparison}{section.3}% 6
-\BOOKMARK [1][-]{section.4}{4 Question 2- Nodal Analysis, and Req}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{4.1 Theoretical Analysis}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{4.2 Operating Point Analysis}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{4.3 Comparison}{section.4}% 10
-\BOOKMARK [1][-]{section.5}{5 Question 3-Natural Response}{}% 11
-\BOOKMARK [2][-]{subsection.5.1}{5.1 Theoretical Analysis}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.2}{5.2 Simulation Analysis}{section.5}% 13
-\BOOKMARK [1][-]{section.6}{6 Question 4- Theoretical Forced Response}{}% 14
-\BOOKMARK [1][-]{section.7}{7 Question 5 \(Theorectial\) and 4 \(Simulation\)-Natural and Forced Response}{}% 15
-\BOOKMARK [2][-]{subsection.7.1}{7.1 Theoretical Analysis}{section.7}% 16
-\BOOKMARK [2][-]{subsection.7.2}{7.2 Simulation Analysis}{section.7}% 17
-\BOOKMARK [2][-]{subsection.7.3}{7.3 Comparison}{section.7}% 18
-\BOOKMARK [1][-]{section.8}{8 Question 6 \(Theoretial\) and 5 \(Simulation\)-Frequency Response}{}% 19
-\BOOKMARK [2][-]{subsection.8.1}{8.1 Theoretical Analysis}{section.8}% 20
-\BOOKMARK [3][-]{subsubsection.8.1.1}{8.1.1 Frequency Response- Magnitude}{subsection.8.1}% 21
-\BOOKMARK [3][-]{subsubsection.8.1.2}{8.1.2 Frequency Response- Phase}{subsection.8.1}% 22
-\BOOKMARK [2][-]{subsection.8.2}{8.2 Simulation Analysis}{section.8}% 23
-\BOOKMARK [2][-]{subsection.8.3}{8.3 Comparison}{section.8}% 24
-\BOOKMARK [3][-]{subsubsection.8.3.1}{8.3.1 Frequency Response- Magnitude}{subsection.8.3}% 25
-\BOOKMARK [3][-]{subsubsection.8.3.2}{8.3.2 Frequency Response- Phase}{subsection.8.3}% 26
-\BOOKMARK [1][-]{section.9}{9 Conclusion}{}% 27
+\BOOKMARK [1][-]{section.2}{2 NODAL ANALYSIS}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{2.1 Theoretical Analysis}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{2.2 Operating Point Analysis}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{2.3 Comparison}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{3 CALCULUS OF REQ}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{3.1 Theoretical Analysis}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{3.2 Operating Point Analysis}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{3.3 Comparison}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{4 NATURAL RESPONSE}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{4.1 Theoretical Analysis}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{4.2 Simulation Analysis}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{5 FORCED RESPONSE}{}% 13
+\BOOKMARK [1][-]{section.6}{6 TOTAL RESPONSE}{}% 14
+\BOOKMARK [2][-]{subsection.6.1}{6.1 Theoretical Analysis}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.2}{6.2 Simulation Analysis}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.3}{6.3 Comparison}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{7 FREQUENCY RESPONSE, MAGNITUDE, PHASE}{}% 18
+\BOOKMARK [2][-]{subsection.7.1}{7.1 Theoretical Analysis}{section.7}% 19
+\BOOKMARK [3][-]{subsubsection.7.1.1}{7.1.1 Frequency Response- Magnitude}{subsection.7.1}% 20
+\BOOKMARK [3][-]{subsubsection.7.1.2}{7.1.2 Frequency Response- Phase}{subsection.7.1}% 21
+\BOOKMARK [2][-]{subsection.7.2}{7.2 Simulation Analysis}{section.7}% 22
+\BOOKMARK [3][-]{subsubsection.7.2.1}{7.2.1 Frequency Response- Magnitude}{subsection.7.2}% 23
+\BOOKMARK [3][-]{subsubsection.7.2.2}{7.2.2 Frequency Response- Phase}{subsection.7.2}% 24
+\BOOKMARK [2][-]{subsection.7.3}{7.3 Comparison}{section.7}% 25
+\BOOKMARK [1][-]{section.8}{8 Conclusion}{}% 26
