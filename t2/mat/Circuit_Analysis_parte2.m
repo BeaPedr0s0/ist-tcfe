@@ -80,7 +80,7 @@ B=[Vs; 0 ; 0; 0 ; 0 ; 0 ; 0; 0];
 % A*B=C <=>
 V=inv(A)*B;
 
-Vx=V(6)-V(8)
+Vx=V(6)-V(8);
 
 % Creating a table in the mat folder with the voltages results of the Node Method
 printf ("nos_part1_TAB\n");
@@ -168,11 +168,12 @@ fprintf(file2, "R7 7 8 %e \n\n",R7);
 fprintf(file2,"*DEPENDENT CURRENT SOURCE. CONNECTED TO NODES X & X. DEPENDS OF THE VOLTAGE BETWEEN THE NODES 1 AND 4. VALUE AMPLIFIED BY CONSTANT Z. VALUE IN AMPERES.\n");
 fprintf(file2, "Gb 6 3 (2,5) %e \n\n",Kb);
 fprintf(file2,"*DEPENDENT VOLTAGE SOURCE. CONNECTED TO NODES X & X . DEPENDS OF THE CURRENT THATS FLOWS IN THE VAUX SOURCE. IS AMPLIFIED BY CONSTANTE Y. VALUE IN VOLTS.\n");
-fprintf(file2, "Hc 5 8 Vaux %e \n\n",Kd);
+fprintf(file2, "Hd 5 8 Vaux %e \n\n",Kd);
 fprintf(file2,"*INDEPENDENT VOLTAGE SOURCE TO USE IN THE DEPENDENT VOLTAGE SOURCE. CONNECTED TO NODES X & X. VALUE = 0 VOLTS\n");
 fprintf(file2, "Vaux 9 7 0 \n\n");
 fprintf(file2,"*CAPACITOR. CONNECTED TO NODES X & X. VALUE = 0 VOLTS\n");
-fprintf(file2, "C1 6 8 %e \n\n",Vx);
+fprintf(file2, "Vx 6 8 %e \n\n",Vx);
+fprintf(file2, ".END\n\n");
 fclose(file2);
 
 

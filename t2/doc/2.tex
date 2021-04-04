@@ -42,7 +42,7 @@ $\begin{bmatrix}
 As requested, an operating point analysis was conducted. The capacitor was replaced by the independent voltage source $V_{x}$ (\ref{sim2draw}). The values of currents and nodal voltages  were then put in a table, as well as the $R_{eq}$, hence:
 
 \begin{equation}
-R_{eq}=\frac{v(6)-v(8)}{vx#branch}}
+R_{eq}=\frac{v(6)-v(8)}{vxbranch}
 \label{eq:4}
 \end{equation}
 
@@ -71,11 +71,11 @@ In order to validate the results obtained in NGSPICE, relative errors between th
     {\bf Name} & {\bf Value [A or V]} \\ \hline
     \input{../mat/voltages_p2_tab}
   \end{tabular}
-  \caption{Calculus of R_{eq}- Octave}}
+  \caption{Calculus of $R_{eq}$- Octave}}
  
 \end{table}
 
-\par After the careful evaluation of the results, several observations need to be made. Firstly, in ngspice, there are some node voltage results different from 0V, with  values  in the order of magnitude of 10^-15, 10^-16 V. After questioning the professor, these will be considered 0V.
+\par After the careful evaluation of the results, several observations need to be made. Firstly, in ngspice, there are some node voltage results different from 0V, with  values  in the order of magnitude of $10^-15$, $10^-16$ V. After questioning the professor, these will be considered 0V.
 
 \par On the other hand, octave results have equally those discrepancies. That said, the procedure was the same and those values were considered 0. We believe the main reason for this situation is that, when the data.txt file is read from the datagen.py in octave, a rounding happens, making it impossible for the nodal voltages to be 0. 
 

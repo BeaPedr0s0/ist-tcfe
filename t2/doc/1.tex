@@ -11,7 +11,7 @@ First of all, to contextualize the values obtained using the tools in ngspice, i
  The circuit with these changes is shown in the drawing below.
 
 \begin{figure}[ht] \centering
-\includegraphics[width=1.0\linewidth]{simdraw.pdf}
+\includegraphics[width=1.0\linewidth]{sim1draw.pdf}
 \caption{Circuit analysed in ngspice.}
 \label{simdraw}
 \end{figure}
@@ -44,27 +44,9 @@ A variable preceded by @ is of type {\em current} and expressed in Ampere; other
 
 In order to validate the results obtained in NGSPICE, relative errors between the theoretical values, obtained in octave and the ones obtained in ngspice, were calculated. These were put in the table below.
 
-\begin{table}[ht] \centering
-\begin{tabular}{|
->{\columncolor[HTML]{FFCC67}}l |c|}
-\hline
-\multicolumn{2}{|l|}{\cellcolor[HTML]{EABD8B}Relative Errors (\%)} \\ \hline
-{\color[HTML]{333333} V1}               & 4.444e-05               \\ \hline
-{\color[HTML]{333333} V2}               & 4.288e-05               \\ \hline
-{\color[HTML]{333333} V3}               & 7.892e-05               \\ \hline
-{\color[HTML]{333333} V4}               & 5.154e-05               \\ \hline
-{\color[HTML]{333333} V5}               & 0                       \\ \hline
-{\color[HTML]{333333} V6}               & 0                       \\ \hline
-{\color[HTML]{333333} V7}               & 2.487e-05               \\ \hline
-{\color[HTML]{333333} IA}               & 9.253e-05               \\ \hline
-{\color[HTML]{333333} IB}               & 1.769e-05               \\ \hline
-{\color[HTML]{333333} IC}               & 0                       \\ \hline
-\end{tabular}
-\caption{Relative Errors between Octave and NgSpice results}
-\end{table}
 
 
 
 
-After the anaylysis of these errors, we conclude that the accuracy is extremely high supported by the fact that the relative maximum error is 9.253e-05\%. Nevertheless, we assume that these errors are due to dissipated power in the resistors. Even so, the simulation results can be validated.
+
 

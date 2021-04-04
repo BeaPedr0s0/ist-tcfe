@@ -1,38 +1,31 @@
-
-* NGSPICE simulation script lab2 QUESTION 2
-* Group 28
+*
+*NGSPICE simulation script lab1
+*Group 1
 *
 .options savecurrents
 
 .include ../mat/second.cir
 
 
-
-*START OF THE SIMULATION
-
-
-.model 2 group 28
+.model group 1
 
 .control
 
 op
 
-*COMMANDS TO PRINT THE RESULTS ON THE NGSPICE LOG FILE
+echo "**************************"
+echo "Operating point"
+echo "**************************"
 
-echo "************************************************************"
-echo RESULTS NGSPICE SIMULATION GROUP 28, LABORATORY 1 QUESTION 2
-echo "************************************************************"
-
-echo  "op2_TAB"
+echo "op2_TAB"
 print all
-print (v(6)-v(8))/vx#branch
-echo  "op2_END"
+echo "op2_END"
 quit
+
 .endc
 
 .end
 
-*END OF THE SIMULATION
 
 
 
