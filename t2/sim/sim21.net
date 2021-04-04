@@ -1,0 +1,33 @@
+
+* NGSPICE simulation script lab2 QUESTION 1
+* Group 28
+*
+.options savecurrents
+
+.include ../mat/first.cir
+
+*START OF THE SIMULATION
+
+
+.model group 28
+
+.control
+
+op
+
+*COMMANDS TO PRINT THE RESULTS ON THE NGSPICE LOG FILE
+
+echo "************************************************************"
+echo RESULTS NGSPICE SIMULATION GROUP 28, LABORATORY 1 QUESTION 1
+echo "************************************************************"
+
+echo  "op_TAB"
+print all
+echo  "op_END"
+quit
+.endc
+
+.end
+
+
+*END OF THE SIMULATION
