@@ -82,8 +82,22 @@ V=inv(A)*B;
 
 Vx=V(6)-V(8);
 
+%Currents Computation
+Ia=(V(2)-V(1))/R1;
+Ib=Kb*(V(2)-V(5));
+Ic=(V(7)-V(8))/R7;
+Id=Ib-((V(5)-V(6))/R5);
+
+
 % Creating a table in the mat folder with the voltages results of the Node Method
 printf ("nos_part1_TAB\n");
+printf ("I1 = %e \n", -Ia);
+printf ("I2 = %e \n", Ib);
+printf ("I3 = %e \n", Ib-Ia);
+printf ("I4 = %e \n", -Ia+Ic);
+printf ("I5 = %e \n", Ib-Id);
+printf ("I6 = %e \n", -Ic);
+printf ("I7 = %e \n", Ic);
 printf ("V1 = %e \n", V(1));
 printf ("V2 = %e \n", V(2));
 printf ("V3 = %e \n", V(3));
