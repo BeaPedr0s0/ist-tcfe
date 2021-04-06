@@ -91,6 +91,8 @@ Id=Ib-((V(5)-V(6))/R5);
 
 % Creating a table in the mat folder with the voltages results of the Node Method
 printf ("nos_part1_TAB\n");
+printf ("c1 = %e \n", 0);
+printf ("Ib = %e \n", Ib);
 printf ("I1 = %e \n", -Ia);
 printf ("I2 = %e \n", Ib);
 printf ("I3 = %e \n", Ib-Ia);
