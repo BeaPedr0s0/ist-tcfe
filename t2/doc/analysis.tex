@@ -103,7 +103,7 @@ $\begin{bmatrix}
 
 It was proposed to study and determine the natural response of the circuit over time, in node 6. The natural response is what the circuit does including the initial conditions (initial voltage of the capacitor) but with the imput supressed. 
 
-In order to calculate the natural solution, we have to eliminate the voltage source, which means vs(t)=0V. Hence, we have an equivalent cicuit described by a voltage source and the capacitor. The current flowing through the capacitor is in fact consumed by it. Therefore, the voltage V8=0V and the amplitude $Vx=V6-V8=V6$.The natural solution will have the format $V{6n}(t)=A*e^{(-t/tau)}$ with $tau=Req*C$ and $A=V6$ obtained in \ref{subsection:2.2}. As expected, the result is a negative exponencial graph, shown bellow.
+In order to calculate the natural solution, we have to eliminate the voltage source, which means vs(t)=0V. Hence, we have an equivalent cicuit described by a voltage source and the capacitor. The voltage V8=0V and the amplitude $Vx=V6-V8=V6$. Over the time, the voltage $V{6n}$ is decreasing which means the capacitor is discharging. The natural solution will have the format $V{6n}(t)=A*e^{(-t/tau)}$ with $tau=Req*C$ and $A=V6$ obtained in \ref{subsection:2.2}. As expected, the result is a negative exponencial graph, shown bellow.
 
 \begin{figure}[ht] \centering
 \includegraphics[width=0.5\linewidth]{natural.eps}
@@ -212,7 +212,7 @@ The final solution for $V(S)_{final}$  is then given by:
 VS_{final}
 \begin{cases}
 Vs & $t$ < $0$ \\
-e.^(-j*(w*t_pos-pi/2))& $t $\geq$ 0$
+e.^{(-j*(w*t_pos-pi/2))}& $t $\geq$ 0$
 \end{cases}
 \label {eq:n2}
 \end{equation}
