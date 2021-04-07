@@ -2,8 +2,8 @@ format long e
 
 printf ("\n\n-----------Parte 1-----------\n\n");
 
-file=fopen("~/ist-tcfe/t2/data.txt",'r');
-t=importdata("~/ist-tcfe/t2/data.txt",'\t',14);
+file=fopen("../data.txt",'r');
+t=importdata("../data.txt",'\t',14);
 R1=sscanf(char (t(4,1)), "Values: R1 = %e")*1000;
 R2=sscanf(char (t(5,1)), "R2 = %e")*1000;
 R3=sscanf(char (t(6,1)), "R3 = %e")*1000;

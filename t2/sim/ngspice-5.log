@@ -1,0 +1,190 @@
+
+Circuit: * ngspice simulation script lab2 question 5 
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+********************************************
+"FREQUENCY ANALYSIS"-QUESTION 5
+********************************************
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 701
+
+The file "sim5_db.ps" may be printed on a postscript printer.
+sim5_db_FIG
+
+The file "sim5_ph.ps" may be printed on a postscript printer.
+sim5_ph_FIG
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 1
+
+No. of Data Rows : 1
+	Node                                  Voltage
+	----                                  -------
+	----	-------
+	V(8)                             0.000000e+00
+	V(7)                             0.000000e+00
+	V(9)                             0.000000e+00
+	V(6)                             0.000000e+00
+	V(5)                             0.000000e+00
+	V(3)                             0.000000e+00
+	V(2)                             0.000000e+00
+	V(1)                             0.000000e+00
+
+	Source	Current
+	------	-------
+
+	@c1[i]                           0.000000e+00
+	@gb[i]                           0.000000e+00
+	@r7[i]                           0.000000e+00
+	@r6[i]                           0.000000e+00
+	@r5[i]                           0.000000e+00
+	@r4[i]                           0.000000e+00
+	@r3[i]                           0.000000e+00
+	@r2[i]                           0.000000e+00
+	@r1[i]                           0.000000e+00
+	vs#branch                        0.000000e+00
+	vaux#branch                      0.000000e+00
+	hd#branch                        0.000000e+00
+
+ Capacitor models (Fixed capacitor)
+      model                     C
+
+        cap                     0
+         cj                     0
+       cjsw                     0
+       defw                 1e-05
+       defl                     0
+     narrow                     0
+      short                     0
+        del                     0
+        tc1                     0
+        tc2                     0
+         di                     0
+      thick                     0
+     bv_max                 1e+99
+
+ Resistor models (Simple linear resistor)
+      model                     R
+
+        rsh                     0
+     narrow                     0
+      short                     0
+        tc1                     0
+        tc2                     0
+        tce                     0
+       defw                 1e-05
+          l                 1e-05
+         kf                     0
+         af                     0
+          r                     0
+     bv_max                 1e+99
+         lf                     1
+         wf                     1
+         ef                     1
+
+ Capacitor: Fixed capacitor
+     device                    c1
+      model                     C
+capacitance           1.04128e-06
+      dtemp                     0
+     bv_max                 1e+99
+          i                     0
+          p                     0
+
+ CCVS: Linear current controlled current source
+     device                    hd
+          i                     0
+          v                     0
+          p                     0
+
+ Resistor: Simple linear resistor
+     device                    r7                    r6                    r5
+      model                     R                     R                     R
+ resistance               1027.54               2047.99               3115.59
+         ac               1027.54               2047.99               3115.59
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i                     0                     0                     0
+          p                     0                     0                     0
+
+ Resistor: Simple linear resistor
+     device                    r4                    r3                    r2
+      model                     R                     R                     R
+ resistance               4119.47               3131.09               2099.45
+         ac               4119.47               3131.09               2099.45
+      dtemp                     0                     0                     0
+     bv_max                 1e+99                 1e+99                 1e+99
+      noisy                     1                     1                     1
+          i                     0                     0                     0
+          p                     0                     0                     0
+
+ Resistor: Simple linear resistor
+     device                    r1
+      model                     R
+ resistance               1041.11
+         ac               1041.11
+      dtemp                     0
+     bv_max                 1e+99
+      noisy                     1
+          i                     0
+          p                     0
+
+ VCCS: Voltage controlled current source
+     device                    gb
+          m                     0
+          i                     0
+          v                     0
+          p                     0
+
+ Vsource: Independent voltage source
+     device                  vaux                    vs
+         dc                     0                     0
+      acmag                     0                     1
+      pulse         -                     0
+                                          1
+                                       1000
+        sin         -                     0
+                                          1
+                                       1000
+        exp         -                     0
+                                          1
+                                       1000
+        pwl         -                     0
+                                          1
+                                       1000
+       sffm         -                     0
+                                          1
+                                       1000
+         am         -                     0
+                                          1
+                                       1000
+    trnoise         -                     0
+                                          1
+                                       1000
+   trrandom         -                     0
+                                          1
+                                       1000
+          i                     0                     0
+          p                    -0                    -0
+
+
+Total analysis time (seconds) = 0.018
+
+Total elapsed time (seconds) = 0.029 
+
+Total DRAM available = 3935.898 MB.
+DRAM currently available = 1745.797 MB.
+Total ngspice program size =   22.637 MB.
+Resident set size =   10.852 MB.
+Shared ngspice pages =    8.195 MB.
+Text (code) pages =    5.070 MB.
+Stack = 0 bytes.
+Library pages =    2.895 MB.
+
