@@ -8,11 +8,11 @@
 
 
 .model group 1
-
+.op
+.end
 .control
 
 op
-
 echo "**************************"
 echo "Operating point"
 echo "**************************"
@@ -25,11 +25,7 @@ echo "op2_END"
 
 
 
-quit
-
 .endc
-
-.end
 
 
 

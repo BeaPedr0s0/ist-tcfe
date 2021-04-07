@@ -10,7 +10,8 @@
 
 
 .model group 28
-
+.op
+.end
 .control
 
 op
@@ -24,10 +25,10 @@ echo "************************************************************"
 echo  "op_TAB"
 print all
 echo  "op_END"
-quit
+
 .endc
 
-.end
+
 
 
 *END OF THE SIMULATION

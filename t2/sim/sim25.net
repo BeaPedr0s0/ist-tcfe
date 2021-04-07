@@ -10,7 +10,8 @@
 
 
 .model group 28
-
+.op
+.end
 .control
 *makes plots in color
 set hcopypscolor=0
@@ -35,8 +36,7 @@ hardcopy sim5_ph.ps ph(v(1))*180/pi ph(v(6))*180/pi ph(v(6)-v(8))*180/pi
 echo sim5_ph_FIG
 
 
-quit
+
 .endc
 
-.end
 

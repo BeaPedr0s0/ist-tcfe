@@ -9,8 +9,10 @@
 
 
 .model group 28
-
+.op
+.end
 .control
+
 *makes plots in color
 set hcopypscolor=0
 set color0=white
@@ -30,9 +32,9 @@ tran 1e-5 20e-3
 hardcopy sim3.ps v(6)
 echo sim3_FIG
 
-quit
+
 .endc
 
-.end
+
 
 
