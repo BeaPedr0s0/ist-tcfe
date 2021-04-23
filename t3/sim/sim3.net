@@ -1,94 +1,98 @@
-* NGSPICE simulation script lab2 QUESTION 4
+* NGSPICE simulation LAB 3 GROUP 28
 * Group 28
 *
 .options savecurrents
-
-
+.param n =1/11.4
 *INDEPENDENT VOLTAGE SOURCE, Vs
-Vs 1 2 0.0 ac 1.0 sin(0 230 50) 
-
-vaux 3 4 0
+Vs 1 0  dc sin(0 230 50) 
 
 
 *RESISTORS
-R1 5 6 10
-R2 6 7 1000
+R1 4 GND 5k
+R2 4 5 50k
 
 
 *DEPENDENT CURRENT SOURCE. 
-Ftransf 1 2 Vaux 18.08
+Ftransf 1 0 Etransf n
 
 
 *DEPENDENT VOLTAGE SOURCE. 
-Etransf 3 0 (2,1) 18.08 
+Etransf 2 3 1 0 n 
 
 
 
 *DIODES
 * FULL WAVE RECTIFIER
 
-D1 4 5 Default
-D2 0 5 Default
-D3 6 0 Default
-D4 6 4 Default
+D1 2 4 D28
+D2 GND 2 D28
+D3 3 4 D28
+D4 GND 3 D28
 
 
 *DIODES IN SERIES
 
-D5 7 8 Default
-D6 8 9 Default
-D7 9 10 Default
-D8 10 11 Default
-D9 11 12 Default 
-D10 12 13 Default
-D11 13 14 Default
-D12 14 15 Default
-D13 15 16 Default
-D14 16 17 Default
-D15 17 18 Default
-D16 18 19 Default
-D17 19 20 Default
-D18 20 21 Default
-D19 21 22 Default
-D20 22 23 Default
-D21 23 24 Default
-D22 24 25 Default
-D23 25 26 Default
-D24 26 6 Default
+D5 5 6 D28
+D6 6 7 D28
+D7 7 8 D28
+D8 8 9 D28
+D9 9 10 D28 
+D10 10 11 D28
+D11 11 12 D28
+D12 12 13 D28
+D13 13 14 D28
+D14 14 15 D28
+D15 15 16 D28
+D16 16 17 D28
+D17 17 18 D28
+D18 18 19 D28
+D19 19 20 D28
+D20 20 21 D28
+D21 21 22 D28
+D22 22 23 D28
+D23 23 24 D28
+D24 24 GND D28
 
 
 
 *CAPACITOR. 
-C1 5 6 5u
+C1 4 GND 20u
 
 *START OF THE SIMULATION
 
 
-.model group 28
+.model D28 D
 .op
 .end
 .control
 
 *makes plots in color
 set hcopypscolor=0
-set color0=white
-set color1=black
-set color2=orange
-set color3=green
-set color4=violet
-set color5=rgb:3/8/0
-set color6=rgb:4/0/0
+set color0= rgb:f/f/f ;
+set color1=rgb:1/1/1;
+set color2=red;
+set color3=green;
+set color4=blue;
+set color5= orange;
+set color5= yellow;
+
 op
 
 
 
 echo "********************************************"
-echo  "TRANSIENT ANALYSIS"- FORCED SOLUTION
+echo  "TRANSIENT ANALYSIS"
 echo "********************************************"
-tran 1e-5 20e-3
+tran 0.0002 205m 5m
 
-hardcopy sim4.ps v(7)-v(6)
-echo sim4_FIG
+echo "op_TAB"
+print maximum(v(5))-minimum(v(5))
+print mean(v(5))
+echo "op_END"
+
+hardcopy sim3.ps {v(2)-v(3)} {v(4)} {v(5)} {v(5)-12}
+echo sim3_FIG
+
 
 
 
