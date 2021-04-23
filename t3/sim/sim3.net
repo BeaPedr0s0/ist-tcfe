@@ -1,0 +1,96 @@
+* NGSPICE simulation script lab2 QUESTION 4
+* Group 28
+*
+.options savecurrents
+
+
+*INDEPENDENT VOLTAGE SOURCE, Vs
+Vs 1 2 0.0 ac 1.0 sin(0 230 50) 
+
+vaux 3 4 0
+
+
+*RESISTORS
+R1 5 6 10
+R2 6 7 1000
+
+
+*DEPENDENT CURRENT SOURCE. 
+Ftransf 1 2 Vaux 18.08
+
+
+*DEPENDENT VOLTAGE SOURCE. 
+Etransf 3 0 (2,1) 18.08 
+
+
+
+*DIODES
+* FULL WAVE RECTIFIER
+
+D1 4 5 Default
+D2 0 5 Default
+D3 6 0 Default
+D4 6 4 Default
+
+
+*DIODES IN SERIES
+
+D5 7 8 Default
+D6 8 9 Default
+D7 9 10 Default
+D8 10 11 Default
+D9 11 12 Default 
+D10 12 13 Default
+D11 13 14 Default
+D12 14 15 Default
+D13 15 16 Default
+D14 16 17 Default
+D15 17 18 Default
+D16 18 19 Default
+D17 19 20 Default
+D18 20 21 Default
+D19 21 22 Default
+D20 22 23 Default
+D21 23 24 Default
+D22 24 25 Default
+D23 25 26 Default
+D24 26 6 Default
+
+
+
+*CAPACITOR. 
+C1 5 6 5u
+
+*START OF THE SIMULATION
+
+
+.model group 28
+.op
+.end
+.control
+
+*makes plots in color
+set hcopypscolor=0
+set color0=white
+set color1=black
+set color2=orange
+set color3=green
+set color4=violet
+set color5=rgb:3/8/0
+set color6=rgb:4/0/0
+op
+
+
+
+echo "********************************************"
+echo  "TRANSIENT ANALYSIS"- FORCED SOLUTION
+echo "********************************************"
+tran 1e-5 20e-3
+
+hardcopy sim4.ps v(7)-v(6)
+echo sim4_FIG
+
+
+
+.endc
+
