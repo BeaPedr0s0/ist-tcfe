@@ -6,14 +6,14 @@ format long;
 
 %chosen variable values
 R1 = 8e3
-R2 = 63.5e3
-C = 2.5e-3
+R2 = 62.84e3
+C = 0.0001
 
 printf ("values_chosen_TAB\n");
 printf ("R1 = %e \n", R1);
 printf ("R2 = %e \n", R2);
 printf ("C = %e \n", C);
-printf ("values_chosen_END\n");
+printf ("values_chosen_END\n\n");
 
 %variables
 f=50;
@@ -56,9 +56,9 @@ ripple_env = max(vOenv) - min(vOenv)
 average_env = ripple_env/2 + min(vOenv)
 
 printf ("envelope_TAB\n");
-printf ("Ripple_Envelope = %e \n", ripple_env);
-printf ("Average_Envelope= %e \n", average_env);
-printf ("envelope_END\n");
+printf ("RippleEnvelope = %e \n", ripple_env);
+printf ("AverageEnvelope = %e \n", average_env);
+printf ("envelope_END\n\n");
 
 %voltage regulator -----------------------------------------
 num_diodes = 20
@@ -97,31 +97,31 @@ ylabel ("v_O [Volts]")
 legend('Location','northeast');
 print (hfc, "all_vout.eps", "-depsc");
 	
-%Deviations (vO - 12) 
+%Deviations (vOenv - 12) 
 hfc = figure(2);
 title("Deviations from desired DC voltage")
-plot (t*1000,vOreg-12, ";vo-12 (t);");
+plot (t*1000,vOenv-12, ";vo-12 (t);");
 xlabel ("t[ms]")
 ylabel ("v_O [Volts]")
 legend('Location','northeast');
 print (hfc, "deviation.eps", "-depsc");
 	
-	
+
 average_reg = mean(vOreg)
 ripple_reg = max(vOreg)-min(vOreg)
 
 printf ("regulator_TAB\n");
-printf ("Ripple_Regulator = %e \n", ripple_reg);
-printf ("Average_Regulator= %e \n", average_reg);
-printf ("regulator_END\n");
+printf ("RippleRegulator = %e \n", ripple_reg);
+printf ("AverageRegulator= %e \n", average_reg);
+printf ("regulator_END\n\n");
 
 cost = R1/1000 + R2/1000 + C*1e6 + 0.4 + num_diodes*0.1 
 MERIT= 1/ (cost* (ripple_reg + abs(average_reg-12) + 10e-6))
 
 printf ("merit_TAB\n");
 printf ("Cost = %e \n", cost);
-printf ("Merit= %e \n", merit);
-printf ("merit_END\n");
+printf ("Merit= %e \n", MERIT);
+printf ("merit_END\n\n");
 
   
   

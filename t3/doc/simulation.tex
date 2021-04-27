@@ -8,13 +8,41 @@ Then, the values of n (parameter of dependency of the dependent sources), the ca
 
 In the table below, the Imput voltage of the secundary circuit (v(2)), output Voltage of the Envelope Detector (v(4)), the output voltage of the  Voltage Regulator (v(5)), and v(5)-12 were computed. This is a visual representation of the effect of the envelope detector, which decreases the ripple voltage and of the voltage regulator , that keeps the output voltage constant. As seen V(5)- 12 is a line (not completely straight due to the oscilations caused by the diodes, that are not linear components ) close to 0, that was the main goal of the assignment.
 
+
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value [V]} \\ \hline
+    \input{../sim/op1_tab}
+  \end{tabular}
+  \caption{Results for the voltage regulator. All variables are expressed in Volt. (Ngspice)}} 
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{../sim/op2_tab}
+  \end{tabular}
+  \caption{Results for the voltage regulator. All variables are expressed in Volt.(Octave)}}
+\end{table}
+
+
+
+
 \begin{figure}[h] \centering
-\includegraphics[width=0.3\linewidth]{sim3.pdf}
-\caption{Imput voltage of the secundary circuit (v(2)), output Voltage of the Envelope Detector (v(4)), Voltage Regulator (v(5)), and v(5)-12}
+\includegraphics[width=0.7\linewidth]{sim3.pdf}
+\caption{Input voltage of the secundary circuit (v(2)), output Voltage of the Envelope Detector (v(4)), Voltage Regulator (v(5)), and v(5)-12}
 \label{fig:sim5}
 \end{figure}
 
 
-
+\begin{figure}[h] \centering
+\includegraphics[width=0.7\linewidth]{sim31.pdf}
+\caption{Output AC components + DC deviation}
+\label{fig:sim5}
+\end{figure}
 
 
