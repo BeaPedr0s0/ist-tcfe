@@ -100,7 +100,7 @@ print (hfc, "all_vout.eps", "-depsc");
 %Deviations (vOenv - 12) 
 hfc = figure(2);
 title("Deviations from desired DC voltage")
-plot (t*1000,vOenv-12, ";vo-12 (t);");
+plot (t*1000,vOenv-12, ";v4-12 (t);", t*1000,vOreg-12, ";v5-12 (t);");
 xlabel ("t[ms]")
 ylabel ("v_O [Volts]")
 legend('Location','northeast');
