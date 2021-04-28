@@ -20,7 +20,7 @@ f=50;
 Vp = 230;
 
 %primary/secondary circuit
-n = 11;
+n = 16;
 Vs = Vp/n;
 	
 %envelope detector 
