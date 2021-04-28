@@ -5,9 +5,9 @@ pkg load symbolic;
 format long;
 
 %chosen variable values
-R1 = 8e3
-R2 = 62.84e3
-C = 0.0001
+R1 = 1.3e3
+R2 = 5.3e3
+C = 0.0005
 
 printf ("values_chosen_TAB\n");
 printf ("R1 = %e \n", R1);
