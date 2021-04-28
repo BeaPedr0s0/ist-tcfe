@@ -2,14 +2,15 @@
 * Group 28
 *
 .options savecurrents
-.param n =1/11
+.param n =1/17 
+.param cost = 9.19 
+
 *INDEPENDENT VOLTAGE SOURCE, Vs
 Vs 1 0 0 sin(0 230 50 0 0 90) 
 
 
 *RESISTORS
-R1 4 GND 8k
-R2 4 5 62.84k
+R2 4 5 1790
 
 
 *DEPENDENT CURRENT SOURCE. 
@@ -56,7 +57,9 @@ D24 24 GND D28
 
 
 *CAPACITOR. 
-C1 4 GND 0.0001
+C1 4 GND 0.000005
+
+
 
 *START OF THE SIMULATION
 
@@ -83,7 +86,7 @@ op
 echo "********************************************"
 echo  "TRANSIENT ANALYSIS"
 echo "********************************************"
-tran 0.0002 205m 5m
+tran 0.0002 400m 200m
 
 echo "op1_TAB"
 print maximum(v(4))-minimum(v(4))
@@ -95,12 +98,16 @@ print maximum(v(5))-minimum(v(5))
 print mean(v(5))
 echo "op2_END"
 
+echo "op3_TAB"
+print 1/ (9.19* ((maximum(v(5))-minimum(v(5))) + abs(mean(v(5)-12)) + 10e-6))
+echo "op3_END"
+
+
 hardcopy sim3.ps {v(2)-v(3)} {v(4)} {v(5)} {v(5)-12}
 echo sim3_FIG
 
 
-
-hardcopy sim31.ps {v(4)-12} 
+hardcopy sim31.ps {v(4)-12} {v(5)-12}
 echo sim31_FIG
 
 
