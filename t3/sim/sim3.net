@@ -2,15 +2,16 @@
 * Group 28
 *
 .options savecurrents
-.param n =1/17 
-.param cost = 9.19 
+.param n =1/16 
+
 
 *INDEPENDENT VOLTAGE SOURCE, Vs
 Vs 1 0 0 sin(0 230 50 0 0 90) 
 
 
 *RESISTORS
-R2 4 5 1790
+R1 4 GND 1.3k
+R2 4 5 5.3k
 
 
 *DEPENDENT CURRENT SOURCE. 
@@ -57,7 +58,7 @@ D24 24 GND D28
 
 
 *CAPACITOR. 
-C1 4 GND 0.000005
+C1 4 GND 0.0005
 
 
 
@@ -99,7 +100,7 @@ print mean(v(5))
 echo "op2_END"
 
 echo "op3_TAB"
-print 1/ (9.19* ((maximum(v(5))-minimum(v(5))) + abs(mean(v(5)-12)) + 10e-6))
+print 1/ (509* ((maximum(v(5))-minimum(v(5))) + abs(mean(v(5)-12)) + 10e-6))
 echo "op3_END"
 
 
