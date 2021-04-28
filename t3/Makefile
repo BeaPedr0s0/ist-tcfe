@@ -14,7 +14,7 @@ clean:
 	make -C mat clean
 	make -C sim clean
 	make -C doc clean
+	@rm -f *.txt 
 
 .PHONY: all clean
-
 

@@ -7,6 +7,6 @@ octave.log: AC_DC_lab3.m
 	octave $< > $@
 
 clean:
-	@rm -f octave.log octave-workspace *.tex *~
+	@rm -f octave.log octave-workspace *.tex *.eps *~ 
 
 .PHONY: clean
