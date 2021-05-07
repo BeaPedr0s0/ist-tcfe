@@ -9,8 +9,8 @@ Initially, we used a transformer to transform Vs=230V in a smaller value (Vr=230
 
 
 
-2)Then, a capacitor is used to reduce the magnitude of the voltage making it closer to a DC (yellow plot). In order to compute this, we discovered when are the diodes ON and OFF (tOFF = 1/w * atan(1/(w*R1*C))). Periodically, if t$<$tOFF we got vO = vr and if t$>$tOFF we got 
-\par vO = Vs*cos(w*tOFF)*exp(-(t-tOFF)/(R1*C)) due to the capacitor.The ripple voltage is basically max(vO)-min(vO). To make the next point clear vO will now be renamed vOenv.
+2)Then, a capacitor is used to reduce the magnitude of the voltage making it closer to a DC (orange plot). In order to compute this, we discovered when are the diodes ON and OFF . Periodically, if t$<$tOFF we got vO = vr and if t$>$tOFF we got 
+\par vO = Vs*cos(w*tOFF)*exp(-(t-tOFF)/(Req*C)) due to the capacitor.The ripple voltage is basically max(vO)-min(vO). To make the next point clear vO will now be renamed vOenv.
 
 \begin{table}[ht]
   \centering
@@ -24,11 +24,11 @@ Initially, we used a transformer to transform Vs=230V in a smaller value (Vr=230
 \end{table}
 
 
-3) Last, a series of 20 diodes reduce the noise making the current an almost perfect DC (orange plot). Calculating the vO average from 2) we are able to see if the voltage difference between v5 and v0 is limited by the maximum voltage that the diodes can handle (this happens if the average is greater than that maximum). Right now, we have the voltage due to the DC ($dc_vO$) so we still need the voltage due to the AC. It is possible to compute that calculating rD which is the resistance of each diode and 
+3) Last, a series of 22 diodes reduce the noise making the current an almost perfect DC (green plot). Calculating the vO average from 2) we are able to see if the voltage difference between v5 and v0 is limited by the maximum voltage that the diodes can handle (this happens if the average is greater than that maximum). Right now, we have the voltage due to the DC ($dc_vO$) so we still need the voltage due to the AC. It is possible to compute that calculating rD which is the resistance of each diode and 
 
-\par $ac_vO = num_diodes*rD/(num_diodes*rd+R2) * (vOenv-average_env)$. 
+\par $acvO = num_diodes*rD/(numdiodes*rd+R2) * (vOenv-averageenv)$. 
 
-\par In the end, $vO$= $ac_vO$ + $dc_vO$. The average must be aproximadetly 12V.
+\par In the end, $vO$= $ac_vO$ + $dcvO$. The average must be aproximadetly 12V.
 
 \begin{table}[ht]
   \centering
