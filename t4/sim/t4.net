@@ -22,6 +22,7 @@ print all
 
 op
 
+
 *Verificacao correto funcionamento transistors.
 echo "**************"
 echo "NPN_TAB"
@@ -52,17 +53,23 @@ endif
 echo "PNP_END"
 
 
+echo  "op_TAB"
+print all
+echo  "op_END"
+
+
 
 
 * frequency analysis
 ac dec 10 10 100MEG
 plot vdb(coll)
 plot vp(coll)
-hardcopy vo1f.ps vdb(coll)
+plot vdb(in)
+hardcopy vo1f.ps vdb(coll) 
 
 plot vdb(out)
 plot vp(out)
-hardcopy vo2f.ps vdb(coll)
+hardcopy vo2f.ps vdb(out)
 
 
 
