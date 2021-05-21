@@ -23,22 +23,23 @@ RS=100;
 
 %Values for ngspice
 %FILE1
+
 file1=fopen("values1.cir",'w');
 fprintf(file1, ".OP\n\n");
 fprintf(file1, "Vcc vcc 0 12\n");
 fprintf(file1, "Vin in 0 0 \n");
 fprintf(file1, "Rin in in2 100 \n\n");
 fprintf(file1,"*input  coupling capacitor\n");
-fprintf(file1, "Ci in2 base 1.9345e-06 \n\n");
+fprintf(file1, "Ci in2 base 1.9u \n\n");
 fprintf(file1,"*bias circuit\n");
-fprintf(file1, "R1 vcc base 76200 \n");
-fprintf(file1, "R2 base 0 19401 \n\n");
+fprintf(file1, "R1 vcc base 76000 \n");
+fprintf(file1, "R2 base 0 19000 \n\n");
 fprintf(file1,"*gain stage\n");
 fprintf(file1, "Q1 coll base emit BC547A\n");
 fprintf(file1, "Rc vcc coll 20000\n");
-fprintf(file1, "Re emit 0 3892.8\n\n");
+fprintf(file1, "Re emit 0 3900\n\n");
 fprintf(file1,"*bypass capacitor\n");
-fprintf(file1, "Cb emit 0 1.0345e-06\n\n");
+fprintf(file1, "Cb emit 0 1.0u\n\n");
 fprintf(file1,"*output stage\n");
 fprintf(file1, "Q2 0 coll emit2 BC557A\n");
 fprintf(file1, "Rout emit2 vcc 100\n\n");
@@ -49,30 +50,31 @@ fprintf(file1, "VL out 0 ac 1.0 sin(0 10m 1k)\n\n");
 fprintf(file1, ".END\n\n");
 fclose(file1);
 
+
 %%%FILE2
 file2=fopen("description.cir",'w');
-fprintf(file1, ".OP\n\n");
+fprintf(file2, ".OP\n\n");
 fprintf(file2, "Vcc vcc 0 12 \n");
 fprintf(file2, "Vin in 0 0 ac 1.0 sin(0 10m 1k) \n");
-fprintf(file2, "Rin in in2 {R_init} \n\n");
+fprintf(file2, "R_in in in2 100\n\n");
 fprintf(file2,"*input  coupling capacitor\n");
-fprintf(file2, "Ci in2 base {C_i} \n\n");
+fprintf(file2, "C_i in2 base 1.9u \n\n");
 fprintf(file2,"*bias circuit\n");
-fprintf(file2, "R1 vcc base {R_1} \n");
-fprintf(file2, "R2 base 0 {R_2} \n\n");
+fprintf(file2, "R_1 vcc base 76000 \n");
+fprintf(file2, "R_2 base 0 19000 \n\n");
 fprintf(file2,"*gain stage\n");
 fprintf(file2, "Q1 coll base emit BC547A\n");
-fprintf(file2, "Rc vcc coll {R_c}\n");
-fprintf(file2, "Re emit 0 {R_e}\n\n");
+fprintf(file2, "R_c vcc coll 20000\n");
+fprintf(file2, "R_e emit 0 3900\n\n");
 fprintf(file2,"*bypass capacitor\n");
-fprintf(file2, "Cb emit 0 {C_b}\n\n");
+fprintf(file2, "C_b emit 0 1u\n\n");
 fprintf(file2,"*output stage\n");
 fprintf(file2, "Q2 0 coll emit2 BC557A\n");
-fprintf(file2, "Rout emit2 vcc {R_out}\n\n");
+fprintf(file2, "R_out emit2 vcc 100\n\n");
 fprintf(file2,"*output coupling capacitor\n");
-fprintf(file2, "Co emit2 out {C_out}\n\n");
+fprintf(file2, "C_out emit2 out 1u\n\n");
 fprintf(file2,"*load\n");
-fprintf(file2, "RL out 0 {R_L}\n\n");
+fprintf(file2, "R_L out 0 8\n\n");
 fprintf(file2, ".END\n\n");
 fclose(file2);
 
