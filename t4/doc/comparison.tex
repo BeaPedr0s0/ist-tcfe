@@ -1,0 +1,72 @@
+\section{Comparison}\label{section:comparison}
+
+In this section, a comparison between the ripple voltages, the average output voltages were made. In addition, the cost of the components and the figure of merit were also calculated.
+
+First, the average and the ripple voltages of the envelope detector (v(4)) were analysed.
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value [V]} \\ \hline
+    \input{../sim/op1_tab}
+  \end{tabular}
+  \caption{Results for the output of the envelope detector. All variables are expressed in Volt. (Ngspice)}} 
+\parbox{.45\linewidth}{
+ \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{../mat/envelope_tab}
+  \end{tabular}
+  \caption{Results for the output of the envelope detector. All variables are expressed in Volt.(Octave)}}
+ 
+\end{table}
+
+\par After analysis of the tables above, some discrepancies are observed. Nevertheless, these are due to the osilations that naturally occur in ngspice. These happen because the diodes used are non-linear components, which means that a linear relaton between the current and the voltage does not exist. The exponential function that comes into the equations leads to these type of oscilation. 
+
+\par However, it is felt by the group that the accuracy and precision of the results is high enough for the model of the envelope detector to be validated. 
+
+
+
+\par Then, the average and the ripple voltages of the voltage regulator (v(5)) were compared.
+
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value [V]} \\ \hline
+    \input{../sim/op2_tab}
+  \end{tabular}
+  \caption{Results for the voltage regulator. All variables are expressed in Volt. (Ngspice)}} 
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{../mat/regulator_tab}
+  \end{tabular}
+  \caption{Results for the voltage regulator. All variables are expressed in Volt.(Octave)}}
+ 
+\end{table}
+
+\par The oscilations between theorectial and simulation results that happened in the output voltage of the envelope detector are extended to the voltage regulator for the same reasons. Hence, a small discrepancy between the results ofboth models was expected to happen. Nevertheless and once more, we believe that once the output voltage is aproximmately 12V, as wanted, the model worked successfuly.
+
+
+
+As for the cost and figure of merit, these are shown in table \ref{tab:merit}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    \input{../sim/op3_tab}
+  \end{tabular}
+  \caption{Cost and Figure of Merit}
+  \label{tab:merit}
+\end{table}
+
+\par Despite the attempts to improve the figure of merit, the group was not successfull in doing so. This was the maximum value obtained in order to match both the simulation and theorectial results. Despite the belief that in some way our results could be optimazed, we can conclude that the model used achieved the main goal of the assignment.
