@@ -27,9 +27,9 @@ op
 echo "**************"
 echo "NPN_TAB"
 let Vce=v(coll)-v(emit)
-
+echo "Vce = $&Vce"
 let Vbe=v(base)-v(emit)
-
+echo "Vbe = $&Vbe"
 if (Vce>Vbe)
 echo "Vce greater than Vbe = Correct F.A.R"
 else
@@ -42,9 +42,9 @@ echo "NPN_END"
 echo "**************"
 echo "PNP_TAB"
 let Vec=v(emit2)
-
+echo "Vec = $&Vec"
 let Veb=v(emit2)-v(coll)
-
+echo "Veb = $&Veb"
 if (Vec>Veb)
 echo "Vec greater than Veb = Correct F.A.R"
 else
@@ -53,16 +53,19 @@ endif
 echo "PNP_END"
 
 
-echo  "op_TAB"
+echo  "op1_TAB"
 *print ib valores das correntes quse iguais
 *print ic 
 *print ie
 print coll
 print base
 print emit
-print vce
-echo  "op_END"
+echo  "op1_END"
 
+
+echo  "op_TAB"
+print all
+echo  "op_END"
 
 
 
@@ -78,9 +81,6 @@ hardcopy vo1f.ps vdb(coll)
 hardcopy vo2f.ps vdb(out)
 
 
-
-
-
 meas AC max MAX vdb(out) from=10 to=100MEG
 let range = max - 3
 
@@ -92,7 +92,6 @@ let gain = max
 let Cut_Out_Freq= lower
 let quality = bandwidth*gain/Cut_Out_Freq
 
-let 
 
 
 
@@ -126,7 +125,7 @@ echo "results_END"
 * total_t = 2*0.1
 
 
-let cost = 100.08
+let cost = 1225.6
 let merit = quality/cost
 
 echo "**************"
