@@ -58,16 +58,16 @@ fprintf(file2, "Vcc vcc 0 12 \n");
 fprintf(file2, "Vin in 0 0 ac 1.0 sin(0 10m 1k) \n");
 fprintf(file2, "R_in in in2 100\n\n");
 fprintf(file2,"*input  coupling capacitor\n");
-fprintf(file2, "C_i in2 base 1.7695u\n\n");
+fprintf(file2, "C_i in2 base 1.9u \n\n");
 fprintf(file2,"*bias circuit\n");
-fprintf(file2, "R_1 vcc base 6.6346k \n");
-fprintf(file2, "R_2 base 0 1.3184k \n\n");
+fprintf(file2, "R_1 vcc base 76000 \n");
+fprintf(file2, "R_2 base 0 19000 \n\n");
 fprintf(file2,"*gain stage\n");
 fprintf(file2, "Q1 coll base emit BC547A\n");
-fprintf(file2, "R_c vcc coll 9.9714k\n");
-fprintf(file2, "R_e emit 0 1.444k\n\n");
+fprintf(file2, "R_c vcc coll 20000\n");
+fprintf(file2, "R_e emit 0 3900\n\n");
 fprintf(file2,"*bypass capacitor\n");
-fprintf(file2, "C_b emit 0 78.666u\n\n");
+fprintf(file2, "C_b emit 0 1u\n\n");
 fprintf(file2,"*output stage\n");
 fprintf(file2, "Q2 0 coll emit2 BC557A\n");
 fprintf(file2, "R_out emit2 vcc 100\n\n");
@@ -86,6 +86,13 @@ IE1=(1+BFN)*IB1;
 VE1=RE1*IE1;
 VO1=VCC-RC1*IC1;
 VCE=VO1-VE1;
+
+printf ("ponto1_TAB\n");
+printf ("IB1 = %e \n", IB1);
+printf ("IC1 = %e \n", IC1);
+printf ("IE1 = %e \n", IE1);
+printf ("VO1 = %e \n", VCOLL);
+printf ("ponto1_END\n\n");
 
 gm1 = IC1/VT;
 rpi1 = BFN/gm1;
@@ -114,10 +121,6 @@ endfor
 ZI1 = 1/(1/RB + 1/rpi1);
 ZO1 = 1/(1/ro1 + 1/RC1);
 
-%???????????????????????????????????
-%ZI1 = ((ro1+RC1+RE1)*(RB+rpi1+RE1)+gm1*RE1*ro1*rpi1 - RE1^2)/(ro1+RC1+RE1);
-%ZX = ro1*((RB+rpi1)*RE1/(RB+rpi1+RE1))/(1/(1/ro1+1/(rpi1+RB)+1/RE1+gm1*rpi1/(rpi1+RB)));
-%ZO1 = 1/(1/ZX+1/RC1);
 
 
 %//////////////////OUTPUT STAGE/////////////////////%
