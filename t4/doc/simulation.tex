@@ -1,13 +1,21 @@
 \section{Simulation Analysis}\label{section:sim}
- In this section ngspice was used in order to simulate the ac/dc converter. Some modifications were made from the start in ordem to simplify the circuit.
  
- First of all, the transformer was replaced by an ideal model, and once the Vs value was used, using a depedent current source (instead of the primary) and a dependent voltage source, (insetad of the secundary). This allowed the group to not having to model a "real" transformer. 
- 
-Then, the values of n (parameter of dependency of the dependent sources), the capacitance of the capacitor and the values of the resistance of the resistors were being adjusted through trial and error in order to achieve a maximum accurary of the output voltage, since the initial goal was to get this value close as possible to 12 V.
+In this section, the several steps taken using ngspice in order to conduct the simulation of the audio amplifier, as requested, will be described.
+In fact, the group proceded as follows:
 
+\begin{enumerate}
+\item Design of the circuit, having as a starting point the circuit given by the professor.
 
-In the table below, the Imput voltage of the secundary circuit (v(2)), output Voltage of the Envelope Detector (v(4)), the output voltage of the  Voltage Regulator (v(5)), and v(5)-12 were computed. This is a visual representation of the effect of the envelope detector, which decreases the ripple voltage and of the voltage regulator , that keeps the output voltage constant. As seen V(5)- 12 is a line (not completely straight due to the oscilations caused by the diodes, that are not linear components ) close to 0, that was the main goal of the assignment.
+\item Verification of the operation of the transistors in the F.A.R mode. The results are shown below.
 
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/NPN_tab}
+  \caption{Verification of the F.A.R mode in the NPN transistor}
+\end{table}
 
 
 \begin{table}[ht]
@@ -15,19 +23,124 @@ In the table below, the Imput voltage of the secundary circuit (v(2)), output Vo
   \centering
   \begin{tabular}{|l|r|}
     \hline    
-    {\bf Calculus} & {\bf Value [V]} \\ \hline
-    \input{../sim/op1_tab}
+   \input{../sim/PNP_tab}
+  \caption{Verification of the F.A.R mode in the NPN transistor}
+\end{table}
+
+
+
+\item OP Analysis
+     Then, the OP values of the currents and nodal voltages were computed. These are key to calculate the incremental parameters.
+     
+     \begin{table}[ht]
+
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [V,A]} \\ \hline
+    \input{../sim/op_tab}
   \end{tabular}
-  \caption{Results for the voltage regulator. All variables are expressed in Volt. (Ngspice)}} 
+  \caption{Simulation nodal voltage results. All variables are expressed in V or A.} 
+\end{table}
+     
+     
+  
+\item  In the frequency domain, measure of the output voltage gain, using the function .meas as well as the lower and upper cut off frequencies and the bandwidth.
+
+
+\begin{table}[ht]
 \parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
-    {\bf Name} & {\bf Value [A or V]} \\ \hline
-    \input{../sim/op2_tab}
-  \end{tabular}
-  \caption{Results for the voltage regulator. All variables are expressed in Volt.(Octave)}}
+   \input{../sim/results_tab}
+  \caption{Output impedance in KOhm}
+    \label{tab:results}
 \end{table}
+
+
+The quantities obtained are desribed in the table \ref{tab:results}. The first conclusion to be taken from the results are that the main goal of the assignment was achieved, since the voltage gain  in the passband is considerable. However, the bandwidth is not as substancial as desired. As so, we conclude the following:
+
+\begin{itemize}
+
+\item The coupling capacitors' main porpuse is to block the DC signals. If studying an incremental model of an audio amplifier, all values that are constant must be eliminated so the transistors are alwaywas fowardly conducting. One of the reasons for the bandwidth obtained to be small is that, these capacitors also cut some low frequencies. These means that the cut off- frequency is high in our circuit. Nevertheless, due to the weight of the cut off frequency in the calculus of the merti, we were able to obtained a good figure of merit.
+
+\item  As studied in the lectures, the resistor Re has the funciton of stabelizing the effect of the temperature in the DC voltage. Howerver, it has also a negative effect on the gain, once it lowers it. In order to solve the problem, a bypass capacitor Ce is placed in parallel with the resistor, so that the capacitor bypasses the resistor. In DC mode, the resistor plays its effect in the temperature. In AC, the resistor will not affect the gain. To sum up, the capacitor is a short-circuit for higher frequencies (AC) and a open-circuit for low frequencies (DC).
+
+\item IC is the most important current in the circuit because it determines gm, and so directly influences the gain. So, after making some calculations, Rc is of extremely importance.
+
+
+
+\end{itemize}
+First, it is fundamental to understand the effects that the coupling capacitors have on the volt
+
+
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.4\linewidth]{vo1f.pdf}
+\caption{Output voltage of the gain stage}
+\label{fig:sim4}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.4\linewidth]{vo2f.pdf}
+\caption{Output voltage of the output stage}
+\label{fig:sim4}
+\end{figure}
+
+
+
+
+
+
+\item Determination of the imput impedance, seen from the imput voltage source.
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/Zin_tab}
+  \caption{Output impedance in KOhm}
+    \label{tab:ZI}
+\end{table}
+
+\par The result obtained for the imput impedance, considering the value in Kohm, is high. Tis is benefitial for the gain, because the voltage in the node In 2 must be as similiar to Vin as possible. Using a voltage dividir, the only way to achieve this was to have a very high resistance value.
+
+\item Determination of the output impedance, using a different set up, seen from the load resistance. 
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/op_ZO_tab}
+  \caption{Output impedance in KOhm}
+  \label{tab:ZO}
+\end{table}
+
+
+Conserning the output impedance, an opposite deduction to the one made for the output impedance is mandoratory. Considering a voltage divider, the output impedance must be as low as possible, in order to the output voltage to be as high as possible. Having said that, an analysing tables \ref{tab:ZI} \ref{tab:ZO}, the difference needed between the two is confirmed.
+
+\item Compute of the cost and figure of merit
+
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/cost_tab}
+  \caption{Output impedance in KOhm}
+  \label{tab:ZO}
+\end{table}
+
+
+
+
+
+
+\end{enumerate}
 
 
 
@@ -38,7 +151,7 @@ In the table below, the Imput voltage of the secundary circuit (v(2)), output Vo
 \label{fig:sim5}
 \end{figure}
 
-In the figure below, as one may observe, the regulator ripple voltage has decreased in comparison with the envelope ripple voltage. Therefore, the goal was achieved.
+
 
 
 \begin{figure}[h] \centering

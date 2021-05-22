@@ -87,6 +87,13 @@ VE1=RE1*IE1;
 VO1=VCC-RC1*IC1;
 VCE=VO1-VE1;
 
+printf ("ponto1_TAB\n");
+printf ("IB1 = %e \n", IB1);
+printf ("IC1 = %e \n", IC1);
+printf ("IE1 = %e \n", IE1);
+printf ("VO1 = %e \n", VCOLL);
+printf ("ponto1_END\n\n");
+
 gm1 = IC1/VT;
 rpi1 = BFN/gm1;
 ro1 = VAFN/IC1;
@@ -114,10 +121,6 @@ endfor
 ZI1 = 1/(1/RB + 1/rpi1);
 ZO1 = 1/(1/ro1 + 1/RC1);
 
-%???????????????????????????????????
-%ZI1 = ((ro1+RC1+RE1)*(RB+rpi1+RE1)+gm1*RE1*ro1*rpi1 - RE1^2)/(ro1+RC1+RE1);
-%ZX = ro1*((RB+rpi1)*RE1/(RB+rpi1+RE1))/(1/(1/ro1+1/(rpi1+RB)+1/RE1+gm1*rpi1/(rpi1+RB)));
-%ZO1 = 1/(1/ZX+1/RC1);
 
 
 %//////////////////OUTPUT STAGE/////////////////////%
