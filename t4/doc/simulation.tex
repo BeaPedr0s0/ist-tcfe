@@ -1,7 +1,7 @@
 \section{Simulation Analysis}
 \label{section:sim}
  
-In this section, the several steps taken using ngspice in order to conduct the simulation of the audio amplifier, as requested, will be described. The main focus of the simulation was to determine and optimize de values of the gain, the cut off frequencies, both lower and upper and the bandiwidth. The quality and overall figure of merit will then be analysed.
+In this section, the several steps taken using ngspice in order to conduct the simulation of the audio amplifier, as requested, will be described. The main focus of the simulation was to determine and optimize the values of the gain, the cut off frequencies, both lower and upper and the bandwidth. The quality and overall figure of merit will then be analysed.
 The group proceded as follows:
 
 \begin{enumerate}
@@ -33,20 +33,9 @@ The group proceded as follows:
 
 
 \item OP Analysis
-     Then, the OP values of the currents and nodal voltages were computed. These are key to calculate the incremental parameters.
-     
- \begin{table}[ht]
+\par Then, the OP values of the currents and nodal voltages were computed. These are key to calculate the incremental parameters.
+The results are compared to the Ocatve results in section \ref{section:comparison}.
 
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Name} & {\bf Value [V,A]} \\ \hline
-    \input{../sim/op_tab}
-  \end{tabular}
-  \caption{Simulation nodal voltage results. All variables are expressed in V or A.} 
-\end{table}
-     
-     
   
 \item  In the frequency domain, measure of the output voltage gain, using the function .meas as well as the lower and upper cut off frequencies and the bandwidth.
 
@@ -71,10 +60,11 @@ The conclusions will be outlined.
 The coupling capacitors' main porpuse is to block the DC signals. If studying an incremental model of an audio amplifier, all values that are constant must be eliminated so the transistors are always fowardly conducting. As so, two coupling capacitors were used. Once the capacitors may also block some low frequencies, they have a direct influence in the bandwidth.
 
 
+
  \textbf{EFFECT OF THE BYPASS CAPACITOR}
  
   As studied in the lectures, the resistor Re has the funciton of stabelizing the effect of the temperature in the DC voltage. However, it has also a negative effect on the gain, once it lowers it. In order to solve the problem, a bypass capacitor Ce is placed in parallel with the resistor, so that the capacitor bypasses the resistor. In DC mode, the resistor plays its effect in the temperature. In AC, the resistor will not affect the gain. To sum up, the capacitor is a short-circuit for higher frequencies (AC) and a open-circuit for low frequencies (DC).
-
+\newpage
 
  \textbf{EFFECT OF RC}
  
@@ -82,26 +72,31 @@ IC is the most important current in the circuit because it determines gm, and so
 
 \textbf{GRAPHICAL REPRESENTATION}
 
-In the graphics \ref{sim4} and \ref{sim5}, a graphic representation of the effect pf the components above mentioned can be observed. In fact, in the plot \ref{sim5} is extremely enligtenment as one can intuitevely notice the high bandwidth, the stabilization of the gain, and the gain itself.
+In the graphics \ref{fig:sim4} and \ref{fig:sim5}, a graphic representation of the effect of the components above mentioned can be observed. In fact, in the plot \ref{fig:sim5} is extremely enlightening as one can intuitevely notice the high bandwidth, the stabilization of the gain, and the gain itself.
 
 
-\begin{figure}[h] \centering
-\includegraphics[width=0.4\linewidth]{vo1f.pdf}
-\caption{Input Voltage}
-\label{fig:sim4}
+
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.75\linewidth]{vo1f.pdf}
+  \caption{Input Voltage}
+  \label{fig:sim4}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.75\linewidth]{vo2f.pdf}
+  \caption{Output voltage}
+  \label{fig:sim5}
+\end{subfigure}
 \end{figure}
 
 
-\begin{figure}[h] \centering
-\includegraphics[width=0.4\linewidth]{vo2f.pdf}
-\caption{Output voltage}
-\label{fig:sim5}
-\end{figure}
 
 
-
-
-\item Determination of the imput impedance, seen from the imput voltage source.
+\item Determination of the input impedance, seen from the input voltage source.
 
 \begin{table}[h]
   \centering
@@ -113,7 +108,7 @@ In the graphics \ref{sim4} and \ref{sim5}, a graphic representation of the effec
     \label{tab:ZI}
 \end{table}
 
-\par The result obtained for the imput impedance, considering the value in Kohm, is high. This is benefitial for the gain, because the voltage in the node In 2 must be as similiar to Vin as possible. Using a voltage dividir, the only way to achieve this was to have a very high resistance value.
+\par The result obtained for the input impedance, considering the value in Ohm, is high. This is benefitial for the gain, because the voltage in the node In 2 must be as similiar to Vin as possible. Using a voltage divider, the only way to achieve this was to have a very high resistance value.
 
 \item Determination of the output impedance, using a different set up, seen from the load resistance. 
 
@@ -129,10 +124,10 @@ In the graphics \ref{sim4} and \ref{sim5}, a graphic representation of the effec
 \end{table}
 
 
-Conserning the output impedance, an opposite deduction to the one made for the output impedance is mandoratory. Considering a voltage divider, the output impedance must be as low as possible, in order to the output voltage to be as high as possible. Having said that, an analysing tables \ref{tab:ZI} \ref{tab:ZO}, the difference needed between the two is confirmed. The output impedance obtained is favorable to the 8 ohm load resistance.
+Conserning the output impedance, an opposite deduction to the one made for the output impedance is mandoratory. Considering a voltage divider, the output impedance must be as low as possible, in order to the output voltage to be as high as possible. Having said that, an analysing tables \ref{tab:ZI} \ref{tab:ZO}, the difference needed between the two is confirmed. The output impedance obtained is favorable to the 8 Ohm load resistance.
 
 \item Compute of the cost and figure of merit
-To finally understand the efficency of the amplifier, the cost and figure of merit were calculated
+\par To finally understand the efficency of the amplifier, the cost and figure of merit were calculated
 
 \begin{table}[ht]
   \centering

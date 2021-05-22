@@ -206,14 +206,14 @@ cost = 1e-3*(RE1 + RC1 + RB1 + RB2 + RE2 + Rout) + 1e6*(C1 + C2 + Cout) + 2*0.1;
 AV=abs(AV);
 Merit = (max(AV) * bandwidth)/(cost * lowerCutoff)
 
-printf ("cost= %e ", cost);
+printf ("cost= %e \n", cost);
 
 printf ("Z_TAB\n");
-printf (" Imput impedance (Gain stage)- ZI1 = %e Ohm \n", ZI1);
-printf ("Output impedance (Gain stage)-ZO1 = %e Ohm \n", ZO1);
-printf (" Imput impedance (Output stage)-ZI2 = %e Ohm \n", ZI2);
-printf ("Output impedance (Output stage)-- ZO2 = %e Ohm \n", ZO2);
-printf ("Output impedance-ZO = %e \n", ZO);
+printf ("ZI1 = %e Ohm \n", real(ZI1));
+printf ("ZO1 = %e Ohm \n", ZO1);
+printf ("ZI2 = %e Ohm \n", ZI2);
+printf ("ZO2 = %e Ohm \n", ZO2);
+printf ("ZO = %e \n", ZO);
 printf ("Z_END\n\n");
 
 printf ("r_theo_TAB\n");
@@ -221,6 +221,5 @@ printf ("Total Gain (AV)  = %e V\n", mean(AV));
 printf ("Bandwidth= %e Hz \n", bandwidth);
 printf ("Lower Cut Off Frequency= %e Hz \n", lowerCutoff);
 printf ("r_theo_END\n\n");
-
 
 

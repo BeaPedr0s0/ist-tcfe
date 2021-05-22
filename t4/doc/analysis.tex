@@ -1,19 +1,19 @@
 \section{Theoretical Analysis} \label{section:theo}
 
 
-\par In this section, a theoretical analysis of the circuit was conducted. In the introduction, we can see analysed circuit.
+\par In this section, a theoretical analysis of the circuit was conducted. In the introduction, we can see the analysed circuit.
 
-First of all we got to keep in mind that our circuit is divided in two different stages. The first one corresponds to the gain stage with a NPN transistor and the second is the output stage with a PNP transistor. Both the components and their functions will be described in Theoretical and Simulation Analysis as well as the goal of each stage.
+First of all, we got to keep in mind that our circuit is divided in two different stages. The first one corresponds to the gain stage with a NPN transistor and the second is the output stage with a PNP transistor. Both the components and their functions will be described in Theoretical and Simulation Analysis as well as the goal of each stage.
 
 \subsection{Gain Stage}
-This stage is basically responsible for the signal amplification which means it has to have a high gain. It also needs to have a high input voltage to avoid signal losses. In order to analyse this stage we need to study both Operating point and incremental analysis.
-First,we compute a simple analysis of the circuit by KVL and KCL. This way we obtain $Z_{i1}=R_B||r_{\pi 1}$ and $Z_{o1}=r_{o1}||R_c$. It is important to note that for low frequencys capacitors behave like open circuits and for high frequencys like short circuits.
+This stage is responsible for the signal amplification which means it has to have a high gain. It also needs to have a high input voltage to avoid signal losses. In order to analyse this stage we need to study both operating point and incremental analysis.
+First,we compute a simple analysis of the circuit by KVL and KCL. This way we obtain $Z_{i1}=R_B||r_{\pi 1}$ and $Z_{o1}=r_{o1}||R_c$. It is important to note that for low frequencies capacitors behave like open circuits and for high frequencys like short circuits.
 
-To analyse the incremental response we have to create a model of the transistor (and the rest of the gain stage) similar to Fig.2. Studying the circuit we get $v_{o1}=-g_m * (r_o||R_c) * v_{\pi}$ and $v_{\pi}= \frac{R_B||r_{\pi 1}}{R_B||r_{\pi 1}+R_s} * v_s $ which lead us to $A_{v1} = \frac{v_{o1}}{v_s} = -g_m * (r_o||R_c)*\frac{R_B||r_{\pi 1}}{R_B||r_{\pi 1}+R_s}$
+To analyse the incremental response we have to create a model of the transistor (and the rest of the gain stage) similar to Fig.2. Studying the circuit we get $v_{o1}=-g_m * (r_o||R_c) * v_{\pi}$ and $v_{\pi}= \frac{R_B||r_{\pi 1}}{R_B||r_{\pi 1}+R_s} * v_s $ which lead us to $A_{v1} = \frac{v_{o1}}{v_s} = -g_m * (r_o||R_c)*\frac{R_B||r_{\pi 1}}{R_B||r_{\pi 1}+R_s}$.
 
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.65\linewidth]{Incremental_Gain.pdf}
+\includegraphics[width=0.8\linewidth]{Incremental_Gain.pdf}
 \caption{Model for the gain stage incremental analysis}
 \label{sdf}
 \end{figure}
@@ -26,7 +26,7 @@ For the DC response of the output stage, we follow the same logic of the gain st
 
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.65\linewidth]{lab41.pdf}
+\includegraphics[width=0.5\linewidth]{lab41.pdf}
 \caption{Model for the output stage incremental analysis}
 \label{s}
 \end{figure}

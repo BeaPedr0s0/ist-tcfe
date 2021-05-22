@@ -24,8 +24,8 @@
 
 In the Ngspice table, the only parameters in comparison are $@q1[ib]$, $@q1[ic]$, $@q1[ie]$, $base$, $coll$ and $emit$.
 \par As one may observe, some discrepancies in the voltage values are noticeable. Nevertheless, the values of the currents flowing are are within reasonable intervals of similarity. Therefore, the gain computed in Octave should not be severely affected by this. It is important to highlight that the theoretical gain expression is dependent on the value of the current $I_{C}$ because of the incremental parameter $g_{m}$. 
-
- \begin{table}[ht]
+\newpage
+ \begin{table}[h]
 \parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
@@ -44,7 +44,7 @@ In the Ngspice table, the only parameters in comparison are $@q1[ib]$, $@q1[ic]$
   \caption{Gain, bandwidth and cut off frequency. (Octave)}}
 \end{table}
 
-\par Aditionally, the gain, bandwidth and cut off frequency results were also computed. As predicted, the voltage gain in the theoretical approach is greater than in the Ngspice computation. Moreover, since we do not have the theoretical high cut frequency, we can only compare the results for the low cut frequency, which are very similar as far as the order of magnitude is concerned.. For this reason, as the bandwidth is the subtraction between high and low cut frequencies, it should not be compared.
+\par Aditionally, the gain, bandwidth and cut off frequency results were also computed. As predicted, the voltage gain in the theoretical approach is greater than in the Ngspice computation. Moreover, since we do not have the theoretical high cut frequency, we can only compare the results for the low cut frequency, which are very similar as far as the order of magnitude is concerned. For this reason, as the bandwidth is the subtraction between high and low cut frequencies, it should not be compared.
 
 \clearpage
 
