@@ -17,7 +17,7 @@ To analyse the incremental response we have to create a model of the transistor 
 \label{sdf}
 \end{figure}
 
-For the DC response of the output stage, we follow the same logic of the gain stage and we easily get $Z_o$. On the other hand, to get the incremental response we have to create another model like Fig.3. Using nodal analysis we end up with $A{v2} = \frac{v_{o1}}{v_i} = \frac{g_{\pi} + g_m }{g_{\pi}+g_z+g_o+g_m}$ for the gain.
+For the DC response of the output stage, we follow the same logic of the gain stage and we easily get $Z_{i2}$ and $Z_{o2}$. On the other hand, to get the incremental response we have to create another model like Fig.3. Using nodal analysis we end up with $A{v2} = \frac{v_{o1}}{v_i} = \frac{g_{\pi} + g_m }{g_{\pi}+g_z+g_o+g_m}$ for the gain.
 
 
 
@@ -29,8 +29,8 @@ For the DC response of the output stage, we follow the same logic of the gain st
 
 
 
-Finally, we calculated $i_o$ to then compute $Z_o=\frac{v_{o}}{i_o}$ using the provided equations. The gain is given by $A_V = A_{V1}*{AV2}$
-All the important results obtained are shown in the table and in the figure bellow. 
+Finally, we calculated $i_o$ to then compute $Z_o=\frac{v_{o}}{i_o}$ using the provided equations. $Z_i=Z_{i1}$. The gain is given by $A_V = A_{V1}*{AV2}$
+All the important results obtained are shown in the tables and in the figure bellow. 
 
 
 \begin{figure}[h] \centering
@@ -45,16 +45,36 @@ All the important results obtained are shown in the table and in the figure bell
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value} \\ \hline
-    \input{../mat/ponto2_tab}
+    \input{../mat/ponto1_tab}
   \end{tabular}
-  \caption{Impedences and Gains of both stages an the full circuit.}
-  \label{tab:p2}
+  \caption{Operating point currents and Vcoll.}
+  \label{tab:1}
+\end{table}
+
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/Z_tab}
+  \end{tabular}
+  \caption{Impedences of both stages and of the full circuit.}
+  \label{tab:2}
 \end{table}
 
 
 
-
-
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/r_theo_tab}
+  \end{tabular}
+  \caption{Gain, bandwidth and cutoff frequency.}
+  \label{tab:3}
+\end{table}
 
 
 
