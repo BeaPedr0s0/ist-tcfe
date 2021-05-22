@@ -1,7 +1,7 @@
 \section{Comparison}
 \label{section:comparison}
 
-\par In this section, a comparison between Octave and Ngspice results will be made. Firstly, the operating point was computed using the theoretical DC model. In the tables below, the three current values ($I_{A}$, $I_{B}$, $I_{C}$) are presented as well as the voltage in the coll.
+\par In this section, a global comparison between Octave and Ngspice results will be made. Firstly, one should bear in mind that, in the previous sections, an Operating Point Analysis was performed to find the necessary values for the Incremental Analysis. Therefore, in the table below, the voltages in the collector, base and emitter of the transistor are presented as well as the currents in each terminal ($I_{B}$, $I_{C}$, $I_{E}$).
 
 \begin{table}[ht]
 \parbox{.45\linewidth}{
@@ -22,51 +22,9 @@
   \caption{Operating point using DC model. Variables are expressed in Ampere or Volt.(Octave)}}
 \end{table}
 
-As one may observe, some discrepancies are noticeable. These may be due to....
+In the Ngspice table, the only parameters in comparison are $@q1[ib]$, $@q1[ic]$, $@q1[ie]$, $base$, $coll$ and $emit$.
+\par As one may observe, some discrepancies in the voltage values are noticeable. Nevertheless, the values of the currents flowing are are within reasonable intervals of similarity. Therefore, the gain computed in Octave should not be severely affected by this. It is important to highlight that the theoretical gain expression is dependent on the value of the current $I_{C}$ because of the incremental parameter $g_{m}$. 
 
-
-SEI LAAAAAAA FALTA ISTOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
-Moreover, the importance of this calculations must be highlighted. In fact, the theoretical gain expression is dependent on the value of the current $I_{C}$. This relation can be understood by the expression below. Since this incremental parameter is also present in the gain expression, this may be one of the reasons why some discrepancies may be observed when comparing Octave and Ngspice gain resuts. 
-
-\begin {equation}
-	 MERIT = \frac{I_{C}}{V_{T}}  	
-	\label{gm_eq}
-\end{equation}
-
-\par For both stages, input and output impedances were also computed and the results are shown in the following table.
-
-\begin{table}[ht]
-\parbox{.45\linewidth}{
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Calculus} & {\bf Value [V]} \\ \hline
-    \input{../sim/Zin_TAB}
-  \end{tabular}
-  \caption{Results for the voltage regulator. All variables are expressed in Volt. (Ngspice)}} 
-\parbox{.45\linewidth}{
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Calculus} & {\bf Value [V]} \\ \hline
-    \input{../sim/op_ZO_TAB}
-  \end{tabular}
-  \caption{Results for the voltage regulator. All variables are expressed in Volt. (Ngspice)}} 
-\parbox{.45\linewidth}{
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Name} & {\bf Value [A or V]} \\ \hline
-    \input{../mat/Z_TAB}
-  \end{tabular}
-  \caption{Results for the voltage regulator. All variables are expressed in Volt.(Octave)}}
-\end{table}
- 
- EXPLICAR DIFERENCAS DAS IMPEDANCIASSSSSSSSSSSSSSSSSSSSSSSSSSSSS
- 
- Aditionally, the gain, bandwidth and cut off frequency results were also computed and compared.
- 
  \begin{table}[ht]
 \parbox{.45\linewidth}{
   \centering
@@ -85,10 +43,15 @@ Moreover, the importance of this calculations must be highlighted. In fact, the 
   \end{tabular}
   \caption{Gain, bandwidth and cut off frequency. (Octave)}}
 \end{table}
- 
- 
- EPLICAR DIFERENCAAAAAAAAAAAAAAAAAAAS
- 
+
+\par Aditionally, the gain, bandwidth and cut off frequency results were also computed. As predicted, the voltage gain in the theoretical approach is greater than in the Ngspice computation. Moreover, since we do not have the theoretical high cut frequency, we can only compare the results for the low cut frequency, which are very similar as far as the order of magnitude is concerned.. For this reason, as the bandwidth is the subtraction between high and low cut frequencies, it should not be compared.
+
+\clearpage
+
+
+
+
+
 
 
 

@@ -53,16 +53,6 @@ endif
 echo "PNP_END"
 
 
-echo  "op1_TAB"
-*print ib valores das correntes quse iguais
-*print ic 
-*print ie
-print coll
-print base
-print emit
-echo  "op1_END"
-
-
 echo  "op_TAB"
 print all
 echo  "op_END"
@@ -113,7 +103,7 @@ echo "Zin_END"
 echo "results_TAB"
 echo "V Gain=$&gain"
 echo "Bandwidth=$&bandwidth"
-echo "Cut Off Freq= $&Cut_Out_Freq"
+echo "Lower Cut Off Freq= $&Cut_Out_Freq"
 echo "results_END"
 
 

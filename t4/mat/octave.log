@@ -1,0 +1,49 @@
+valores_intro_TAB
+Cin = 5.000000e-04 
+CE = 5.000000e-04 
+Cout = 2.000000e-04 
+R1 = 2.000000e+04 
+R2 = 2.000000e+03 
+RC = 3.000000e+03 
+RE = 1.000000e+02 
+Rout = 1.000000e+02 
+Vin = 1.000000e-02 
+Vcc = 1.200000e+01 
+valores_intro_END
+
+ponto1_TAB
+IB1 = 1.975467e-05 
+IC1 = 3.530160e-03 
+IE1 = 3.549915e-03 
+VColl = 1.409519e+00 
+VBase = 1.090909e+00 
+VEmit = 3.549915e-01 
+ponto1_END
+
+BFP =  227.30
+VAFP =  37.200
+RE2 =  100
+VEBON =  0.70000
+VI2 =  1.4095
+IE2 =  0.098905
+IC2 =  0.098472
+VO2 =  2.1095
+gm2 =  3.9389
+go2 =  0.0026471
+gpi2 =  0.017329
+ge2 =  0.010000
+Merit =  6981.1
+cost= 1.225600e+03 Z_TAB
+ Imput impedance (Gain stage)- ZI1 = 7.461645e+02 Ohm 
+Output impedance (Gain stage)-ZO1 = 2.604294e+03 Ohm 
+ Imput impedance (Output stage)-ZI2 = 7.640438e+03 Ohm 
+Output impedance (Output stage)-- ZO2 = 2.519628e-01 Ohm 
+Output impedance-ZO = 1.016161e+01 
+Z_END
+
+r_theo_TAB
+Total Gain (AV)  = 3.035752e+02 V
+Bandwidth= 1.348349e+06 Hz 
+Lower Cut Off Frequency= 5.094138e+01 Hz 
+r_theo_END
+
