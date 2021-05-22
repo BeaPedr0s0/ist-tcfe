@@ -26,14 +26,14 @@ op
 *Verificacao correto funcionamento transistors.
 echo "**************"
 echo "NPN_TAB"
-let V_CE=v(coll)-v(emit)
-echo "V_CE=$&V_CE"
-let V_BE=v(base)-v(emit)
-echo "V_BE=$&V_BE"
-if (V_CE>V_BE)
-echo "V_CE>V_BE = Correct F.A.R"
+let Vce=v(coll)-v(emit)
+
+let Vbe=v(base)-v(emit)
+
+if (Vce>Vbe)
+echo "Vce > Vbe = Correct F.A.R"
 else
-echo "V_CE>V_BE = Wrong F.A.R"
+echo "Vce > Vbe = Wrong F.A.R"
 endif
 
 echo "NPN_END"
@@ -41,14 +41,14 @@ echo "NPN_END"
 
 echo "**************"
 echo "PNP_TAB"
-let V_EC=v(emit2)
-echo "V_CE=$&V_EC"
-let V_EB=v(emit2)-v(coll)
-echo "V_EB=$&V_EB"
-if (V_EC>V_EB)
-echo "V_EC>V_EB = Correct F.A.R"
+let Vec=v(emit2)
+
+let Veb=v(emit2)-v(coll)
+
+if (Vec>Veb)
+echo "Vec > Veb = Correct F.A.R"
 else
-echo "V_EC>V_EB = Wrong F.A.R"
+echo "Vec > Veb = Wrong F.A.R"
 endif
 echo "PNP_END"
 
@@ -62,13 +62,13 @@ echo  "op_END"
 
 * frequency analysis
 ac dec 10 10 100MEG
-plot vdb(coll)
-plot vp(coll)
-plot vdb(in)
+*plot vdb(coll)
+*plot vp(coll)
+*plot vdb(in)
 hardcopy vo1f.ps vdb(coll) 
 
-plot vdb(out)
-plot vp(out)
+*plot vdb(out)
+*plot vp(out)
 hardcopy vo2f.ps vdb(out)
 
 
@@ -106,9 +106,9 @@ echo "Zin_END"
 
 
 echo "results_TAB"
-echo "V_Gain=$&gain"
+echo "V Gain=$&gain"
 echo "Bandwidth=$&bandwidth"
-echo "CO_Freq= $&Cut_Out_Freq"
+echo "Cut Off Freq= $&Cut_Out_Freq"
 echo "results_END"
 
 

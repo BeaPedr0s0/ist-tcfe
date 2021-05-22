@@ -9,22 +9,24 @@ In fact, the group proceded as follows:
 \item Verification of the operation of the transistors in the F.A.R mode. The results are shown below.
 
 \begin{table}[ht]
-\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
    \input{../sim/NPN_tab}
+     \end{tabular}
   \caption{Verification of the F.A.R mode in the NPN transistor}
+ 
 \end{table}
 
 
 \begin{table}[ht]
-\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
    \input{../sim/PNP_tab}
+     \end{tabular}
   \caption{Verification of the F.A.R mode in the NPN transistor}
+    
 \end{table}
 
 
@@ -32,7 +34,7 @@ In fact, the group proceded as follows:
 \item OP Analysis
      Then, the OP values of the currents and nodal voltages were computed. These are key to calculate the incremental parameters.
      
-     \begin{table}[ht]
+ \begin{table}[ht]
 
   \centering
   \begin{tabular}{|l|r|}
@@ -49,12 +51,12 @@ In fact, the group proceded as follows:
 
 
 \begin{table}[ht]
-\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
    \input{../sim/results_tab}
-  \caption{Output impedance in KOhm}
+    \end{tabular}
+  \caption{Results for ngspice}
     \label{tab:results}
 \end{table}
 
@@ -70,38 +72,18 @@ The quantities obtained are desribed in the table \ref{tab:results}. The first c
 \item IC is the most important current in the circuit because it determines gm, and so directly influences the gain. So, after making some calculations, Rc is of extremely importance.
 
 
-
 \end{itemize}
-First, it is fundamental to understand the effects that the coupling capacitors have on the volt
-
-
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.4\linewidth]{vo1f.pdf}
-\caption{Output voltage of the gain stage}
-\label{fig:sim4}
-\end{figure}
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.4\linewidth]{vo2f.pdf}
-\caption{Output voltage of the output stage}
-\label{fig:sim4}
-\end{figure}
-
-
-
-
 
 
 \item Determination of the imput impedance, seen from the imput voltage source.
 
 \begin{table}[ht]
-\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
    \input{../sim/Zin_tab}
-  \caption{Output impedance in KOhm}
+   \end{tabular}
+  \caption{Input impedance in KOhm}
     \label{tab:ZI}
 \end{table}
 
@@ -110,12 +92,13 @@ First, it is fundamental to understand the effects that the coupling capacitors 
 \item Determination of the output impedance, using a different set up, seen from the load resistance. 
 
 \begin{table}[ht]
-\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
    \input{../sim/op_ZO_tab}
+   \end{tabular}
   \caption{Output impedance in KOhm}
+  
   \label{tab:ZO}
 \end{table}
 
@@ -126,13 +109,13 @@ Conserning the output impedance, an opposite deduction to the one made for the o
 
 
 \begin{table}[ht]
-\parbox{.45\linewidth}{
   \centering
   \begin{tabular}{|l|r|}
     \hline    
    \input{../sim/cost_tab}
+   \end{tabular}
   \caption{Output impedance in KOhm}
-  \label{tab:ZO}
+  \label{tab:cost}
 \end{table}
 
 
@@ -142,22 +125,5 @@ Conserning the output impedance, an opposite deduction to the one made for the o
 
 \end{enumerate}
 
-
-
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.7\linewidth]{sim3.pdf}
-\caption{Input voltage of the secundary circuit (v(2)), output Voltage of the Envelope Detector (v(4)), Voltage Regulator (v(5)), and v(5)-12}
-\label{fig:sim5}
-\end{figure}
-
-
-
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.7\linewidth]{sim31.pdf}
-\caption{Output AC components + DC deviation}
-\label{fig:sim5}
-\end{figure}
 
 
