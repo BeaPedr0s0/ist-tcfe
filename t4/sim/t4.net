@@ -78,7 +78,7 @@ hardcopy vo2f.ps vdb(out)
 meas AC max MAX vdb(out) from=10 to=100MEG
 let range = max - 3
 
-meas AC lower WHEN vdb(out) = range
+meas AC lower WHEN vdb(out) = range RISE =1
 meas AC upper WHEN vdb(out) = range CROSS=LAST
 
 let bandwidth = upper-lower
@@ -86,7 +86,7 @@ let gain = max
 let Cut_Out_Freq= lower
 let quality = bandwidth*gain/Cut_Out_Freq
 
-
+let 
 
 
 
@@ -120,7 +120,7 @@ echo "results_END"
 * total_t = 2*0.1
 
 
-let cost = 123.208
+let cost = 100.1039
 let merit = quality/cost
 
 echo "**************"
