@@ -31,9 +31,9 @@ let Vce=v(coll)-v(emit)
 let Vbe=v(base)-v(emit)
 
 if (Vce>Vbe)
-echo "Vce > Vbe = Correct F.A.R"
+echo "Vce greater than Vbe = Correct F.A.R"
 else
-echo "Vce > Vbe = Wrong F.A.R"
+echo "Vce greater than Vbe = Wrong F.A.R"
 endif
 
 echo "NPN_END"
@@ -46,15 +46,21 @@ let Vec=v(emit2)
 let Veb=v(emit2)-v(coll)
 
 if (Vec>Veb)
-echo "Vec > Veb = Correct F.A.R"
+echo "Vec greater than Veb = Correct F.A.R"
 else
-echo "Vec > Veb = Wrong F.A.R"
+echo "Vec greater than Veb = Wrong F.A.R"
 endif
 echo "PNP_END"
 
 
 echo  "op_TAB"
-print all
+*print ib valores das correntes quse iguais
+*print ic 
+*print ie
+print coll
+print base
+print emit
+print vce
 echo  "op_END"
 
 
