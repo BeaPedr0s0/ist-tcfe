@@ -1,61 +1,57 @@
 \section{Theoretical Analysis} \label{section:theo}
 
 
-\par In this section, a theoretical analysis of the circuit was conducted.
+\par In this section, a theoretical analysis of the circuit was conducted. In the introduction, we can see analysed circuit.
 
-Initially, we used a transformer to transform Vs=230V in a smaller value (Vr=230/n with n=11)so that the rest of the circuit can aproximate it to 12 V. However, we want a DC voltage, not the initial AC voltage. In order to do achieve that, we use the circuit shown in Introduction.
+First of all we got to keep in mind that that our circuit is divided in two different stages. The first one corresponds to the gain stage with a NPN transistor and the second is the output stage with a PNP transistor. The components and their functions of each stage has already been described in the Simulation Analysis as well as the goal of each stage.
 
-1)The four diodes on the left are a full wave rectifier which means, they transform the AC current in an equal amplitude unidirectional current (blue plot). To compute that all we had to do was taking the the absolute value of the transformed voltage vr.
+In order to analyse a stage we need to study both Operating point and incremental analysis.
+First, we shut down the AC independent sources and  and compute a simple analysis of the circuit. This way we obtain $Z_i$ and $Z_o$. Moreover, to compute the DC response we can say the capacitors behave like open circuits because there is only DC.
+
+To analyse the incremental response we have to create a model of the transistor (and the rest of the gain stage) similar to Fig.2. Studying the circuit we get $v_{o1}=-g_m * (r_o||R_c) * v_{\pi}$ and $v_{\pi}= \frac{R_B||r_{\pi}}{R_B||r_{\pi}+R_s} * v_s $ which lead us to $A_{v1} = \frac{v_{o1}}{v_s} = -g_m * (r_o||R_c)*\frac{R_B||r_{\pi}}{R_B||r_{\pi}+R_s}$
+
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.65\linewidth]{Incremental_Gain.pdf}
+\caption{Model for the gain stage incremental analysis}
+\label{sdf}
+\end{figure}
+
+For the DC response of the output stage, we follow the same logic of the gain stage and we easily get $Z_o$. On the other hand, to get the incremental response we have to create another model like Fig.3. Using nodal analysis we end up with $A{v2} = \frac{v_{o1}}{v_i} = \frac{g_{\pi} + g_m }{g_{\pi}+g_z+g_o+g_m}$ for the gain.
 
 
 
-2)Then, a capacitor is used to reduce the magnitude of the voltage making it closer to a DC (orange plot). In order to compute this, we discovered when are the diodes ON and OFF . Periodically, if t$<$tOFF we got vO = vr and if t$>$tOFF we got 
-\par vO = Vs*cos(w*tOFF)*exp(-(t-tOFF)/(Req*C)) due to the capacitor.The ripple voltage is basically max(vO)-min(vO). To make the next point clear vO will now be renamed vOenv.
+\begin{figure}[h] \centering
+\includegraphics[width=0.65\linewidth]{Incremental_Output.pdf}
+\caption{Model for the output stage incremental analysis}
+\label{s}
+\end{figure}
+
+
+
+Finally, we calculated $i_o$ to then compute $Z_o=\frac{v_{o}}{i_o}$ using the provided equations. The gain is given by $A_V = A_{V1}*{AV2}$
+All the important results obtained are shown in the table and in the figure bellow. 
+
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.65\linewidth]{A.eps}
+\caption{Voltage Gain of the circuit}
+\label{sh}
+\end{figure}
+
 
 \begin{table}[ht]
   \centering
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Name} & {\bf Value} \\ \hline
-    \input{../mat/envelope_tab}
+    \input{../mat/ponto2_tab}
   \end{tabular}
-  \caption{Ripple and average envelope values}
+  \caption{Impedences and Gains of both stages an the full circuit.}
   \label{tab:p2}
 \end{table}
 
 
-3) Last, a series of 22 diodes reduce the noise making the current an almost perfect DC (green plot). Calculating the vO average from 2) we are able to see if the voltage difference between v5 and v0 is limited by the maximum voltage that the diodes can handle (this happens if the average is greater than that maximum). Right now, we have the voltage due to the DC ($dc_vO$) so we still need the voltage due to the AC. It is possible to compute that calculating rD which is the resistance of each diode and 
-
-\par $acvO = num_diodes*rD/(numdiodes*rd+R2) * (vOenv-averageenv)$. 
-
-\par In the end, $vO$= $ac_vO$ + $dcvO$. The average must be aproximadetly 12V.
-
-\begin{table}[ht]
-  \centering
-  \begin{tabular}{|l|r|}
-    \hline    
-    {\bf Name} & {\bf Value} \\ \hline
-    \input{../mat/regulator_tab}
-  \end{tabular}
-  \caption{Ripple and average regulator values}
-  \label{tab:p2}
-\end{table}
-
-
-The figure shows the plots mentioned above.
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.65\linewidth]{all_vout.eps}
-\caption{Input voltage of the secundary circuit (v(2)), output Voltage of the Envelope Detector (v(4)), Voltage Regulator (v(5)), and v(5)-12}
-\label{sim3}
-\end{figure}
-
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.65\linewidth]{deviation.eps}
-\caption{Output AC components + DC deviation}
-\label{sim3}
-\end{figure}
 
 
 

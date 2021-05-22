@@ -1,12 +1,12 @@
 %//////////////////GAIN STAGE/////////////////////%
 
 %%%%%%% optimized variables %%%%%%%%%
-C1 = 1.9e-06;
-C2 = 1.0e-06;
-RB1 = 76000;
-RB2 = 19000;
-RC1 = 20000;
-RE1 = 3900;
+C1 =1.8e-06;
+C2 =78.7e-06;
+RB1 =6.6e3 ;
+RB2 = 1.3e3;
+RC1 = 9.98e3;
+RE1 =1.4e3 ;
 %%%%%%%%
 
 i = complex(0,1);
@@ -30,14 +30,14 @@ fprintf(file1, "Vcc vcc 0 12\n");
 fprintf(file1, "Vin in 0 0 \n");
 fprintf(file1, "Rin in in2 100 \n\n");
 fprintf(file1,"*input  coupling capacitor\n");
-fprintf(file1, "Ci in2 base 1.9u \n\n");
+fprintf(file1, "Ci in2 base 1.8u \n\n");
 fprintf(file1,"*bias circuit\n");
-fprintf(file1, "R1 vcc base 76000 \n");
-fprintf(file1, "R2 base 0 19000 \n\n");
+fprintf(file1, "R1 vcc base 6.6k \n");
+fprintf(file1, "R2 base 0 1.3k \n\n");
 fprintf(file1,"*gain stage\n");
 fprintf(file1, "Q1 coll base emit BC547A\n");
-fprintf(file1, "Rc vcc coll 20000\n");
-fprintf(file1, "Re emit 0 3900\n\n");
+fprintf(file1, "Rc vcc coll 9.98k\n");
+fprintf(file1, "Re emit 0 1.4k\n\n");
 fprintf(file1,"*bypass capacitor\n");
 fprintf(file1, "Cb emit 0 1.0u\n\n");
 fprintf(file1,"*output stage\n");
@@ -58,16 +58,16 @@ fprintf(file2, "Vcc vcc 0 12 \n");
 fprintf(file2, "Vin in 0 0 ac 1.0 sin(0 10m 1k) \n");
 fprintf(file2, "R_in in in2 100\n\n");
 fprintf(file2,"*input  coupling capacitor\n");
-fprintf(file2, "C_i in2 base 1.7695u\n\n");
+fprintf(file2, "C_i in2 base 1.8u\n\n");
 fprintf(file2,"*bias circuit\n");
-fprintf(file2, "R_1 vcc base 6.6346k \n");
-fprintf(file2, "R_2 base 0 1.3184k \n\n");
+fprintf(file2, "R_1 vcc base 6.6k \n");
+fprintf(file2, "R_2 base 0 1.3k \n\n");
 fprintf(file2,"*gain stage\n");
 fprintf(file2, "Q1 coll base emit BC547A\n");
-fprintf(file2, "R_c vcc coll 9.9714k\n");
-fprintf(file2, "R_e emit 0 1.444k\n\n");
+fprintf(file2, "R_c vcc coll 9.98k\n");
+fprintf(file2, "R_e emit 0 1.4k\n\n");
 fprintf(file2,"*bypass capacitor\n");
-fprintf(file2, "C_b emit 0 78.666u\n\n");
+fprintf(file2, "C_b emit 0 78.7u\n\n");
 fprintf(file2,"*output stage\n");
 fprintf(file2, "Q2 0 coll emit2 BC557A\n");
 fprintf(file2, "R_out emit2 vcc 100\n\n");
@@ -114,10 +114,6 @@ endfor
 ZI1 = 1/(1/RB + 1/rpi1);
 ZO1 = 1/(1/ro1 + 1/RC1);
 
-%???????????????????????????????????
-%ZI1 = ((ro1+RC1+RE1)*(RB+rpi1+RE1)+gm1*RE1*ro1*rpi1 - RE1^2)/(ro1+RC1+RE1);
-%ZX = ro1*((RB+rpi1)*RE1/(RB+rpi1+RE1))/(1/(1/ro1+1/(rpi1+RB)+1/RE1+gm1*rpi1/(rpi1+RB)));
-%ZO1 = 1/(1/ZX+1/RC1);
 
 
 %//////////////////OUTPUT STAGE/////////////////////%
@@ -187,12 +183,21 @@ cost = 1e-3*(RE1 + RC1 + RB1 + RB2 + RE2) + 1e6*(C1 + C2) + 2*0.1;
 AV=abs(AV);
 Merit = (max(AV) * bandwidth)/(cost * lowerCutoff)
 
-printf ("ponto2_TAB\n");
-printf ("AV1 = %e \n", max(AV1));
-printf ("ZI1 = %e \n", ZI1);
-printf ("ZO1 = %e \n", ZO1);
-printf ("AV2 = %e V \n", max(AV2));
-printf ("ZI2 = %e \n", ZI2);
-printf ("ZO2 = %e \n", ZO2);
-printf ("ZO = %e \n", ZO);
-printf ("ponto2_END\n\n");
+printf ("cost= %e ", cost);
+
+
+printf ("Z_TAB\n");
+printf (" Imput impedance (Gain stage)- ZI1 = %e Ohm \n", ZI1);
+printf ("Output impedance (Gain stage)-ZO1 = %e Ohm \n", ZO1);
+printf (" Imput impedance (Output stage)-ZI2 = %e Ohm \n", ZI2);
+printf ("Output impedance (Output stage)-- ZO2 = %e Ohm \n", ZO2);
+printf ("Output impedance-ZO = %e \n", ZO);
+printf ("Z_END\n\n");
+
+printf ("r_theo_TAB\n");
+printf ("Gain stage- AV1  = %e V\n", max(AV1));
+printf ("Output stage stage -AV2 = %e V \n", max(AV2));
+printf ("Bandwidth= %e Hz \n", bandwidth);
+printf ("Cut Off Frequency= %e Hz \n", lowerCutoff);
+printf ("r_theo_END\n\n");
+
