@@ -3,12 +3,13 @@
 
 \par In this section, a theoretical analysis of the circuit was conducted. In the introduction, we can see analysed circuit.
 
-First of all we got to keep in mind that that our circuit is divided in two different stages. The first one corresponds to the gain stage with a NPN transistor and the second is the output stage with a PNP transistor. The components and their functions of each stage has already been described in the Simulation Analysis as well as the goal of each stage.
+First of all we got to keep in mind that our circuit is divided in two different stages. The first one corresponds to the gain stage with a NPN transistor and the second is the output stage with a PNP transistor. Both the components and their functions will be described in Theoretical and Simulation Analysis as well as the goal of each stage.
 
-In order to analyse a stage we need to study both Operating point and incremental analysis.
-First, we shut down the AC independent sources and  and compute a simple analysis of the circuit. This way we obtain $Z_i$ and $Z_o$. Moreover, to compute the DC response we can say the capacitors behave like open circuits because there is only DC.
+\subsection{Gain Stage}
+This stage is basically responsible for the signal amplification which means it has to have a high gain. It also needs to have a high input voltage to avoid signal losses. In order to analyse this stage we need to study both Operating point and incremental analysis.
+First,we compute a simple analysis of the circuit by KVL and KCL. This way we obtain $Z_{i1}=R_B||r_{\pi 1}$ and $Z_{o1}=r_{o1}||R_c$. It is important to note that for low frequencys capacitors behave like open circuits and for high frequencys like short circuits.
 
-To analyse the incremental response we have to create a model of the transistor (and the rest of the gain stage) similar to Fig.2. Studying the circuit we get $v_{o1}=-g_m * (r_o||R_c) * v_{\pi}$ and $v_{\pi}= \frac{R_B||r_{\pi}}{R_B||r_{\pi}+R_s} * v_s $ which lead us to $A_{v1} = \frac{v_{o1}}{v_s} = -g_m * (r_o||R_c)*\frac{R_B||r_{\pi}}{R_B||r_{\pi}+R_s}$
+To analyse the incremental response we have to create a model of the transistor (and the rest of the gain stage) similar to Fig.2. Studying the circuit we get $v_{o1}=-g_m * (r_o||R_c) * v_{\pi}$ and $v_{\pi}= \frac{R_B||r_{\pi 1}}{R_B||r_{\pi 1}+R_s} * v_s $ which lead us to $A_{v1} = \frac{v_{o1}}{v_s} = -g_m * (r_o||R_c)*\frac{R_B||r_{\pi 1}}{R_B||r_{\pi 1}+R_s}$
 
 
 \begin{figure}[h] \centering
@@ -17,7 +18,10 @@ To analyse the incremental response we have to create a model of the transistor 
 \label{sdf}
 \end{figure}
 
-For the DC response of the output stage, we follow the same logic of the gain stage and we easily get $Z_{i2}$ and $Z_{o2}$. On the other hand, to get the incremental response we have to create another model like Fig.3. Using nodal analysis we end up with $A{v2} = \frac{v_{o1}}{v_i} = \frac{g_{\pi} + g_m }{g_{\pi}+g_z+g_o+g_m}$ for the gain.
+\subsection{Output Stage}
+
+However $Z_{o1}$ is too high so we need a second stage to achieve a lower $Z_{o}$. Due to the big difference between the $Z_{o1}$ we can be positive that no voltage signal will be lost.
+For the DC response of the output stage, we follow the same logic of the gain stage and we easily get $Z_{i2}=\frac{(g_{m2}+g_{\pi 2}+g_{o2}+g_{E2})}{g_{\pi 2}(g_{\pi 2}+g_{o2}+g_{e2})}$ and $Z_{o2}= \frac{1}{(g_{m2}+g_{\pi2}+g_{o2}+g_{E2})}$. On the other hand, to get the incremental response we have to create another model like Fig.3. Using nodal analysis we end up with $A_{v2} = \frac{v_{o2}}{v_{i2}} = \frac{g_{\pi} + g_{m2} }{g_{\pi 2}+g_{z2}+g_{o2}+g_{m2}}$ for the gain.
 
 
 
@@ -28,14 +32,17 @@ For the DC response of the output stage, we follow the same logic of the gain st
 \end{figure}
 
 
+\subsection{Final Results}
 
-Finally, we calculated $i_o$ to then compute $Z_o=\frac{v_{o}}{i_o}$ using the provided equations. $Z_i=Z_{i1}$. The gain is given by $A_V = A_{V1}*{AV2}$
-All the important results obtained are shown in the tables and in the figure bellow. 
 
+Finally, we calculated $i_o$ to then compute $Z_o=\frac{v_{o}}{i_o}=\frac{1}{g_{o2}+g_{m2}\frac{r_{\pi 2}}{r_{\pi 2}+Z_{o1}}+g_{e2}+\frac{1}{r_{\pi 2}+Z_{o1}}}$ using the provided equations. The gain is given by $A_V = A_{V1}*{AV2}$.
+
+We also computed the low cutoff frequency in octave.
+All the important results obtained are shown in the tables and in the figure bellow. As we can see, there will not be signal loss since $Z_{i2}>>Z_{o1}$.
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.65\linewidth]{theo.eps}
-\caption{Voltage Gain of the circuit}
+\caption{Voltage Gain of the circuit. Octave}
 \label{sh}
 \end{figure}
 
@@ -75,7 +82,6 @@ All the important results obtained are shown in the tables and in the figure bel
   \caption{Gain, bandwidth and cutoff frequency.}
   \label{tab:3}
 \end{table}
-
 
 
 
