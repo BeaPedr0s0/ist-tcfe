@@ -120,7 +120,7 @@ echo "results_END"
 * total_t = 2*0.1
 
 
-let cost = 100.1039
+let cost = 100.08
 let merit = quality/cost
 
 echo "**************"
