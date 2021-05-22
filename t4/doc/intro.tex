@@ -3,23 +3,23 @@
 
 
 % state the learning objective
+\par The aim of this laboratory assignment was to create an audio amplifier circuit. To do so, both the gain and the output stages were designed. This amplifier receives an audio maximum input of 10mV and connects to an 8 Ohm speaker. The source has an impedance of 100 Ohms and the circuit is supplied by a 12V Voltage DC source (vcc).
+\par In the gain stage mentioned above, a NPN transistor and a common emitter amplifier with degeneration were used. It allows us to have a high $Z_{i}$ and a high $A_{V}$. Nevertheless, $Z_{o}$ is also very high, which consitutes a problem. Hence, this situation has to be adressed in the output stage. Consequently, in this second stage, it was used a common collecter amplifier and a PNP transistor. Not only does it allow to remain a high $A_{V}$ but it also reduces the value of $(Z_{o})$ significantly. Therefore, the gain is $\approx 1$, which is the desired result.
 
-\par The aim of this laboratory assignment is to design and analyse an AC/DC converter circuit. To do so, the group chose the architecture of both the Envelope Detector and Voltage Regulator circuits. The final result is shown below.
+\par The quality of the audio amplifier is evaluated by the following expression:
+\begin {equation}
+	 MERIT = \frac{Voltage Gain*Bandwidth}{Cost*Lower Cut Off Frequency}   	
+	\label{merit}
+\end{equation}
 
-
+The circuit is shown below.
 
 \begin{figure}[ht] \centering
-\includegraphics[width=0.8\linewidth]{lab3draw.pdf}
-\caption{ AC/DC converter circuit.}
-\label{AC/DC circuit.}
+\includegraphics[width=0.8\linewidth]{lab4.pdf}
+\caption{Circuit i analysis.}
+\label{circuito todo}
 \end{figure}
 \par 
-
-
-One method to achieve a steady DC voltage is to use every half-cycle of the input voltage instead of every other half-cycle. The circuit which allows us to do this is called a Full Wave Rectifier. As one may observe, 4 diodes are used, a pair for each half-cycle. Hence, it is completely efficient since it is produced an output for both of them.
-
-In addition, the ripple and voltage variations were reduced by connecting smoothing capacitors. The voltage regulator circuit consists of one resistor and a series of diodes. It keeps the output voltage constant at the desired value (12V) in spite of variations in the supply voltage or in the current load.
-
 
 
 \newpage
