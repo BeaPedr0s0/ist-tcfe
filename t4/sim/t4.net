@@ -80,6 +80,7 @@ meas AC upper WHEN vdb(out) = range CROSS=LAST
 let bandwidth = upper-lower
 let gain = max
 let Cut_Out_Freq= lower
+let High_Freq = upper
 let quality = bandwidth*gain/Cut_Out_Freq
 
 
@@ -94,19 +95,11 @@ echo "Zin_END"
 
 
 
-
-
-
-
-
-
 echo "results_TAB"
 echo "V Gain=$&gain"
 echo "Bandwidth=$&bandwidth"
 echo "Lower Cut Off Freq= $&Cut_Out_Freq"
 echo "results_END"
-
-
 
 
 
@@ -118,8 +111,20 @@ echo "results_END"
 let cost = 1225.6
 let merit = quality/cost
 
+
+echo "**************"
+echo "cost1_TAB"
+echo "Cost = $&cost"
+echo "merit = $&merit"
+echo "cost1_END"
+echo "**************"
+
 echo "**************"
 echo "cost_TAB"
+echo "V Gain=$&gain"
+echo "Low Cut Off Freq= $&Cut_Out_Freq"
+echo "High Cut Off Freq= $&High_Freq"
+echo "Bandwidth=$&bandwidth"
 echo "Cost = $&cost"
 echo "merit = $&merit"
 echo "cost_END"
