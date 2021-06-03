@@ -1,6 +1,5 @@
-%//////////////////GAIN STAGE/////////////////////%
+%Lab4
 
-%%%%%%% optimized variables %%%%%%%%%
 C1 =500e-06;
 C2 =500e-06;
 RB1 =20e3 ;
@@ -9,19 +8,21 @@ RC1 = 3e3;
 RE1 =0.1e3;
 Rout=0.2e3;
 Cout=200e-6;
-%%%%%%%%
+RL=8;
 
-i = complex(0,1);
-f = logspace(1,8, 100);
-w = 2*pi*f;
-
-vi = 0.01;
+%Stage1
 VT=25e-3;
 BFN=178.7;
 VAFN=69.7;
 VBEON=0.7;
 VCC=12;
-RS=100;
+Rin=100;
+
+%Stage2
+BFP = 227.3
+VAFP = 37.2
+RE2 = 100
+VEBON = 0.7
 
 printf ("valores_intro_TAB\n");
 printf ("Cin = %e \n", C1);
@@ -32,7 +33,6 @@ printf ("R2 = %e \n", RB2);
 printf ("RC = %e \n", RC1);
 printf ("RE = %e \n", RE1);
 printf ("Rout = %e \n", RE1);
-printf ("Vin = %e \n", vi);
 printf ("Vcc = %e \n", VCC);
 printf ("valores_intro_END\n\n");
 
@@ -93,6 +93,8 @@ fprintf(file2, "RL out 0 8\n\n");
 fprintf(file2, ".END\n\n");
 fclose(file2);
 
+
+%//////////////////GAIN STAGE/////////////////////%
 RB=1/(1/RB1+1/RB2);
 VEQ=RB2/(RB1+RB2)*VCC;
 IB1=(VEQ-VBEON)/(RB+(1+BFN)*RE1);
@@ -102,49 +104,19 @@ VE1=RE1*IE1;
 VO1=VCC-RC1*IC1;
 VCE=VO1-VE1;
 
-printf ("ponto1_TAB\n");
-printf ("IB1 = %e \n", IB1);
-printf ("IC1 = %e \n", IC1);
-printf ("IE1 = %e \n", IE1);
-printf ("VColl = %e \n", VO1);
-printf ("VBase = %e \n", VEQ);
-printf ("VEmit = %e \n", VE1);
-printf ("ponto1_END\n\n");
-
 gm1 = IC1/VT;
 rpi1 = BFN/gm1;
 ro1 = VAFN/IC1;
-Zc1 = 1./(i*w*C1);
-Zc2 = 1./(i*w*C2);
 
-I=ones(length(w),4);
-voE=zeros(1,length(w));
-AV1=zeros(1,length(w));
+RinB=RB*Rin/(RB+Rin);
 
-for k=1:length(w)
-A = [0, -RB, 0, 0, RS+RB;
-    -RE1, -Zc2(k), 0, RE1 + Zc2(k), 0; 
-    RE1 + ro1 + RC1, 0, -ro1, -RE1, 0;
-    0, gm1*rpi1, 1, 0, 0;
-    0, RB+Zc1(k)+rpi1+Zc2(k), 0, -Zc2(k), -RB];
+AV1 = RinB/Rin * RC1*(RE1-gm1*rpi1*ro1)/((ro1+RC1+RE1)*(RinB+rpi1+RE1)+gm1*RE1*ro1*rpi1 - RE1^2);
+AV1db = 20*log10(abs(AV1));
 
-N = [vi; 0; 0; 0; 0];
-res = A\N;
-
-voE(k) = abs(RC1 * res(1));
-AV1(k) = voE(k)/vi;
-endfor
-
-ZI1 = 1/(1/RB + 1/rpi1);
-ZO1 = 1/(1/ro1 + 1/RC1);
-
-
+Zin1 = 1/(1/RB+1/(((ro1+RC1+RE1)*(rpi1+RE1)+gm1*RE1*ro1*rpi1 - RE1^2)/(ro1+RC1+RE1)));
+Zoutut1 = 1/(1/ro1+1/RC1);
 
 %//////////////////OUTPUT STAGE/////////////////////%
-BFP = 227.3
-VAFP = 37.2
-RE2 = 100
-VEBON = 0.7
 VI2 = VO1
 IE2 = (VCC-VEBON-VI2)/RE2
 IC2 = BFP/(BFP+1)*IE2
@@ -155,71 +127,90 @@ go2 = IC2/VAFP
 gpi2 = gm2/BFP
 ge2 = 1/RE2
 
-ro2 = 1/go2;
-rpi2 = 1/gpi2;
+AV2 = gm2/(gm2+gpi2+go2+ge2);
+AV2db= 20*log10(abs(AV2));
 
-I2=zeros(length(w),3);
-vo2=zeros(1,length(w));
-AV2 = zeros(1,length(w));
+Zin2 = (gm2+gpi2+go2+ge2)/gpi2/(gpi2+go2+ge2);
+Zoutut2 = 1/(gm2+gpi2+go2+ge2);
 
-for k=1:length(w)
-A2 = [rpi2+RE2, -RE2, 0;
-    gm2*rpi2, 0, 1; 
-    -RE2, RE2+ro2, -ro2];
+%total
+gB = 1/(1/gpi2+Zoutut1);
+AV = (gB+gm2/gpi2*gB)/(gB+ge2+go2+gm2/gpi2*gB)*AV1;
+AV_TOT_db = 20*log10(abs(AV));
 
-N2 = [voE(k); 0; 0];
-res = A2\N2;
+ZI=Zin1;
+Zout=1/(go2+gm2/gpi2*gB+ge2+gB);
 
-vo2(k) = abs((res(1)-res(2))*RE2);
-AV2(k) = vo2(k)/voE(k);
-endfor
+%LowCutOff Frequency
+R1S = Rin + (1/(1/RB + 1/rpi1));
+R2S = RL + (1/(1/RC1 + 1/ro1));
+R3S = 1/((1/RE1) + (1/(rpi1 + (1/(1/Rin + 1/RB)))) + ((gm1*rpi1)/(rpi1 + (1/(1/Rin + 1/RB)))));
+wL = 1/(R1S*C1) + 1/(R2S*C2) + 1/(R3S*Cout);
+LowFreq = wL/(2*pi);
 
-ZI2 = (gm2+gpi2+go2+ge2)/gpi2/(gpi2+go2+ge2);
-ZO2 = 1/(gm2+gpi2+go2+ge2);
-ZO = 1/(gm2*(rpi2/(rpi2+ZO1))+(1/(rpi2+ZO1))+go2+ge2);
-AV = AV1.*AV2;
+%HighCutOff Frequency
+Cpi = 16.1e-12;
+Co = 4.388e-12;
+wH = 1/(Cpi*rpi1 + Co*ro1);
+HighFreq = wH/(2*pi);
 
+w = logspace(1,12);
+Tdb = ones(1,length(w));
+for k = 1:length(w)
+	T = 10^((AV_TOT_db-20*log10(wL))/20)*(w(k)/(w(k)/wL + 1))*(1/(w(k)/wH + 1));
+	Tdb(k) = 20*log10(abs(T));
+end
 
-%%%%%%PLOT%%%%%%%
-theo = figure ();
-plot (log10(f), 20*log10(AV), "g");
-legend("v_o(f)/v_i(f)");
-xlabel ("Frequency [Hz]");
-ylabel ("Gain");
-print (theo, "theo", "-depsc");
-%%%%%%% end plot %%%%%%%%
-
-AVdb = 20*log10(AV);
-maximo = max(AVdb);
-k = 1;
-
-while  0.05 < ((maximo - AVdb(k))/maximo)
-    k = k + 1;
-endwhile
-
-lowerCutoff = (w(k))/(2*pi);
-highCutoff = 1.3484e6;
-
-bandwidth = highCutoff - lowerCutoff;
-cost = 1e-3*(RE1 + RC1 + RB1 + RB2 + RE2 + Rout) + 1e6*(C1 + C2 + Cout) + 2*0.1;
-
-AV=abs(AV);
-Merit = (max(AV) * bandwidth)/(cost * lowerCutoff)
+cost = 1e-3*(RE1 + RC1 + RB1 + RB2 + RE2) + 1e6*(C1 + C2 + Cout) + 2*0.1;
+Merit = (abs(AV_TOT_db) * (HighFreq-LowFreq))/(cost * LowFreq);
 
 printf ("cost= %e \n", cost);
 
+%%Final Result Tables and Plots
+%%%%%%PONTO1%%%%%%%
+printf ("ponto1_TAB\n");
+printf ("IB1 = %e \n", IB1);
+printf ("IC1 = %e \n", IC1);
+printf ("IE1 = %e \n", IE1);
+printf ("VColl = %e \n", VO1);
+printf ("VBase = %e \n", VEQ);
+printf ("VEmit = %e \n", VE1);
+printf ("VCE = %e V\n", VCE);
+printf ("VBEON = %e V \n", VBEON);
+printf ("VEC = %e V\n", VO2);
+printf ("VEBON = %e V \n", VEBON);
+printf ("IB2 = %e A \n", IC2-IE2);
+printf ("IC2 = %e A \n", IC2);
+printf ("IE2 = %e A \n", IE2);
+printf ("ponto1_END\n\n");
+
+%%%%%%PONTO2%%%%%%%
 printf ("Z_TAB\n");
-printf ("ZI1 = %e Ohm \n", real(ZI1));
-printf ("ZO1 = %e Ohm \n", ZO1);
-printf ("ZI2 = %e Ohm \n", ZI2);
-printf ("ZO2 = %e Ohm \n", ZO2);
-printf ("ZO = %e \n", ZO);
+printf ("Zin1 = %e Ohm \n", real(Zin1));
+printf ("Zoutut1 = %e Ohm \n", Zoutut1);
+printf ("Zin2 = %e Ohm \n", Zin2);
+printf ("Zoutut2 = %e Ohm \n", Zoutut2);
+printf ("Zout = %e \n", Zout);
 printf ("Z_END\n\n");
 
 printf ("r_theo_TAB\n");
-printf ("Total Gain (AV)  = %e V\n", mean(AV));
-printf ("Bandwidth= %e Hz \n", bandwidth);
-printf ("Lower Cut Off Frequency= %e Hz \n", lowerCutoff);
+printf ("Total Gain (dB)  = %e V\n", AV_TOT_db);
+printf ("Low Cut Off Frequency= %e Hz \n", LowFreq);
+printf ("High Cut Off Frequency= %e Hz \n", HighFreq);
+printf ("Bandwidth= %e Hz \n", HighFreq-LowFreq);
+printf ("Cost = %e MU's\n", cost);
+printf ("Merit = %e \n", Merit);
 printf ("r_theo_END\n\n");
+
+
+%%%%%%Ponto3%%%%%%%
+theo = figure ();
+plot(log10(w/(2*pi)),Tdb,"g");
+legend("v_o(f)/v_i(f)");
+xlabel ("Log10(Frequency [Hz])");
+ylabel ("Gain");
+print (theo, "theo", "-depsc");
+
+
 
 
