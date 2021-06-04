@@ -1,0 +1,59 @@
+\section{Comparison}
+\label{section:comparison}
+
+\par In this section, a global comparison between Octave and Ngspice results will be made. Firstly, one should bear in mind that, in the previous sections, an Operating Point Analysis was performed to find the necessary values for the Incremental Analysis. Therefore, in the table below, the voltages in the collector, base and emitter of the transistor are presented as well as the currents in each terminal ($I_{B}$, $I_{C}$, $I_{E}$).
+
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value [A or V]} \\ \hline
+    \input{../sim/op_tab}
+  \end{tabular}
+  \caption{Operating point using DC model. Variables are expressed in Ampere or Volt. (Ngspice)}} 
+\parbox{.45\linewidth}{
+ \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [A or V]} \\ \hline
+    \input{../mat/ponto1_TAB}
+  \end{tabular}
+  \caption{Operating point using DC model. Variables are expressed in Ampere or Volt.(Octave)}}
+\end{table}
+
+\par As one may observe, some discrepancies in the voltage values are noticeable. Nevertheless, the values of the currents flowing are are within reasonable intervals of similarity. Therefore, the gain computed in Octave should not be severely affected by this. It is important to highlight that the theoretical gain expression is dependent on the value of the current $I_{C}$ because of the incremental parameter $g_{m}$. 
+\newpage
+ \begin{table}[h]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value} \\ \hline
+    \input{../sim/cost_tab}
+  \end{tabular}
+  \caption{Gain, bandwidth and cut off frequency. (Ngspice)}} 
+\parbox{.45\linewidth}{
+ \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/r_theo_TAB}
+  \end{tabular}
+  \caption{Gain, bandwidth and cut off frequency. (Octave)}}
+\end{table}
+
+\par Aditionally, the gain, bandwidth and cut off frequency results were also computed. As predicted, the voltage gain in the theoretical approach is greater than in the Ngspice computation. Moreover, since we do not have the theoretical high cut frequency, we can only compare the results for the low cut frequency, which are very similar as far as the order of magnitude is concerned. For this reason, as the bandwidth is the subtraction between high and low cut frequencies, it should not be compared.
+
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
