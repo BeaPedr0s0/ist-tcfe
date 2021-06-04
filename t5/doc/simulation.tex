@@ -1,0 +1,88 @@
+\section{Simulation Analysis}
+\label{section:sim}
+ 
+In this section, the several steps taken using ngspice in order to conduct the simulation of the band pass filter using an OP-AMP, as requested, will be described. The main focus of the simulation was to determine and optimize the values of the gain, the central frequency and the output and input impedances. The quality and overall figure of merit will then be analysed.
+The group proceded as follows:
+
+\begin{enumerate}
+\item Design of the circuit, having as a starting point the circuit presented in section \ref{introduction}
+
+  
+\item  In the frequency domain, measure of the output voltage gain, using the function .meas as well as the lower and upper cut off frequencies and the central frequency.
+
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/results_tab}
+    \end{tabular}
+  \caption{Results for ngspice}
+    \label{tab:results}
+\end{table}
+
+
+
+In the figure \ref{fig:gain}, a plot of the gain can be observed. In fact, the main goal of the assignement was to design a band pass filter. This means that this filter should cut both low an very high frequencies. THis is precisely what is shown in figure \ref{fig:gain}
+
+
+
+\begin{figure}[ht]
+\centering
+  \includegraphics[width=.75\linewidth]{vo1f.pdf}
+  \caption{Gain}
+  \label{fig:gain}
+\end{figure}
+
+
+
+\item Determination of the input impedance, seen from the input voltage source.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/Zin_tab}
+   \end{tabular}
+  \caption{Input impedance in Ohm}
+    \label{tab:ZI}
+\end{table}
+
+\par The result obtained for the input impedance, considering the value in Ohm, is high. This is benefitial for the gain, because the voltage in the node In 2 must be as similiar to Vin as possible. Using a voltage divider, the only way to achieve this was to have a very high resistance value.
+
+\item Determination of the output impedance, using a different set up, seen from the load resistance. 
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/op_ZO_tab}
+   \end{tabular}
+  \caption{Output impedance in Ohm}
+  
+  \label{tab:ZO}
+\end{table}
+
+
+Conserning the output impedance, an opposite deduction to the one made for the output impedance is mandoratory. Considering a voltage divider, the output impedance must be as low as possible, in order to the output voltage to be as high as possible. Having said that, an analysing tables \ref{tab:ZI} \ref{tab:ZO}, the difference needed between the two is confirmed. 
+
+\item Compute of the cost and figure of merit
+\par To finally understand the efficency of the amplifier, the cost and figure of merit were calculated
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+   \input{../sim/cost_tab}
+   \end{tabular}
+  \caption{Cost and Figure of merit}
+  \label{tab:cost}
+\end{table}
+
+Analysing table \ref{tab:cost}, the results obtained may be considered satisfying.
+
+
+\end{enumerate}
+
+
+
