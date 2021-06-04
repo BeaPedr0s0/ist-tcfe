@@ -28,6 +28,11 @@ echo "Zo(arg) = $&ARG"
 echo "op_ZO_END"
 
 
+<<<<<<< HEAD:t4/sim/t42.net
+=======
+plot abs(v(in2)/vin#branch/(-1000))
+print v(in2)[40]/vin#branch[40]/(-1000)
+>>>>>>> 322aa190fd8dc4f4e30d079abdc9dd407ba1cdd9:t4/t4.net
 
 
 quit

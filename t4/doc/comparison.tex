@@ -22,7 +22,6 @@
   \caption{Operating point using DC model. Variables are expressed in Ampere or Volt.(Octave)}}
 \end{table}
 
-In the Ngspice table, the only parameters in comparison are $@q1[ib]$, $@q1[ic]$, $@q1[ie]$, $base$, $coll$ and $emit$.
 \par As one may observe, some discrepancies in the voltage values are noticeable. Nevertheless, the values of the currents flowing are are within reasonable intervals of similarity. Therefore, the gain computed in Octave should not be severely affected by this. It is important to highlight that the theoretical gain expression is dependent on the value of the current $I_{C}$ because of the incremental parameter $g_{m}$. 
 \newpage
  \begin{table}[h]
@@ -31,7 +30,7 @@ In the Ngspice table, the only parameters in comparison are $@q1[ib]$, $@q1[ic]$
   \begin{tabular}{|l|r|}
     \hline    
     {\bf Calculus} & {\bf Value} \\ \hline
-    \input{../sim/results_tab}
+    \input{../sim/cost_tab}
   \end{tabular}
   \caption{Gain, bandwidth and cut off frequency. (Ngspice)}} 
 \parbox{.45\linewidth}{
