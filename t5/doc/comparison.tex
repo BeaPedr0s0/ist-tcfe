@@ -1,20 +1,51 @@
 \section{Comparison}
 \label{section:comparison}
 
-\par In this section, a global comparison between Octave and Ngspice results will be made. Firstly, one should bear in mind that, in the previous sections, an Operating Point Analysis was performed to find the necessary values for the Incremental Analysis. Therefore, in the table below, the voltages in the collector, base and emitter of the transistor are presented as well as the currents in each terminal ($I_{B}$, $I_{C}$, $I_{E}$).
+\par In this section, a global comparison between Octave and Ngspice results will be made. Firstly, one should bear in mind that, in the previous sections, an Operating Point Analysis was performed to find the necessary values for the Incremental Analysis. 
+
+\par As requested we are able to compute the passband frequency in simulation analysis using the measure funtion and the central frequency in the theoretical analysis using Low and High Band Pass Frequencies. The different calculation methods leads the results to a little difference.
 
 
+ \begin{table}[h]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value} \\ \hline
+    \input{../sim/results_tab}
+  \end{tabular}
+  \caption{Central frequency [Hz] and respective gain [dB]. (Ngspice)}} 
+\parbox{.45\linewidth}{
+ \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value} \\ \hline
+    \input{../mat/wo_freq_gain_TAB}
+  \end{tabular}
+  \caption{Central frequency [Hz] and respective gain [dB]. (Octave)}}
+\end{table}
 
-\par As one may observe, some discrepancies in the voltage values are noticeable. Nevertheless, the values of the currents flowing are are within reasonable intervals of similarity. Therefore, the gain computed in Octave should not be severely affected by this. It is important to highlight that the theoretical gain expression is dependent on the value of the current $I_{C}$ because of the incremental parameter $g_{m}$. 
-\newpage
+We also computed the impedances as shown in the table bellow.
 
 
-\par Aditionally, the gain, bandwidth and cut off frequency results were also computed. As predicted, the voltage gain in the theoretical approach is greater than in the Ngspice computation. Moreover, since we do not have the theoretical high cut frequency, we can only compare the results for the low cut frequency, which are very similar as far as the order of magnitude is concerned. For this reason, as the bandwidth is the subtraction between high and low cut frequencies, it should not be compared.
-
-\clearpage
-
-
-
+\begin{table}[ht]
+\parbox{.45\linewidth}{
+  \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Calculus} & {\bf Value [Ohm]} \\ \hline
+    \input{../sim/Zin_tab}
+  \end{tabular}
+  \caption{Cirtcuit impedances. Variables are expressed in Ohm.(Ngspice)}} 
+\parbox{.45\linewidth}{
+ \centering
+  \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Name} & {\bf Value [Ohm]} \\ \hline
+    \input{../mat/impedances_TAB}
+  \end{tabular}
+  \caption{Cirtcuit impedances. Variables are expressed in Ohm.(Octave)}}
+\end{table}
 
 
 
