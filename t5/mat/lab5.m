@@ -21,8 +21,8 @@ wL=1/(R1*C1);
 wH=1/(R2*C2);
 wo=sqrt(wL*wH);
 printf ("band_pass_freq_TAB\n");
-printf ("LowFreq_BandPass = %e \n", wL); 
-printf ("HighFreq_BandPass = %e \n", wH);
+printf ("LowFreq BandPass = %e \n", wL); 
+printf ("HighFreq BandPass = %e \n", wH);
 printf ("Central Freq = %e \n", wo);
 printf ("band_pass_freq_END\n\n");
 
@@ -32,16 +32,16 @@ T_central_freq = (R1*C1*j*wo/(1+R1*C1*j*wo))*(1+R3/R4)*(1/(1+R2*C2*j*wo));
 Tdb_central_freq = 20*log10(abs(T_central_freq));
 wo_Hz=wo/2/pi;
 printf ("wo_freq_gain_TAB\n");
-printf ("Central_Freq_Hz = %e \n", wo_Hz); 
-printf ("Gain_Central_Freq_dB = %e \n", Tdb_central_freq);
+printf ("Central Freq (Hz) = %e \n", wo_Hz); 
+printf ("Gain Central Freq (dB) = %e \n", Tdb_central_freq);
 printf ("wo_freq_gain_END\n\n");
 %Input and Output Impedancies
 z_in = (R1 + 1/(j*wo*C1))
 z_out = R2/(j*wo*C2)/(R2+1/(j*wo*C2))
-printf ("wo_freq_gain_TAB\n");
+printf ("impedances_TAB\n");
 printf ("Z in = %e + %ej \n", real(z_in), imag(z_in)); 
 printf ("Z out = %e + %ej\n", real(z_out) , imag(z_out));
-printf ("wo_freq_gain_END\n\n");
+printf ("impedances_END\n\n");
 
 %PONTO2%
 %Gain in dB - logscale from 10Hz to 100MHz
@@ -66,7 +66,7 @@ Gain_Deviation = abs(40-Tdb_central_freq);
 Central_Frequency_Deviation=abs(1000-wo_Hz);
 cost = 1e-3*(R1 + R2 + R3 + R4 + 100 + 530500 + 183600 + 13190000 + 150) + 1e6*(C1 + C2) + 38.66e-18 + 0.1*2;
 Merit = 1/(cost * Gain_Deviation * Central_Frequency_Deviation);
-printf ("Cost_Merit\n");
+printf ("Cost_Merit_TAB\n");
 printf ("Cost = %e \n", cost); 
 printf ("Merit = %e \n", Merit);
 printf ("Cost_Merit_END\n\n");
