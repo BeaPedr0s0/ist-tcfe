@@ -61,15 +61,15 @@ C1 in 3 220n
 R1 3 0 1k
 
 
-
-R3 2 4 100k
+*R3 results from 1 100k resistor in series with 2 100k resistors in parallel
+R3 2 4 150k
 R4 2 0 1k
 
 
 R2 4 out 1k
-C2 out 0 220n
+C2 out 0 110n
 
-
+*C2 results from 2 220nF capacitors in series
 
 .op
 .end
@@ -105,12 +105,10 @@ meas AC Cfreq MAX_AT vdb(out) from=10 to=100MEG
 
 
 
-let cost = 13425.8
+let cost = 14057.88
 let cdevi=abs(1000-Cfreq)
 let gaindevi=abs(100-10^(maximo/20))
-let merit = 1/(cost*gaindevi*cdevi)
-
-
+let merit = 1/(cost*(gaindevi+cdevi +1e-6))
 
 
 
@@ -125,8 +123,8 @@ echo "Zin_END"
 
 
 echo "results_TAB"
-echo "Gain= $&maximo"
-echo "Central Frequency= $&Cfreq"
+echo "Gain (dB)= $&maximo"
+echo "Central Frequency (Hz)= $&Cfreq"
 echo "Gain deviation=$&gaindevi"
 echo "Central frequency deviation=$&cdevi"
 echo "results_END"
