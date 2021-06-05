@@ -1,9 +1,9 @@
 %Circuit Components
-C1 =110e-09;
-C2=220e-09;
+C1 =220e-09;
+C2=110e-09;
 R1=1000;
 R2=1000;
-R3=100000;
+R3=150000;
 R4=1000;
 Vcc=10;
 printf ("valores_intro_TAB\n");
@@ -20,10 +20,12 @@ printf ("valores_intro_END\n\n");
 wL=1/(R1*C1);
 wH=1/(R2*C2);
 wo=sqrt(wL*wH);
+wo_Hz=wo/2/pi;
 printf ("band_pass_freq_TAB\n");
-printf ("LowFreq BandPass = %e \n", wL); 
-printf ("HighFreq BandPass = %e \n", wH);
-printf ("Central Freq = %e \n", wo);
+printf ("LowFreq BandPass [rad/s] = %e \n", wL); 
+printf ("HighFreq BandPass [rad/s] = %e \n", wH);
+printf ("Central Freq [rad/s] = %e \n", wo);
+printf ("Central Freq [Hz] = %e \n", wo_Hz); 
 printf ("band_pass_freq_END\n\n");
 
 %PONTO1%
@@ -36,8 +38,9 @@ printf ("Central Freq (Hz) = %e \n", wo_Hz);
 printf ("Gain Central Freq (dB) = %e \n", Tdb_central_freq);
 printf ("wo_freq_gain_END\n\n");
 %Input and Output Impedancies
-z_in = (R1 + 1/(j*wo*C1)) %%serie ou paralelo???????
+z_in = (R1 + 1/(j*wo*C1))
 z_out = R2/(j*wo*C2)/ (R2+1/(j*wo*C2))
+
 printf ("impedances_TAB\n");
 printf ("Z in = %e + %ej \n", real(z_in), imag(z_in)); 
 printf ("Z out = %e + %ej\n", real(z_out) , imag(z_out));
@@ -46,7 +49,7 @@ printf ("impedances_END\n\n");
 %PONTO2%
 %Gain in dB - logscale from 10Hz to 100MHz
 freq = logspace(1,8,70);
-w=2*pi*f;
+w=2*pi*freq;
 s=j*w;
 Tdb = ones(1,length(s));
 for k = 1:length(s)
@@ -63,13 +66,13 @@ xlabel("Frequency [Hz]");
 ylabel("Phase [Deg]");
 print(theo_phase, "theo_phase_freq_response.eps", "-depsc");
 %%
-theo_gain = figure ();
+theo = figure ();
 plot(log10(freq),Tdb,"g");
 title("Gain Frequency Response");
 xlabel ("Frequency [Hz]");
 ylabel ("Gain");
 legend("v_o(f)/v_i(f)");
-print (theo_gain, "theo_gain_freq_response", "-depsc");
+print (theo, "theo", "-depsc");
 %%
 
 %Merit & Cost
