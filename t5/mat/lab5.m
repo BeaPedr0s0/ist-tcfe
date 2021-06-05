@@ -64,7 +64,7 @@ plot(log10(freq),(180*arg(T)/pi),"b");
 title("Phase Frequency Response");
 xlabel("Frequency [Hz]");
 ylabel("Phase [Deg]");
-print(theo_phase, "theo_phase_freq_response.eps", "-depsc");
+print(theo_phase, "theo_phase.eps", "-depsc");
 %%
 theo = figure ();
 plot(log10(freq),Tdb,"g");
@@ -72,7 +72,7 @@ title("Gain Frequency Response");
 xlabel ("Frequency [Hz]");
 ylabel ("Gain");
 legend("v_o(f)/v_i(f)");
-print (theo, "theo", "-depsc");
+print (theo, "theo.eps", "-depsc");
 %%
 
 %Merit & Cost
@@ -80,7 +80,7 @@ Gain_Deviation_dB = abs(40-Tdb_central_freq);
 Gain_Deviation=10^(Gain_Deviation_dB/20);
 Central_Frequency_Deviation=abs(1000-wo_Hz);
 cost = 1e-3*(R1 + R2 + R3 + R4 + 100 + 530500 + 183600 + 13190000 + 150) + 1e6*(C1 + C2) + 38.66e-18 + 0.1*2;
-Merit = 1/(cost * Gain_Deviation * Central_Frequency_Deviation);
+Merit = 1/(cost * (Gain_Deviation + Central_Frequency_Deviation + 1e-6));
 printf ("Cost_Merit_TAB\n");
 printf ("Cost = %e \n", cost); 
 printf ("Merit = %e \n", Merit);
