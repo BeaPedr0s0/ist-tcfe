@@ -1,9 +1,9 @@
 \section{Comparison}
 \label{section:comparison}
 
-\par In this section, a global comparison between Octave and Ngspice results will be made. Firstly, one should bear in mind that, in the previous sections, an Operating Point Analysis was performed to find the necessary values for the Incremental Analysis. 
+\par In this section, a global comparison between Octave and Ngspice results will be made. 
 
-\par As requested we are able to compute the passband frequency in simulation analysis using the measure funtion and the central frequency in the theoretical analysis using Low and High Band Pass Frequencies. The different calculation methods leads the results to a little difference.
+\par As requested we were able to compute the passband frequency in simulation analysis using the measure funtion and the central frequency in the theoretical analysis as already explained. Moreover, the POP-AMP model is far more complex in Ngspice than in Octave.The different calculation methods lead to the difference between both methods. The calculated and simulated impedances have the same issues. However, our results were fairly satisfying.
 
 
  \begin{table}[h]
@@ -25,7 +25,24 @@
   \caption{Central frequency [Hz] and respective gain [dB]. (Octave)}}
 \end{table}
 
-We also computed the impedances as shown in the table bellow.
+
+
+\begin{figure}[ht]
+\centering
+\parbox{.49\linewidth}{
+  \centering
+  \includegraphics[width=.7\linewidth]{theo.eps}
+  \caption{Gain [dB]. Octave}
+  \label{fig:sim6} }
+\parbox{.49\linewidth}{
+  \centering
+  \includegraphics[width=.65\linewidth]{gain.pdf}
+  \caption{Gain [dB]. Ngspice}
+  \label{fig:sim6}
+
+}
+\end{figure}
+
 
 
 \begin{table}[ht]
@@ -48,8 +65,24 @@ We also computed the impedances as shown in the table bellow.
 \end{table}
 
 
+We must also compare the phase plots. In octave, thanks to the capacitors we have 2 poles and 2 roots. However, in Ngspice we see 4 poles, again due to the complexity of the model used by this software.
 
 
+\begin{figure}[ht]
+\centering
+\parbox{.49\linewidth}{
+  \centering
+  \includegraphics[width=.7\linewidth]{theo_phase.eps}
+  \caption{Output voltage (phase). Octave}
+  \label{fig:si} }
+\parbox{.49\linewidth}{
+  \centering
+  \includegraphics[width=.65\linewidth]{vo2f.pdf}
+  \caption{Output voltage (phase). Ngspice}
+  \label{fig:sim6}
+
+}
+\end{figure}
 
 
 
